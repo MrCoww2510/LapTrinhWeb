@@ -89,12 +89,12 @@ body {
     position:relative;
 }
 
-.menu a {
+.menu > a {
     color:white;
     font-weight:bold;
     text-transform:uppercase;
 }
 
 .menu a:hover {
-    color:#ffd27f;
+    scale: 1.2;
 }
