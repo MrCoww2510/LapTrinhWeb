@@ -21,7 +21,7 @@
 
                 <div class="logo">
 
-                    <a href="TrangChu.php">
+                    <a href="index.php">
                     <img src="img/LOGO.png" alt="logo">
                     </a>
 
@@ -49,7 +49,7 @@
 
                 <ul class="menu">
 
-                    <li><a class="test" href="TrangChu.php">Trang chủ</a></li>
+                    <li><a class="test" href="index.php">Trang chủ</a></li>
 
                     <li><a href="html/GioiThieu.html">Giới thiệu</a></li>
 
