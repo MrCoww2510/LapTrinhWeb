@@ -1,111 +1,97 @@
 /* ===== BANNER ===== */
 
-.TC_banner img
-{
-width:100%;
-height:400px;
-object-fit:cover;
+.TC_banner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
 }
 
 
 /* ===== SECTION ===== */
 
 .TC_category,
-.TC_product
-{
-padding:40px 80px;
+.TC_product {
+    padding: 40px 80px;
 }
 
-.TC_title
-{
-font-size:28px;
-margin-bottom:25px;
+.TC_title {
+    font-size: 28px;
+    margin-bottom: 25px;
 }
 
 
 /* ===== CATEGORY ===== */
 
-.TC_categoryGrid
-{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:20px;
+.TC_categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
 }
 
-.TC_categoryItem
-{
-background:white;
-padding:25px;
-text-align:center;
-font-weight:bold;
-border-radius:6px;
-cursor:pointer;
-transition:0.2s;
+.TC_categoryItem {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.TC_categoryItem:hover
-{
-transform:translateY(-5px);
-box-shadow:0 5px 10px rgba(0,0,0,0.2);
+.TC_categoryItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 
 /* ===== PRODUCT ===== */
 
-.TC_productGrid
-{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
+.TC_productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-.TC_productCard
-{
-background:white;
-padding:15px;
-border-radius:6px;
-text-align:center;
-transition:0.2s;
+.TC_productCard {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.2s;
 }
 
-.TC_productCard:hover
-{
-transform:translateY(-5px);
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+.TC_productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.TC_productCard img
-{
-width:100%;
-height:200px;
-object-fit:cover;
+.TC_productCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-.TC_productName
-{
-margin:10px 0;
+.TC_productName {
+    margin: 10px 0;
 }
 
-.TC_price
-{
-color:red;
-font-weight:bold;
-margin-bottom:10px;
+.TC_price {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 
 /* ===== BUTTON ===== */
 
-.TC_btn
-{
-display:inline-block;
-background:#bd540d;
-color:white;
-padding:8px 15px;
-border-radius:4px;
+.TC_btn {
+    display: inline-block;
+    background: #bd540d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
 }
 
-.TC_btn:hover
-{
-background:#8a3b07;
+.TC_btn:hover {
+    background: #8a3b07;
 }
