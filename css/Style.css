@@ -1,0 +1,100 @@
+/* ================= RESET ================= */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration:none;
+}
+
+/* ================= BACKGROUND ================= */
+
+body {
+    background:linear-gradient(135deg,#ffb98a,#ffe3c8,#fff3e6,#ffd4a3);
+    min-height:100vh;
+}
+
+/* ================= TOP HEADER ================= */
+
+.top-header {
+    background:#ff9900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 20px;
+    padding:15px 40px;
+}
+
+/* logo */
+
+.logo img {
+    height:60px;
+}
+
+/* search */
+
+.search {
+    display:flex;
+    gap:5px;
+}
+
+.search input {
+    padding:8px 10px;
+    width:500px;
+    border:none;
+    border-radius:3px;
+}
+
+.search button {
+    background:#8b0000;
+    color:white;
+
+    border:none;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+/* right menu */
+
+.header-right {
+    display:flex;
+    gap:20px;
+}
+
+.header-right a {
+    color:black;
+    font-weight:bold;
+}
+
+/* ================= MENU ================= */
+
+.nav {
+    background:#bd540d;
+    display:flex;
+    justify-content:center;
+}
+
+.menu {
+    display:flex;
+    list-style:none;
+    gap:30px;
+    padding:12px 0;
+}
+
+.menu li {
+    position:relative;
+}
+
+.menu a {
+    color:white;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.menu a:hover {
+    color:#ffd27f;
+}
