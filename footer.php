@@ -11,7 +11,7 @@
         <div class="FT_col">
             <h3 class="FT_title">Liên kết nhanh</h3>
             <ul class="FT_list">
-                <li><a href="/html/TrangChu.html">Trang chủ</a></li>
+                <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="/html/TrangSanPham.html">Sản phẩm</a></li>
                 <li><a href="/html/GioiThieu.html">Giới thiệu</a></li>
                 <li><a href="/html/BaoHanh.html">Bảo hành</a></li>
@@ -37,7 +37,7 @@
     </div>
     <!-- ===== COPYRIGHT ===== -->
     <div class="FT_bottom">
-        <p>© 2026 F1GamingGear - Nhóm 10</p>
+        <p>© 2026 F1GamingGear - Nhóm 10 </p>
     </div>
 </footer>
 </body>
