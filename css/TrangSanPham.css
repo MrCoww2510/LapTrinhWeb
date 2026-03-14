@@ -1,17 +1,3 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
-body{
-background:#f5f5f5;
-display:flex;
-justify-content:center;
-padding:40px;
-}
-
 .danhsachsanpham{
 display:grid;
 grid-template-columns:repeat(5,1fr);
@@ -22,7 +8,7 @@ padding:40px;
 /* khung sản phẩm */
 
 .sanpham{
-width:auto;
+/* width:auto; */
 background:white;
 padding:15px;
 border-radius:8px;
