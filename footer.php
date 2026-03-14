@@ -1,19 +1,80 @@
+<footer class="FT_footer">
+
+<div class="FT_container">
+
+<!-- ===== CỘT 1 ===== -->
+
+<div class="FT_col">
+
+<h3 class="FT_title">F1GamingGear</h3>
+
+<p class="FT_text">
+Chuyên cung cấp thiết bị gaming chính hãng như bàn phím, chuột, tai nghe và laptop gaming.
+</p>
+
+</div>
 
 
+<!-- ===== CỘT 2 ===== -->
+
+<div class="FT_col">
+
+<h3 class="FT_title">Liên kết nhanh</h3>
+
+<ul class="FT_list">
+
+<li><a href="/html/TrangChu.html">Trang chủ</a></li>
+<li><a href="/html/TrangSanPham.html">Sản phẩm</a></li>
+<li><a href="/html/GioiThieu.html">Giới thiệu</a></li>
+<li><a href="/html/BaoHanh.html">Bảo hành</a></li>
+
+</ul>
+
+</div>
 
 
+<!-- ===== CỘT 3 ===== -->
+
+<div class="FT_col">
+
+<h3 class="FT_title">Hỗ trợ</h3>
+
+<ul class="FT_list">
+
+<li><a href="#">Chính sách bảo hành</a></li>
+<li><a href="#">Chính sách đổi trả</a></li>
+<li><a href="#">Hướng dẫn mua hàng</a></li>
+<li><a href="#">Liên hệ</a></li>
+
+</ul>
+
+</div>
 
 
+<!-- ===== CỘT 4 ===== -->
+
+<div class="FT_col">
+
+<h3 class="FT_title">Liên hệ</h3>
+
+<p class="FT_text">📍 Cần Thơ, Việt Nam</p>
+<p class="FT_text">📞 0123 456 789</p>
+<p class="FT_text">📧 support@f1gaminggear.vn</p>
+
+</div>
+
+</div>
 
 
+<!-- ===== COPYRIGHT ===== -->
 
+<div class="FT_bottom">
 
+<p>© 2026 F1GamingGear - Nhóm 10</p>
 
+</div>
 
-
-
-
-
+</footer>
 
 </body>
 </html>
