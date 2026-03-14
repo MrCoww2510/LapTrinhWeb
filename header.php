@@ -14,7 +14,7 @@
             <div class="HD_topHeader">
                 <div class="HD_logo">
                     <a href="index.php">
-                    <img src="img/LOGO.png" alt="logo">
+                    <img src="img/Logo.png" alt="logo">
                     </a>
                 </div>
                 <div class="HD_search">
