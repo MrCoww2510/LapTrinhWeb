@@ -1,16 +1,15 @@
 /* ================= BANNER ================= */
 
-.TC_main
-{
-max-width:100rem;
-margin:auto;
+.TC_main {
+	max-width: 100rem;
+	margin: auto;
 }
 
 .TC_banner img {
+	position: relative;
 	width: 100%;
 	display: block;
 }
-
 
 /* ================= CATEGORY ================= */
 
@@ -35,7 +34,6 @@ margin:auto;
 	border-radius: 8px;
 	font-weight: bold;
 }
-
 
 /* ================= PRODUCT ================= */
 
@@ -79,4 +77,163 @@ margin:auto;
 	padding: 8px 12px;
 	border-radius: 5px;
 	cursor: pointer;
+}
+/* ================= NEW PRODUCT ================= */
+
+.TC_newProduct {
+	padding: 60px 5%;
+}
+
+.TC_newProductHeader {
+	margin-bottom: 30px;
+}
+
+.TC_newProductTitle {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/* list */
+
+.TC_newProductList {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+}
+
+/* card */
+
+.TC_newProductCard {
+	background: white;
+	border-radius: 10px;
+	padding: 15px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+}
+
+.TC_newProductCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* image */
+
+.TC_newProductImage img {
+	width: 100%;
+	border-radius: 8px;
+}
+
+/* info */
+
+.TC_newProductName {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+.TC_newProductPrice {
+	color: #e63946;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+/* button */
+
+.TC_newProductAction {
+	margin-top: 10px;
+}
+
+.TC_newProductButton {
+	width: 100%;
+	padding: 8px;
+	border: none;
+	background: #ff7a00;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.TC_newProductButton:hover {
+	background: #ff5500;
+}
+/* ================= BLOG ================= */
+
+.TC_blog {
+	padding: 60px 5%;
+}
+
+.TC_blogHeader {
+	margin-bottom: 20px;
+}
+
+.TC_blogTitle {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/* list */
+
+.TC_blogList {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
+}
+
+/* card */
+
+.TC_blogCard {
+	background: white;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+}
+
+.TC_blogCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* image */
+
+.TC_blogImage img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+
+/* content */
+
+.TC_blogContent {
+	padding: 15px;
+}
+
+.TC_blogName {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.TC_blogDesc {
+	font-size: 14px;
+	color: #414141;
+}
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+	.TC_newProductList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.TC_blogList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.TC_newProductList {
+		grid-template-columns: 1fr;
+	}
+
+	.TC_blogList {
+		grid-template-columns: 1fr;
+	}
 }
