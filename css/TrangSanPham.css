@@ -1,100 +1,100 @@
-.danhsachsanpham{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:20px;
-padding:40px;
+.danhsachsanpham {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 40px;
 }
 
 /* khung sản phẩm */
 
-.sanpham{
-/* width:auto; */
-background:white;
-padding:15px;
-border-radius:8px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
+.sanpham {
+    /* width:auto; */
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* hình ảnh */
 
-.hinhanh{
-text-align:center;
-margin-bottom:10px;
+.hinhanh {
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.hinhanh img{
-width:100%;
+.hinhanh img {
+    width: 100%;
 }
 
 /* tên sản phẩm */
 
-.tensanpham{
-font-size:18px;
-color:#333;
-margin-bottom:10px;
-line-height:1.4;
+.tensanpham {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 /* thông số */
 
-.thongso{
-background:#f1f1f1;
-padding:10px;
-border-radius:6px;
-font-size:14px;
-color:#555;
-margin-bottom:10px;
+.thongso {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.thongso div{
-margin:4px 0;
+.thongso div {
+    margin: 4px 0;
 }
 
 /* giá cũ */
 
-.giacu{
-text-decoration:line-through;
-color:#888;
-font-size:14px;
-margin-bottom:5px;
+.giacu {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 /* giá mới */
 
-.gia{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:8px;
+.gia {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
 }
 
-.giamoi{
-color:#e60012;
-font-size:22px;
-font-weight:bold;
+.giamoi {
+    color: #e60012;
+    font-size: 22px;
+    font-weight: bold;
 }
 
-.giamgia{
-border:1px solid red;
-color:red;
-padding:2px 6px;
-font-size:13px;
-border-radius:4px;
+.giamgia {
+    border: 1px solid red;
+    color: red;
+    padding: 2px 6px;
+    font-size: 13px;
+    border-radius: 4px;
 }
 
 /* đánh giá */
 
-.danhgia{
-font-size:14px;
-color:#777;
+.danhgia {
+    font-size: 14px;
+    color: #777;
 }
 
-.sao{
-color:orange;
-font-size:16px;
+.sao {
+    color: orange;
+    font-size: 16px;
 }
 
-.nhanxet{
-color:#888;
-margin-left:5px;
+.nhanxet {
+    color: #888;
+    margin-left: 5px;
 }
