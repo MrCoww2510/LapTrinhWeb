@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/TrangChu.css">
     <link rel="stylesheet" href="css/TrangSanPham.css">
+    <link rel="stylesheet" href="css/ChiTietSanPham.css">
 </head>
 
 <body>
