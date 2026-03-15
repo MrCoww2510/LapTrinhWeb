@@ -80,10 +80,6 @@
 }
 /* ================= NEW PRODUCT ================= */
 
-.TC_newProduct {
-	padding: 60px 5%;
-}
-
 .TC_newProductHeader {
 	margin-bottom: 30px;
 }
@@ -156,10 +152,6 @@
 	background: #ff5500;
 }
 /* ================= BLOG ================= */
-
-.TC_blog {
-	padding: 60px 5%;
-}
 
 .TC_blogHeader {
 	margin-bottom: 20px;

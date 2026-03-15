@@ -1,51 +1,78 @@
+/* ================= RESET ================= */
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Segoe UI;
 }
+
 a {
 	text-decoration: none;
 }
 
+/* ================= BODY ================= */
+
 body {
-	background: linear-gradient(135deg, #ffb98a, #ffe3c8, #fff3e6);
+	background: linear-gradient(
+		135deg,
+		hsl(32, 100%, 80%),
+		hsl(30, 100%, 70%),
+		hsl(28, 100%, 60%)
+	);
 
 	overflow-x: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+.HD_header {
+	position: sticky;
+	top: 0;
 
+	z-index: 1000;
+}
 .HD_topHeader {
-	background: #ff9900;
+	background: hsl(30, 100%, 50%);
 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
 	padding: 15px 5%;
+	gap: 15px;
 
-	flex-wrap: wrap;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
+
+/* ---------- LOGO ---------- */
 
 .HD_logo img {
 	height: 45px;
+	margin: 4px;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 }
+
+/* ---------- SEARCH ---------- */
 
 .HD_search {
 	display: flex;
 
 	flex: 1;
-
 	max-width: 500px;
+
+	border-radius: 4px;
+	overflow: hidden;
+
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .HD_search input {
 	flex: 1;
 
-	padding: 8px;
+	padding: 9px;
 
 	border: none;
+	outline: none;
 }
 
 .HD_search button {
@@ -53,8 +80,18 @@ body {
 	color: white;
 	border: none;
 
-	padding: 8px 12px;
+	padding: 9px 14px;
+
+	cursor: pointer;
+
+	transition: 0.2s;
 }
+
+.HD_search button:hover {
+	background: #a80000;
+}
+
+/* ---------- RIGHT MENU ---------- */
 
 .HD_rightMenu {
 	display: flex;
@@ -64,34 +101,68 @@ body {
 .HD_rightMenu a {
 	color: white;
 	font-weight: bold;
+
+	transition: 0.2s;
 }
 
-/* MENU */
+.HD_rightMenu a:hover {
+	color: #222;
+}
+
+/* ================= NAV MENU ================= */
 
 .HD_nav {
-	background: #bd540d;
+	background: hsl(30, 100%, 50%);
 }
 
 .HD_menu {
 	display: flex;
-
 	justify-content: center;
-
+	align-items: center;
 	list-style: none;
-
-	gap: 25px;
-
+	gap: 30px;
 	padding: 12px;
-
 	flex-wrap: wrap;
+	max-width: 1200px;
+	margin: auto;
 }
+/* ---------- MENU ITEM ---------- */
 
 .HD_menu a {
 	color: white;
-
 	font-weight: bold;
+	padding: 6px 4px;
+	position: relative;
+	transition: 0.2s;
 }
-/* FOOTER */
+
+.HD_menu a:hover {
+	color: #222;
+}
+
+/* underline animation */
+
+.HD_menu a::after {
+	content: "";
+
+	position: absolute;
+
+	left: 0;
+	bottom: -4px;
+
+	width: 0%;
+	height: 2px;
+
+	background: white;
+
+	transition: 0.3s;
+}
+
+.HD_menu a:hover::after {
+	width: 100%;
+}
+
+/* ================= FOOTER ================= */
 
 .FT_footer {
 	background: #1c1c1c;
@@ -117,6 +188,12 @@ body {
 
 .FT_list a {
 	color: #ccc;
+
+	transition: 0.2s;
+}
+
+.FT_list a:hover {
+	color: white;
 }
 
 .FT_bottom {
@@ -125,4 +202,9 @@ body {
 	padding: 15px;
 
 	border-top: 1px solid #333;
+}
+@media (max-width: 600px) {
+	* {
+		font-size: 1rem;
+	}
 }
