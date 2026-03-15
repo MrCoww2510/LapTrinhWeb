@@ -1,0 +1,180 @@
+<div class="DangNhap_overlay" id="KhuVuc_Form" style="display: none;">
+    <div class="DangNhap_box">
+        
+        <div class="DangNhap_header">
+            <h3 id="TieuDe_Form">ĐĂNG NHẬP HOẶC TẠO TÀI KHOẢN</h3>
+            <span class="DangNhap_close_btn" onclick="dongPopup()">&times;</span>
+        </div>
+
+        <form class="DangNhap_body" action="xuly_taikhoan.php" method="POST">
+            
+            <input type="hidden" name="loai_hanh_dong" id="Loai_Hanh_Dong" value="dang_nhap">
+
+            <div class="DangNhap_text_right">
+                <a class="DangNhap_link" id="Link_DoiKieuNhap" onclick="chuyenDoiEmailSDT()">Đăng nhập bằng số điện thoại</a>
+                <a class="DangNhap_link" id="Link_QuayLai" onclick="chuyenCheDo('DangNhap')" style="display: none; color: #555; text-decoration: underline; font-size: 13px;">Quay lại</a>
+            </div>
+
+            <div class="DangNhap_input_group">
+                <input type="text" name="tai_khoan" id="Input_TaiKhoan" class="DangNhap_input" placeholder="Email" required>
+            </div>
+
+            <div id="Nhom_DangKy" style="display: none;">
+                <div class="DangNhap_input_group">
+                    <input type="text" name="ho" class="DangNhap_input" placeholder="Họ">
+                </div>
+                <div class="DangNhap_input_group">
+                    <input type="text" name="ten" class="DangNhap_input" placeholder="Tên">
+                </div>
+            </div>
+
+            <div class="DangNhap_input_group" id="KhuVuc_MatKhau">
+                <input type="password" name="mat_khau" id="Input_MatKhau" class="DangNhap_input" placeholder="Mật khẩu" required>
+                <div class="DangNhap_eye_wrapper" onclick="anHienMatKhau()">
+                    <img id="Icon_Mat" src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Hiện mật khẩu" class="DangNhap_eye_image">
+                </div>
+            </div>
+
+            <div class="DangNhap_text_right" id="KhuVuc_QuenMatKhau">
+                <a class="DangNhap_link" id="Link_QuenMatKhau" onclick="chuyenCheDo('QuenMatKhau')">Quên mật khẩu email?</a>
+            </div>
+
+            <button type="submit" class="DangNhap_btn_main" id="Nut_Chinh">ĐĂNG NHẬP</button>
+
+            <div class="DangNhap_divider">
+                <span id="Chu_Hoac">hoặc đăng nhập bằng</span>
+            </div>
+
+            <div class="DangNhap_social_group">
+                <button type="button" class="DangNhap_btn_social DangNhap_btn_google"><b>G+</b> Google</button>
+                <button type="button" class="DangNhap_btn_social DangNhap_btn_facebook"><b>f</b> Facebook</button>
+            </div>
+
+            <div class="DangNhap_footer" id="KhuVuc_Footer">
+                <p style="margin: 0;">Bạn chưa có tài khoản? <a href="javascript:void(0)" onclick="chuyenCheDo('DangKy')">Đăng ký ngay!</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    /* ==========================================
+       PHẦN 1: ĐÓNG / MỞ VÀ CƠ BẢN
+       ========================================== */
+    function moPopupDangNhap() {
+        document.getElementById("KhuVuc_Form").style.display = "flex";
+        chuyenCheDo('DangNhap');
+    }
+
+    function dongPopup() {
+        document.getElementById("KhuVuc_Form").style.display = "none";
+    }
+
+    function anHienMatKhau() {
+        const input = document.getElementById("Input_MatKhau");
+        const icon = document.getElementById("Icon_Mat");
+        if (input.type === "password") {
+            input.type = "text";
+            icon.src = "https://cdn-icons-png.flaticon.com/512/2767/2767146.png"; 
+        } else {
+            input.type = "password";
+            icon.src = "https://cdn-icons-png.flaticon.com/512/159/159604.png"; 
+        }
+    }
+
+    /* ==========================================
+       PHẦN 2: LOGIC BIẾN HÌNH FORM (QUAN TRỌNG)
+       ========================================== */
+    let dangO_CheDoDangKy = false;
+
+    function chuyenCheDo(cheDo) {
+        const tieuDe = document.getElementById("TieuDe_Form");
+        const nhomDangKy = document.getElementById("Nhom_DangKy");
+        const khuVucMatKhau = document.getElementById("KhuVuc_MatKhau");
+        const khuVucQuenMK = document.getElementById("KhuVuc_QuenMatKhau");
+        const nutChinh = document.getElementById("Nut_Chinh");
+        const chuHoac = document.getElementById("Chu_Hoac");
+        const khuVucFooter = document.getElementById("KhuVuc_Footer");
+        const linkDoiKieuNhap = document.getElementById("Link_DoiKieuNhap");
+        const linkQuayLai = document.getElementById("Link_QuayLai");
+        const inputMatKhau = document.getElementById("Input_MatKhau");
+        const loaiHanhDong = document.getElementById("Loai_Hanh_Dong"); 
+
+        if (cheDo === 'QuenMatKhau') {
+            // Chế độ KHÔI PHỤC (Ảnh 6)
+            loaiHanhDong.value = "quen_mat_khau";
+            tieuDe.innerText = "ĐĂNG NHẬP HOẶC TẠO TÀI KHOẢN";
+            nhomDangKy.style.display = "none";
+            khuVucMatKhau.style.display = "none";
+            khuVucQuenMK.style.display = "none";
+            linkDoiKieuNhap.style.display = "none";
+            linkQuayLai.style.display = "inline-block";
+            nutChinh.innerText = "KHÔI PHỤC";
+            chuHoac.innerText = "hoặc đăng nhập bằng";
+            inputMatKhau.removeAttribute("required");
+            dangO_CheDoDangKy = false;
+
+        } else if (cheDo === 'DangKy') {
+            // Chế độ ĐĂNG KÝ (Ảnh 5)
+            loaiHanhDong.value = "dang_ky";
+            tieuDe.innerText = "ĐĂNG KÝ TÀI KHOẢN GEARVN";
+            nhomDangKy.style.display = "block";
+            khuVucMatKhau.style.display = "block";
+            khuVucQuenMK.style.display = "none";
+            linkDoiKieuNhap.style.display = "inline-block";
+            linkQuayLai.style.display = "none";
+            nutChinh.innerText = "TẠO TÀI KHOẢN";
+            chuHoac.innerText = "hoặc đăng ký bằng";
+            khuVucFooter.innerHTML = '<p style="margin: 0;">Bạn đã có tài khoản? <a href="javascript:void(0)" onclick="chuyenCheDo(\'DangNhap\')">Đăng nhập!</a></p>';
+            linkDoiKieuNhap.innerText = "Đăng ký bằng số điện thoại";
+            inputMatKhau.setAttribute("required", "true");
+            dangO_CheDoDangKy = true;
+
+        } else {
+            // Chế độ ĐĂNG NHẬP (Ảnh 3, 4)
+            loaiHanhDong.value = "dang_nhap";
+            tieuDe.innerText = "ĐĂNG NHẬP HOẶC TẠO TÀI KHOẢN";
+            nhomDangKy.style.display = "none";
+            khuVucMatKhau.style.display = "block";
+            khuVucQuenMK.style.display = "block";
+            linkDoiKieuNhap.style.display = "inline-block";
+            linkQuayLai.style.display = "none";
+            nutChinh.innerText = "ĐĂNG NHẬP";
+            chuHoac.innerText = "hoặc đăng nhập bằng";
+            khuVucFooter.innerHTML = '<p style="margin: 0;">Bạn chưa có tài khoản? <a href="javascript:void(0)" onclick="chuyenCheDo(\'DangKy\')">Đăng ký ngay!</a></p>';
+            linkDoiKieuNhap.innerText = "Đăng nhập bằng số điện thoại";
+            inputMatKhau.setAttribute("required", "true");
+            dangO_CheDoDangKy = false;
+        }
+    }
+
+    /* ==========================================
+       PHẦN 3: ĐỔI KIỂU NHẬP (EMAIL / SĐT)
+       ========================================== */
+    let dungEmail = true; 
+    function chuyenDoiEmailSDT() {
+        const link = document.getElementById("Link_DoiKieuNhap");
+        const input = document.getElementById("Input_TaiKhoan");
+        const linkQuen = document.getElementById("Link_QuayLai"); // Dùng link quay lại để tham chiếu text
+        const trangThai = dangO_CheDoDangKy ? "Đăng ký" : "Đăng nhập";
+
+        if (dungEmail) {
+            link.innerText = `${trangThai} bằng email`;
+            input.type = "tel"; 
+            input.placeholder = "Số điện thoại";
+            dungEmail = false;
+        } else {
+            link.innerText = `${trangThai} bằng số điện thoại`;
+            input.type = "email";
+            input.placeholder = "Email";
+            dungEmail = true;
+        }
+    }
+
+    // Đóng popup khi nhấn ra vùng ngoài
+    window.onclick = function(event) {
+        const popup = document.getElementById("KhuVuc_Form");
+        if (event.target == popup) dongPopup();
+    }
+</script>

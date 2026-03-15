@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/TrangChu.css">
     <link rel="stylesheet" href="css/TrangSanPham.css">
+    <link rel="stylesheet" href="css/DangNhap.css">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             </div>
             <div class="HD_rightMenu">
                 <a href="GioHang.html">Giỏ hàng</a>
-                <a href="DangNhap.html">Tài khoản</a>
+                <a href="javascript:void(0)" onclick="moPopupDangNhap()">Tài khoản</a>
             </div>
         </div>
         <!-- ===== MENU ===== -->
@@ -40,3 +41,4 @@
             </ul>
         </nav>
     </header>
+    <?php include 'html/DangNhap.html'; ?>
