@@ -34,9 +34,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
     padding: 15px 5%;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* logo */
@@ -50,15 +50,14 @@ body {
 .HD_search {
     display: flex;
     flex: 1;
-    max-width: 600px;
-    gap: 5px;
+    max-width: 500px;
 }
 
 .HD_search input {
-    padding: 8px 10px;
-    width: 100%;
+    flex: 1;
+    padding: 8px;
     border: none;
-    border-radius: 3px;
+    border-radius: 3px 0 0 3px;
 }
 
 .HD_search button {
@@ -66,8 +65,8 @@ body {
     color: white;
     border: none;
     padding: 8px 12px;
+    border-radius: 0 3px 3px 0;
     cursor: pointer;
-    border-radius: 3px;
 }
 
 /* right menu */
@@ -75,7 +74,6 @@ body {
 .HD_rightMenu {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .HD_rightMenu a {
@@ -87,20 +85,15 @@ body {
 
 .HD_nav {
     background: #bd540d;
-    width: 100%;
 }
 
 .HD_menu {
+    list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
     gap: 25px;
     padding: 12px 5%;
-}
-
-.HD_menu li {
-    position: relative;
+    flex-wrap: wrap;
 }
 
 .HD_menu a {
@@ -122,8 +115,6 @@ body {
     margin-top: 40px;
 }
 
-/* container */
-
 .FT_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -131,22 +122,15 @@ body {
     padding: 40px 5%;
 }
 
-/* title */
-
 .FT_title {
     margin-bottom: 15px;
-    font-size: 18px;
 }
-
-/* text */
 
 .FT_text {
     font-size: 14px;
     margin-bottom: 8px;
     color: #ccc;
 }
-
-/* list */
 
 .FT_list {
     list-style: none;
@@ -164,38 +148,30 @@ body {
     color: white;
 }
 
-/* bottom */
-
 .FT_bottom {
     text-align: center;
     padding: 15px;
     border-top: 1px solid #333;
-    font-size: 14px;
     color: #aaa;
 }
 
 /* ================= TABLET ================= */
 
-@media (max-width:1024px) {
+@media(max-width:1024px) {
 
     .HD_topHeader {
         flex-direction: column;
-        align-items: center;
     }
 
     .HD_search {
         width: 100%;
     }
 
-    .HD_rightMenu {
-        justify-content: center;
-    }
-
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width:768px) {
+@media(max-width:768px) {
 
     .HD_menu {
         gap: 15px;

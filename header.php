@@ -7,9 +7,9 @@
     <title>F1GamingGear</title>
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/TrangChu.css">
-    <link rel="stylesheet" href="css/TrangSanPham.css">
+    <!-- <link rel="stylesheet" href="css/TrangSanPham.css">
     <link rel="stylesheet" href="css/DangNhap.css">
-    <link rel="stylesheet" href="css/ChiTietSanPham.css">
+    <link rel="stylesheet" href="css/ChiTietSanPham.css"> -->
 </head>
 
 <body>
