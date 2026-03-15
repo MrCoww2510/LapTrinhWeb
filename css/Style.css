@@ -1,188 +1,157 @@
-/* ================= RESET ================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
 }
 
-a {
-    text-decoration: none;
-}
+body{
 
-/* ================= BACKGROUND ================= */
+background:linear-gradient(135deg,#ffb98a,#ffe3c8,#fff3e6);
 
-body {
-    background: linear-gradient(135deg, #ffb98a, #ffe3c8, #fff3e6, #ffd4a3);
-    min-height: 100vh;
-}
-
-/* ================= HEADER ================= */
-
-.HD_header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-}
-
-/* ================= TOP HEADER ================= */
-
-.HD_topHeader {
-    background: #ff9900;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 5%;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* logo */
-
-.HD_logo img {
-    height: 40px;
-}
-
-/* search */
-
-.HD_search {
-    display: flex;
-    flex: 1;
-    max-width: 500px;
-}
-
-.HD_search input {
-    flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 3px 0 0 3px;
-}
-
-.HD_search button {
-    background: #8b0000;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-}
-
-/* right menu */
-
-.HD_rightMenu {
-    display: flex;
-    gap: 20px;
-}
-
-.HD_rightMenu a {
-    color: white;
-    font-weight: bold;
-}
-
-/* ================= MENU ================= */
-
-.HD_nav {
-    background: #bd540d;
-}
-
-.HD_menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 12px 5%;
-    flex-wrap: wrap;
-}
-
-.HD_menu a {
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-.HD_menu a:hover {
-    color: wheat;
-}
-
-/* ================= FOOTER ================= */
-
-.FT_footer {
-    background: #1c1c1c;
-    color: white;
-    margin-top: 40px;
-}
-
-.FT_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    padding: 40px 5%;
-}
-
-.FT_title {
-    margin-bottom: 15px;
-}
-
-.FT_text {
-    font-size: 14px;
-    margin-bottom: 8px;
-    color: #ccc;
-}
-
-.FT_list {
-    list-style: none;
-}
-
-.FT_list li {
-    margin-bottom: 8px;
-}
-
-.FT_list a {
-    color: #ccc;
-}
-
-.FT_list a:hover {
-    color: white;
-}
-
-.FT_bottom {
-    text-align: center;
-    padding: 15px;
-    border-top: 1px solid #333;
-    color: #aaa;
-}
-
-/* ================= TABLET ================= */
-
-@media(max-width:1024px) {
-
-    .HD_topHeader {
-        flex-direction: column;
-    }
-
-    .HD_search {
-        width: 100%;
-    }
+overflow-x:hidden;
 
 }
 
-/* ================= MOBILE ================= */
+/* HEADER */
 
-@media(max-width:768px) {
+.HD_topHeader{
 
-    .HD_menu {
-        gap: 15px;
-    }
+background:#ff9900;
 
-    .HD_menu a {
-        font-size: 13px;
-    }
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-    .FT_container {
-        grid-template-columns: 1fr;
-    }
+padding:15px 5%;
+
+flex-wrap:wrap;
+
+}
+
+.HD_logo img{
+
+height:45px;
+
+}
+
+.HD_search{
+
+display:flex;
+
+flex:1;
+
+max-width:500px;
+
+}
+
+.HD_search input{
+
+flex:1;
+
+padding:8px;
+
+border:none;
+
+}
+
+.HD_search button{
+
+background:#8b0000;
+color:white;
+border:none;
+
+padding:8px 12px;
+
+}
+
+.HD_rightMenu{
+
+display:flex;
+gap:20px;
+
+}
+
+.HD_rightMenu a{
+
+color:white;
+font-weight:bold;
+
+}
+
+/* MENU */
+
+.HD_nav{
+
+background:#bd540d;
+
+}
+
+.HD_menu{
+
+display:flex;
+
+justify-content:center;
+
+list-style:none;
+
+gap:25px;
+
+padding:12px;
+
+flex-wrap:wrap;
+
+}
+
+.HD_menu a{
+
+color:white;
+
+font-weight:bold;
+
+}
+/* FOOTER */
+
+.FT_footer{
+
+background:#1c1c1c;
+
+color:white;
+
+margin-top:40px;
+
+}
+
+.FT_container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:40px;
+
+padding:40px 5%;
+
+}
+
+.FT_list{
+
+list-style:none;
+
+}
+
+.FT_list a{
+
+color:#ccc;
+
+}
+
+.FT_bottom{
+
+text-align:center;
+
+padding:15px;
+
+border-top:1px solid #333;
 
 }
