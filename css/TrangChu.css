@@ -1,8 +1,8 @@
 /* ===== BANNER ===== */
 
 .TC_banner img {
-    width: 100%;
-    height: 400px;
+    width: 1rem;
+    height: auto;
     object-fit: cover;
 }
 

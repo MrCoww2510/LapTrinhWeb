@@ -18,12 +18,14 @@ body {
     min-height: 100vh;
 }
 
+/* ================= HEADER ================= */
+
 .HD_header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
-
 
 /* ================= TOP HEADER ================= */
 
@@ -31,9 +33,10 @@ body {
     background: #ff9900;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 5%;
 }
 
 /* logo */
@@ -46,12 +49,14 @@ body {
 
 .HD_search {
     display: flex;
+    flex: 1;
+    max-width: 600px;
     gap: 5px;
 }
 
 .HD_search input {
     padding: 8px 10px;
-    width: 500px;
+    width: 100%;
     border: none;
     border-radius: 3px;
 }
@@ -62,6 +67,7 @@ body {
     border: none;
     padding: 8px 12px;
     cursor: pointer;
+    border-radius: 3px;
 }
 
 /* right menu */
@@ -69,10 +75,11 @@ body {
 .HD_rightMenu {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .HD_rightMenu a {
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: bold;
 }
 
@@ -80,15 +87,16 @@ body {
 
 .HD_nav {
     background: #bd540d;
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
 
 .HD_menu {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     list-style: none;
-    gap: 30px;
-    padding: 12px 0;
+    gap: 25px;
+    padding: 12px 5%;
 }
 
 .HD_menu li {
@@ -99,14 +107,14 @@ body {
     color: white;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 14px;
 }
 
 .HD_menu a:hover {
     color: wheat;
 }
 
-
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 
 .FT_footer {
     background: #1c1c1c;
@@ -118,9 +126,9 @@ body {
 
 .FT_container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
-    padding: 40px 80px;
+    padding: 40px 5%;
 }
 
 /* title */
@@ -164,4 +172,41 @@ body {
     border-top: 1px solid #333;
     font-size: 14px;
     color: #aaa;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:1024px) {
+
+    .HD_topHeader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .HD_search {
+        width: 100%;
+    }
+
+    .HD_rightMenu {
+        justify-content: center;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px) {
+
+    .HD_menu {
+        gap: 15px;
+    }
+
+    .HD_menu a {
+        font-size: 13px;
+    }
+
+    .FT_container {
+        grid-template-columns: 1fr;
+    }
+
 }
