@@ -8,11 +8,8 @@
     <link rel="stylesheet" href="css/Style.css">
     <link rel="stylesheet" href="css/TrangChu.css">
     <link rel="stylesheet" href="css/TrangSanPham.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/DangNhap.css">
-=======
     <link rel="stylesheet" href="css/ChiTietSanPham.css">
->>>>>>> f87599d639dccc19bb43f3c4583077a285fd6de9
 </head>
 
 <body>
