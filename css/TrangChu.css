@@ -1,8 +1,7 @@
 /* ================= BANNER ================= */
 
 .TC_main {
-	max-width: 100rem;
-	margin: auto;
+	max-width: 100%;
 }
 
 .TC_banner img {
@@ -71,7 +70,7 @@
 }
 
 .TC_btn {
-	background: #bd540d;
+	background: #ff7a00;
 	color: white;
 	border: none;
 	padding: 8px 12px;

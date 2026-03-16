@@ -1,43 +1,42 @@
-.danhsachsanpham {
+.SP_DanhSachSanPham {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 20px;
 	padding: 40px;
 }
 
-/* khung sản phẩm */
+/* ================= KHUNG SẢN PHẨM ================= */
 
-.sanpham {
-	/* width:auto; */
+.SP_SanPham {
 	background: white;
 	padding: 15px;
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* hình ảnh */
+/* ================= HÌNH ẢNH ================= */
 
-.hinhanh {
+.SP_HinhAnh {
 	text-align: center;
 	margin-bottom: 10px;
 }
 
-.hinhanh img {
+.SP_HinhAnh img {
 	width: 100%;
 }
 
-/* tên sản phẩm */
+/* ================= TÊN SẢN PHẨM ================= */
 
-.tensanpham {
+.SP_TenSanPham {
 	font-size: 18px;
 	color: #333;
 	margin-bottom: 10px;
 	line-height: 1.4;
 }
 
-/* thông số */
+/* ================= THÔNG SỐ ================= */
 
-.thongso {
+.SP_ThongSo {
 	background: #f1f1f1;
 	padding: 10px;
 	border-radius: 6px;
@@ -46,35 +45,35 @@
 	margin-bottom: 10px;
 }
 
-.thongso div {
+.SP_ThongSo div {
 	margin: 4px 0;
 }
 
-/* giá cũ */
+/* ================= GIÁ CŨ ================= */
 
-.giacu {
+.SP_GiaCu {
 	text-decoration: line-through;
 	color: #888;
 	font-size: 14px;
 	margin-bottom: 5px;
 }
 
-/* giá mới */
+/* ================= GIÁ MỚI ================= */
 
-.gia {
+.SP_Gia {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	margin-bottom: 8px;
 }
 
-.giamoi {
+.SP_GiaMoi {
 	color: #e60012;
 	font-size: 22px;
 	font-weight: bold;
 }
 
-.giamgia {
+.SP_GiamGia {
 	border: 1px solid red;
 	color: red;
 	padding: 2px 6px;
@@ -82,19 +81,23 @@
 	border-radius: 4px;
 }
 
-/* đánh giá */
+/* ================= ĐÁNH GIÁ ================= */
 
-.danhgia {
+.SP_DanhGia {
 	font-size: 14px;
 	color: #777;
 }
 
-.sao {
+.SP_Sao {
 	color: orange;
 	font-size: 16px;
 }
 
-.nhanxet {
+.SP_NhanXet {
 	color: #888;
 	margin-left: 5px;
+}
+.SP_SanPham:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
