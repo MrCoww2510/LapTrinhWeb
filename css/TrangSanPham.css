@@ -4,6 +4,16 @@
 	gap: 20px;
 	padding: 40px;
 }
+/* ================= PRODUCT ================= */
+
+.SP_DanhMuc {
+	padding: 40px 5%;
+	overflow: hidden;
+}
+
+.SP_DanhMuc .SP_TenDanhMuc {
+	margin-bottom: 20px;
+}
 
 /* ================= KHUNG SẢN PHẨM ================= */
 
