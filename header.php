@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/TrangSanPham.css">
     <link rel="stylesheet" href="css/DangNhap.css">
     <link rel="stylesheet" href="css/ChiTietSanPham.css">
+    <link rel="stylesheet" href="css/TrangBaoHanh.css">
 </head>
 
 <body>
