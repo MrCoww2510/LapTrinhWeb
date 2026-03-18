@@ -35,7 +35,7 @@
             <ul class="HD_menu">
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="html/GioiThieu.html">Giới thiệu</a></li>
-                <li><a href="html/BaoHanh.html">Bảo hành</a></li>
+                <li><a href="TrangBaoHanh.php">Bảo hành</a></li>
                 <li><a href="TrangSanPham.php">Sản phẩm</a></li>
                 <li><a href="TraCuuDonHang.html">Tra cứu đơn hàng</a></li>
                 <li><a href="LienHe.html">Liên hệ</a></li>
