@@ -1,3 +1,75 @@
+/* ===== THANH HÃNG ===== */
+.SP_ThanhHang{
+    display:flex;
+    gap:30px;
+    padding:20px;
+	background: linear-gradient(to right, #ffa36d, #f68438);
+    overflow-x:auto;
+	justify-content: center;
+}
+
+.SP_ThanhHang button{
+    min-width:100px;
+    padding:15px;
+    border:2px solid white;
+    border-radius:15px;
+    background:transparent;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.SP_ThanhHang button:hover{
+    background:white;
+    color:#1e90ff;
+}
+
+/* ===== THANH TRÊN ===== */
+.SP_ThanhSP{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
+
+/* ===== SẮP XẾP ===== */
+.SP_SapXep{
+    position:relative;
+}
+
+.SP_SapXepNut{
+    padding:10px 15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    background:white;
+    cursor:pointer;
+}
+
+.SP_SapXepMenu{
+    position:absolute;
+    top:110%;
+    right:0;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:8px;
+    display:none;
+    width:180px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.SP_SapXepMenu li{
+    list-style:none;
+    padding:10px;
+    cursor:pointer;
+}
+
+.SP_SapXepMenu li:hover{
+    background:#eee;
+}
+
+
+
 .SP_DanhSachSanPham {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -110,4 +182,23 @@
 .SP_SanPham:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 1024px) {
+	.SP.SP_DanhSachSanPham {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.TC_blogList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.SP_DanhSachSanPham{
+		grid-template-columns: 1fr;
+	}
+
+	.TC_blogList {
+		grid-template-columns: 1fr;
+	}
 }
