@@ -1,134 +1,134 @@
 /* Container chính của component */
 .BH_component {
-    max-width: 850px;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    line-height: 1.5;
+	max-width: 850px;
+	margin: 0 auto;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	line-height: 1.5;
 }
 
 /* Tiêu đề */
 .BH_title {
-    font-size: 22px;
-    font-weight: bold;
-    color: #111;
-    margin-bottom: 35px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #111;
+	margin-bottom: 35px;
 }
 
 /* Vùng Tabs */
 .BH_tabs {
-    display: flex;
-    margin-bottom: 25px;
+	display: flex;
+	margin-bottom: 25px;
 }
 
 .BH_tabs .tab {
-    padding: 12px 20px;
-    font-weight: bold;
-    font-size: 15px;
-    text-align: center;
-    width: 230px;
-    cursor: pointer;
+	padding: 12px 20px;
+	font-weight: bold;
+	font-size: 15px;
+	text-align: center;
+	width: 230px;
+	cursor: pointer;
 }
 
 .BH_tabs .tab.active {
-    background-color: #5b75f0;
-    color: #ffffff;
+	background-color: #5b75f0;
+	color: #ffffff;
 }
 
 .BH_tabs .tab.inactive {
-    background-color: transparent;
-    color: #111;
+	background-color: transparent;
+	color: #111;
 }
 
 /* Chú thích */
 .BH_instruction {
-    font-size: 14px;
-    margin-bottom: 12px;
-    color: #111;
+	font-size: 14px;
+	margin-bottom: 12px;
+	color: #111;
 }
 
 /* Form tra cứu */
 .BH_search-form {
-    display: flex;
-    width: 100%;
-    margin-bottom: 40px;
+	display: flex;
+	width: 100%;
+	margin-bottom: 40px;
 }
 
 .BH_search-form .input-field {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    font-size: 15px;
-    outline: none;
-    color: #333;
+	flex: 1;
+	padding: 12px 15px;
+	border: 1px solid #ddd;
+	font-size: 15px;
+	outline: none;
+	color: #333;
 }
 
 .BH_search-form .input-field::placeholder {
-    color: #888;
+	color: #888;
 }
 
 .BH_search-form .phone-input {
-    border-right: none;
-    border-radius: 4px 0 0 4px;
+	border-right: none;
+	border-radius: 4px 0 0 4px;
 }
 
 .BH_search-form .code-input {
-    border-radius: 0;
+	border-radius: 0;
 }
 
 /* Nút tra cứu */
 .BH_search-form .btn-search {
-    background-color: #1a73e8;
-    color: #ffffff;
-    border: none;
-    padding: 0 30px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 0 4px 4px 0;
-    transition: background-color 0.2s;
+	background-color: #1a73e8;
+	color: #ffffff;
+	border: none;
+	padding: 0 30px;
+	font-size: 15px;
+	font-weight: 500;
+	cursor: pointer;
+	border-radius: 0 4px 4px 0;
+	transition: background-color 0.2s;
 }
 
 .BH_search-form .btn-search:hover {
-    background-color: #1557b0;
+	background-color: #1557b0;
 }
 
 /* Đường kẻ ngang */
 .BH_divider {
-    border: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 30px 0;
+	border: none;
+	border-top: 1px solid #e0e0e0;
+	margin: 30px 0;
 }
 
 /* Nội dung chính sách */
 .BH_policy-content p {
-    font-size: 15.5px;
-    color: #333;
-    margin-bottom: 15px;
+	font-size: 15.5px;
+	color: #333;
+	margin-bottom: 15px;
 }
 
 .BH_policy-content h3 {
-    font-size: 17px;
-    font-weight: bold;
-    color: #111;
-    margin-top: 25px;
-    margin-bottom: 15px;
+	font-size: 17px;
+	font-weight: bold;
+	color: #111;
+	margin-top: 25px;
+	margin-bottom: 15px;
 }
 
 .BH_contact-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 10px;
+	list-style-type: disc;
+	padding-left: 20px;
+	margin-top: 10px;
 }
 
 .BH_contact-list li {
-    font-size: 15.5px;
-    color: #333;
-    margin-bottom: 12px;
+	font-size: 15.5px;
+	color: #333;
+	margin-bottom: 12px;
 }
 
 .BH_policy-content .phone-link {
-    color: #1a73e8;
-    font-weight: bold;
-    text-decoration: underline;
+	color: #1a73e8;
+	font-weight: bold;
+	text-decoration: underline;
 }
