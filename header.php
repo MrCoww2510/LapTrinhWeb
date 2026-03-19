@@ -1,8 +1,11 @@
+<?php 
+	include("config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
-<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F1GamingGear</title>
@@ -12,16 +15,6 @@
     <link rel="stylesheet" href="css/DangNhap.css">
     <link rel="stylesheet" href="css/ChiTietSanPham.css">
     <link rel="stylesheet" href="css/TrangBaoHanh.css">
-=======
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>F1GamingGear</title>
-	<link rel="stylesheet" href="css/Style.css">
-	<link rel="stylesheet" href="css/TrangChu.css">
-	<link rel="stylesheet" href="css/TrangSanPham.css">
-	<link rel="stylesheet" href="css/DangNhap.css">
-	<link rel="stylesheet" href="css/ChiTietSanPham.css">
->>>>>>> 361982cf8a8a619d952a1a8c199a74c27c8b553b
 </head>
 
 <body>
@@ -38,7 +31,7 @@
 				<button>Tìm</button>
 			</div>
 			<div class="HD_rightMenu">
-				<a href="GioHang.html">Giỏ hàng</a>
+				<a href="GioHang.php">Giỏ hàng</a>
 				<a href="javascript:void(0)" onclick="moPopupDangNhap()">Tài khoản</a>
 			</div>
 		</div>

@@ -1,0 +1,54 @@
+<section class="GH_container">
+	<h2 class="GH_title">🛒 Giỏ hàng của bạn</h2>
+
+	<table class="GH_table">
+		<thead>
+			<tr>
+				<th>Hình</th>
+				<th>Tên sản phẩm</th>
+				<th>Giá</th>
+				<th>Số lượng</th>
+				<th>Tổng</th>
+				<th>Xóa</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<!-- ===== 1 SẢN PHẨM ===== -->
+			<tr class="GH_item">
+				<td>
+					<img src="../img/SanPham/g102.jpg" alt="" />
+				</td>
+
+				<td>Logitech G102 Lightsync</td>
+
+				<td>450.000đ</td>
+
+				<td>
+					<input
+						type="number"
+						value="1"
+						min="1"
+						class="GH_quantity"
+					/>
+				</td>
+
+				<td>450.000đ</td>
+
+				<td>
+					<button class="GH_delete">❌</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- ======================= TOTAL ======================= -->
+	<div class="GH_totalBox">
+		<h3>Tổng tiền: <span>450.000đ</span></h3>
+
+		<div class="GH_actions">
+			<button class="GH_continue">← Tiếp tục mua</button>
+			<button class="GH_checkout">Thanh toán →</button>
+		</div>
+	</div>
+</section>
