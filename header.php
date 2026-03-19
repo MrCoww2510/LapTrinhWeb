@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/TrangSanPham.css">
     <link rel="stylesheet" href="css/DangNhap.css">
     <link rel="stylesheet" href="css/ChiTietSanPham.css">
+	<link rel="stylesheet" href="css/TrangGioiThieu.css">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
         <nav class="HD_nav">
             <ul class="HD_menu">
                 <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="html/GioiThieu.html">Giới thiệu</a></li>
+                <li><a href="TrangGioiThieu.php">Giới thiệu</a></li>
                 <li><a href="html/BaoHanh.html">Bảo hành</a></li>
                 <li><a href="TrangSanPham.php">Sản phẩm</a></li>
                 <li><a href="TraCuuDonHang.html">Tra cứu đơn hàng</a></li>
