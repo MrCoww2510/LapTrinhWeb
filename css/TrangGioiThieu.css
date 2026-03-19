@@ -1,0 +1,121 @@
+/* Main Component Container */
+.GT_component {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e0e0e0;
+    background-color: #bd540d;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+/* Ensure padding and borders are included in element's total width/height */
+.GT_component * {
+    box-sizing: inherit;
+}
+
+/* Header Elements */
+.GT_header-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.GT_title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.GT_subtitle {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.GT_divider {
+    width: 80px;
+    height: 4px;
+    background-color: #ffffff; /* F1 White accent */
+    margin: 0 auto 30px auto;
+}
+
+/* Về chúng tôi */
+.GT_content-section {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.GT_section-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.GT_text {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Grids for Layout */
+.GT_grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.GT_grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Cards */
+.GT_card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.GT_card:hover {
+    transform: translateY(-5px);
+    border-color: #d32f2f;
+}
+
+.GT_icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.GT_card-title {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.GT_reason-title {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .GT_grid-2, .GT_grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .GT_content-section {
+        padding: 20px;
+    }
+}
