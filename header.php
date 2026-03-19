@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/TrangSanPham.css">
     <link rel="stylesheet" href="css/DangNhap.css">
     <link rel="stylesheet" href="css/ChiTietSanPham.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/TrangBaoHanh.css">
 </head>
 
@@ -49,39 +48,3 @@
 		</nav>
 	</header>
 	<?php include 'html/DangNhap.html'; ?>
-=======
-	<link rel="stylesheet" href="css/TrangGioiThieu.css">
-</head>
-
-<body>
-    <header class="HD_header">
-        <!-- ===== TOP HEADER ===== -->
-        <div class="HD_topHeader">
-            <div class="HD_logo">
-                <a href="index.php">
-                    <img src="img/Logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="HD_search">
-                <input type="text" placeholder="Tìm sản phẩm...">
-                <button>Tìm</button>
-            </div>
-            <div class="HD_rightMenu">
-                <a href="GioHang.html">Giỏ hàng</a>
-                <a href="javascript:void(0)" onclick="moPopupDangNhap()">Tài khoản</a>
-            </div>
-        </div>
-        <!-- ===== MENU ===== -->
-        <nav class="HD_nav">
-            <ul class="HD_menu">
-                <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="TrangGioiThieu.php">Giới thiệu</a></li>
-                <li><a href="html/BaoHanh.html">Bảo hành</a></li>
-                <li><a href="TrangSanPham.php">Sản phẩm</a></li>
-                <li><a href="TraCuuDonHang.html">Tra cứu đơn hàng</a></li>
-                <li><a href="LienHe.html">Liên hệ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <?php include 'html/DangNhap.html'; ?>
->>>>>>> origin/CongThanh
