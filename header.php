@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="css/TrangSanPham.css">
 	<link rel="stylesheet" href="css/DangNhap.css">
 	<link rel="stylesheet" href="css/ChiTietSanPham.css">
+	<link rel="stylesheet" href="css/GioHang.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 				<button>Tìm</button>
 			</div>
 			<div class="HD_rightMenu">
-				<a href="GioHang.html">Giỏ hàng</a>
+				<a href="GioHang.php">Giỏ hàng</a>
 				<a href="javascript:void(0)" onclick="moPopupDangNhap()">Tài khoản</a>
 			</div>
 		</div>
