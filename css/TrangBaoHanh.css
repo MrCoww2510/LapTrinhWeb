@@ -1,0 +1,54 @@
+/* Main Component Container */
+.BH_component {
+    max-width: 850px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* Content Formatting */
+.BH_policy-content p {
+    font-size: 15.5px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.BH_policy-content h3 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #111;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* List Styles */
+.BH_list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.BH_list li {
+    font-size: 15.5px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* Links and Highlights */
+.BH_policy-content .phone-link {
+    color: #1a73e8;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.BH_note-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.BH_text-red {
+    color: #d93025 !important;
+}

@@ -1,0 +1,77 @@
+/* Layout tổng quát */
+.TTTK_container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; font-family: 'Roboto', Arial, sans-serif; text-align: left; }
+
+/* Sidebar bên trái */
+.TTTK_sidebar { width: 280px; background: #fff; border-radius: 5px; padding: 15px 0; border: 1px solid #eee; }
+.TTTK_user_info { display: flex; align-items: center; padding: 0 20px 15px; border-bottom: 1px solid #f0f0f0; margin-bottom: 10px; }
+.TTTK_avatar { width: 45px; height: 45px; background: #8e8e8e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; margin-right: 12px; font-size: 20px; }
+.TTTK_menu_list { list-style: none; padding: 0; margin: 0; }
+.TTTK_menu_item { cursor: pointer; display: flex; align-items: center; padding: 12px 20px; color: #333; font-size: 14px; transition: 0.3s; }
+.TTTK_menu_item i { width: 25px; margin-right: 10px; text-align: center; color: #666; }
+.TTTK_menu_item.TTTK_active { color: #d10000; font-weight: bold; background: #f9f9f9; }
+
+/* Nội dung bên phải */
+.TTTK_main_content { flex: 1; background: #fff; border-radius: 5px; padding: 25px; min-height: 500px; border: 1px solid #eee; }
+.TTTK_section { display: none; } /* Mặc định ẩn các phần, hiện qua JS */
+.TTTK_section.TTTK_show { display: block; }
+
+.TTTK_header_row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.TTTK_title { font-size: 22px; font-weight: 500; margin: 0; }
+
+/* Form nhập liệu */
+.TTTK_form_group { display: flex; align-items: center; margin-bottom: 20px; }
+.TTTK_label { width: 150px; font-size: 15px; color: #333; }
+.TTTK_input { flex: 1; max-width: 450px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; outline: none; }
+.TTTK_input:focus { border-color: #4CAF50; }
+.TTTK_btn_save { background: #e30019; color: white; border: none; padding: 12px 35px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-left: 150px; }
+
+/* Nút Sổ địa chỉ */
+.TTTK_btn_add_addr { background: #0056b3; color: #fff; border: none; padding: 10px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+
+/* Modal Popup Địa chỉ mới */
+.TTTK_modal_overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; justify-content: center; align-items: center; z-index: 1000; }
+.TTTK_modal_box { background: #fff; width: 500px; border-radius: 8px; overflow: hidden; }
+.TTTK_modal_header { display: flex; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: bold; }
+.TTTK_modal_body { padding: 20px; }
+.TTTK_modal_sub { font-size: 14px; font-weight: bold; margin: 15px 0 10px; color: #444; }
+.TTTK_modal_input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px; box-sizing: border-box; }
+.TTTK_modal_row { display: flex; gap: 10px; }
+.TTTK_type_group { display: flex; gap: 10px; }
+.TTTK_type_label { flex: 1; border: 1px solid #ccc; padding: 10px; text-align: center; border-radius: 4px; cursor: pointer; }
+.TTTK_type_group input:checked + .TTTK_type_label { border-color: #d10000; color: #d10000; background: #fff5f5; font-weight: bold; }
+.TTTK_btn_submit { width: 100%; background: #e30019; color: #fff; border: none; padding: 14px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+/* Nhóm các ô chọn Ngày sinh */
+.TTTK_select_group {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    max-width: 450px;
+}
+
+.TTTK_select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.TTTK_select:focus {
+    border-color: #4CAF50;
+}
+
+/* Nhóm Radio Giới tính */
+.TTTK_radio_group {
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+}
+
+.TTTK_radio_group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}

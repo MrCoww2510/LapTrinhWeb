@@ -1,100 +1,204 @@
-.danhsachsanpham {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    padding: 40px;
+/* ===== THANH HÃNG ===== */
+.SP_ThanhHang{
+    display:flex;
+    gap:30px;
+    padding:20px;
+	background: linear-gradient(to right, #ffa36d, #f68438);
+    overflow-x:auto;
+	justify-content: center;
 }
 
-/* khung sản phẩm */
-
-.sanpham {
-    /* width:auto; */
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.SP_ThanhHang button{
+    min-width:100px;
+    padding:15px;
+    border:2px solid white;
+    border-radius:15px;
+    background:transparent;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-/* hình ảnh */
-
-.hinhanh {
-    text-align: center;
-    margin-bottom: 10px;
+.SP_ThanhHang button:hover{
+    background:white;
+    color:#1e90ff;
 }
 
-.hinhanh img {
-    width: 100%;
+/* ===== THANH TRÊN ===== */
+.SP_ThanhSP{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
 }
 
-/* tên sản phẩm */
-
-.tensanpham {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-    line-height: 1.4;
+/* ===== SẮP XẾP ===== */
+.SP_SapXep{
+    position:relative;
 }
 
-/* thông số */
-
-.thongso {
-    background: #f1f1f1;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
+.SP_SapXepNut{
+    padding:10px 15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    background:white;
+    cursor:pointer;
 }
 
-.thongso div {
-    margin: 4px 0;
+.SP_SapXepMenu{
+    position:absolute;
+    top:110%;
+    right:0;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:8px;
+    display:none;
+    width:180px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
 }
 
-/* giá cũ */
-
-.giacu {
-    text-decoration: line-through;
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 5px;
+.SP_SapXepMenu li{
+    list-style:none;
+    padding:10px;
+    cursor:pointer;
 }
 
-/* giá mới */
-
-.gia {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
+.SP_SapXepMenu li:hover{
+    background:#eee;
 }
 
-.giamoi {
-    color: #e60012;
-    font-size: 22px;
-    font-weight: bold;
+
+
+.SP_DanhSachSanPham {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
+	padding: 40px;
+}
+/* ================= PRODUCT ================= */
+
+.SP_DanhMuc {
+	padding: 40px 5%;
+	overflow: hidden;
 }
 
-.giamgia {
-    border: 1px solid red;
-    color: red;
-    padding: 2px 6px;
-    font-size: 13px;
-    border-radius: 4px;
+.SP_DanhMuc .SP_TenDanhMuc {
+	margin-bottom: 20px;
 }
 
-/* đánh giá */
+/* ================= KHUNG SẢN PHẨM ================= */
 
-.danhgia {
-    font-size: 14px;
-    color: #777;
+.SP_SanPham {
+	background: white;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sao {
-    color: orange;
-    font-size: 16px;
+/* ================= HÌNH ẢNH ================= */
+
+.SP_HinhAnh {
+	text-align: center;
+	margin-bottom: 10px;
 }
 
-.nhanxet {
-    color: #888;
-    margin-left: 5px;
+.SP_HinhAnh img {
+	width: 100%;
+}
+
+/* ================= TÊN SẢN PHẨM ================= */
+
+.SP_TenSanPham {
+	font-size: 18px;
+	color: #333;
+	margin-bottom: 10px;
+	line-height: 1.4;
+}
+
+/* ================= THÔNG SỐ ================= */
+
+.SP_ThongSo {
+	background: #f1f1f1;
+	padding: 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 10px;
+}
+
+.SP_ThongSo div {
+	margin: 4px 0;
+}
+
+/* ================= GIÁ CŨ ================= */
+
+.SP_GiaCu {
+	text-decoration: line-through;
+	color: #888;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+/* ================= GIÁ MỚI ================= */
+
+.SP_Gia {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.SP_GiaMoi {
+	color: #e60012;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.SP_GiamGia {
+	border: 1px solid red;
+	color: red;
+	padding: 2px 6px;
+	font-size: 13px;
+	border-radius: 4px;
+}
+
+/* ================= ĐÁNH GIÁ ================= */
+
+.SP_DanhGia {
+	font-size: 14px;
+	color: #777;
+}
+
+.SP_Sao {
+	color: orange;
+	font-size: 16px;
+}
+
+.SP_NhanXet {
+	color: #888;
+	margin-left: 5px;
+}
+.SP_SanPham:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 1024px) {
+	.SP.SP_DanhSachSanPham {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.TC_blogList {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.SP_DanhSachSanPham{
+		grid-template-columns: 1fr;
+	}
+
+	.TC_blogList {
+		grid-template-columns: 1fr;
+	}
 }

@@ -1,0 +1,79 @@
+/* ======================= CART ======================= */
+
+.GH_container {
+	padding: 40px 5%;
+}
+
+.GH_title {
+	margin-bottom: 20px;
+}
+
+/* ======================= TABLE ======================= */
+
+.GH_table {
+	width: 100%;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.GH_table th,
+.GH_table td {
+	padding: 15px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+.GH_table img {
+	width: 80px;
+}
+
+/* ======================= QUANTITY ======================= */
+
+.GH_quantity {
+	width: 60px;
+	padding: 5px;
+	text-align: center;
+}
+
+/* ======================= DELETE ======================= */
+
+.GH_delete {
+	background: red;
+	color: white;
+	border: none;
+	padding: 8px 12px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* ======================= TOTAL ======================= */
+
+.GH_totalBox {
+	margin-top: 20px;
+	text-align: right;
+}
+
+.GH_actions {
+	margin-top: 10px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+.GH_continue {
+	background: gray;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.GH_checkout {
+	background: orange;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	cursor: pointer;
+}
