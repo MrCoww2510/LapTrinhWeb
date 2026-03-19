@@ -1,4 +1,4 @@
-/* Container chính của component */
+/* Main Component Container */
 .BH_component {
 	max-width: 850px;
 	margin: 0 auto;
@@ -125,10 +125,38 @@
 	font-size: 15.5px;
 	color: #333;
 	margin-bottom: 12px;
-}
 
-.BH_policy-content .phone-link {
+	/* List Styles */
+	.BH_list {
+		list-style-type: disc;
+		padding-left: 20px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+
+	.BH_list li {
+		font-size: 15.5px;
+		color: #333;
+		margin-bottom: 12px;
+	}
+
+	/* Links and Highlights */
+	.BH_policy-content .phone-link {
+		color: #1a73e8;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
 	color: #1a73e8;
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+.BH_note-title {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.BH_text-red {
+	color: #d93025 !important;
 }

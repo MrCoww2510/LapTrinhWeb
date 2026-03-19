@@ -14,7 +14,7 @@
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="/html/TrangSanPham.html">Sản phẩm</a></li>
                 <li><a href="/html/GioiThieu.html">Giới thiệu</a></li>
-                <li><a href="/html/BaoHanh.html">Bảo hành</a></li>
+                <li><a href="TrangBaoHanh.php">Bảo hành</a></li>
             </ul>
         </div>
         <!-- ===== CỘT 3 ===== -->
