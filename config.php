@@ -1,4 +1,4 @@
-<?php
+<?php if (session_status() == PHP_SESSION_NONE) {session_start();}
 // =======================
 // KẾT NỐI DATABASE
 // =======================
@@ -20,14 +20,9 @@ if ($Conn->connect_error) {
 // SET UTF-8 (TRÁNH LỖI TIẾNG VIỆT)
 // =======================
 $Conn->set_charset("utf8");
-
 // =======================
 // KHỞI TẠO SESSION
 // =======================
-if (session_status() == PHP_SESSION_NONE) {
-	session_start();
-}
-
 // =======================
 // (OPTIONAL) HÀM HỖ TRỢ
 // =======================

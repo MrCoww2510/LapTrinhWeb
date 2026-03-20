@@ -1,3 +1,21 @@
+<?php
+require_once("config.php");
+
+// =======================
+// LẤY 5 SẢN PHẨM ĐẦU TIÊN
+// =======================
+
+$sql = "SELECT p.id, p.name, p.price, p.stock, p.image,
+               b.name AS brand_name,
+               c.name AS category_name
+        FROM products p
+        JOIN brands b ON p.brand_id = b.id
+        JOIN categories c ON p.category_id = c.id
+        LIMIT 5";
+
+$result = $Conn->query($sql);
+?>
+
 <div class="TC_main">
 	<!-- ================= BANNER ================= -->
 
@@ -25,34 +43,52 @@
 	<section class="SP_DanhMuc">
 		<h2 class="SP_TenDanhMuc">Sản phẩm nổi bật</h2>
 		<div class="SP_DanhSachSanPham">
+
+			<?php while ($row = $result->fetch_assoc()): ?>
+
 			<div class="SP_SanPham">
-				<a href="ChiTietSanPham.php">
+				<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
+
+					<!-- ================= HÌNH ================= -->
 					<div class="SP_HinhAnh">
-						<img
-							src="img/SanPham/ava_77563131fc2b48acb9a41ec545d9ed7d_medium.png"
-							alt="img"
-						/>
+						<img src="SanPham/<?= $row['image'] ?>" alt="img" />
 					</div>
+
+					<!-- ================= TÊN ================= -->
 					<h3 class="SP_TenSanPham">
-						Laptop Acer Swift X14 SFX14 72G 77F9
+						<?= $row['name'] ?>
 					</h3>
+
+					<!-- ================= THÔNG TIN ================= -->
 					<div class="SP_ThongSo">
-						<div>CPU: Ultra 7 155H</div>
-						<div>VGA: RTX 4050</div>
-						<div>RAM: 32GB SSD: 1TB</div>
-						<div>Màng: 14.5 inch OLED 120Hz</div>
+						<div>Hãng: <?= $row['brand_name'] ?></div>
+						<div>Loại: <?= $row['category_name'] ?></div>
+						<div>Còn lại: <?= $row['stock'] ?></div>
 					</div>
-					<div class="SP_GiaCu">44.990.000đ</div>
+
+					<!-- ================= GIÁ ================= -->
 					<div class="SP_Gia">
-						<span class="SP_GiaMoi">35.490.000đ</span>
-						<span class="SP_GiamGia">-21%</span>
+						<span class="SP_GiaMoi">
+							<?= number_format($row['price'], 0, ',', '.') ?>đ
+						</span>
 					</div>
+
+					<!-- ================= ĐÁNH GIÁ (FAKE) ================= -->
 					<div class="SP_DanhGia">
-						<span class="SP_Sao">★</span> 0.0
-						<span class="SP_NhanXet">(0 đánh giá)</span>
+						<span class="SP_Sao">★</span> 5.0
+						<span class="SP_NhanXet">(100 đánh giá)</span>
 					</div>
+
+				</a>
+
+				<!-- ================= THÊM GIỎ ================= -->
+				<a href="addToCart.php?id=<?= $row['id'] ?>">
+					<button>Thêm vào giỏ</button>
 				</a>
 			</div>
+
+			<?php endwhile; ?>
+
 		</div>
 	</section>
 	<!-- ================= Sản phẩm mới ================= -->
@@ -62,10 +98,7 @@
 			<div class="SP_SanPham">
 				<a href="ChiTietSanPham.php">
 					<div class="SP_HinhAnh">
-						<img
-							src="img/SanPham/ava_77563131fc2b48acb9a41ec545d9ed7d_medium.png"
-							alt="img"
-						/>
+						<img src="img/SanPham/ava_77563131fc2b48acb9a41ec545d9ed7d_medium.png" alt="img" />
 					</div>
 					<h3 class="SP_TenSanPham">
 						Laptop Acer Swift X14 SFX14 72G 77F9

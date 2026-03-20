@@ -11,7 +11,6 @@ $sql = "SELECT p.id, p.name, p.price, p.stock, p.image,
         FROM products p
         JOIN brands b ON p.brand_id = b.id
         JOIN categories c ON p.category_id = c.id";
-
 $result = $Conn->query($sql);
 ?>
 <section>
