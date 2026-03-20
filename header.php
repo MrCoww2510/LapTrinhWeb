@@ -6,16 +6,17 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1GamingGear</title>
-    <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/TrangChu.css">
-    <link rel="stylesheet" href="css/TrangSanPham.css">
-    <link rel="stylesheet" href="css/DangNhap.css">
-    <link rel="stylesheet" href="css/ChiTietSanPham.css">
-    <link rel="stylesheet" href="css/TrangBaoHanh.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>F1GamingGear</title>
+	<link rel="stylesheet" href="css/Style.css">
+	<link rel="stylesheet" href="css/TrangChu.css">
+	<link rel="stylesheet" href="css/TrangSanPham.css">
+	<link rel="stylesheet" href="css/DangNhap.css">
+	<link rel="stylesheet" href="css/ChiTietSanPham.css">
+	<link rel="stylesheet" href="css/TrangBaoHanh.css">
 	<link rel="stylesheet" href="css/GioHang.css">
+	<link rel="stylesheet" href="css/TrangBaoHanh.css">
 </head>
 
 <body>

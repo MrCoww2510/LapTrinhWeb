@@ -1,5 +1,5 @@
 <?php 
     include("header.php");
-    include("html/TrangSanPham.html"); 
+    include("html/TrangSanPham.php"); 
     include("footer.php"); 
 ?>
