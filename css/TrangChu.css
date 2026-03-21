@@ -36,31 +36,28 @@
 
 /* ================= BLOG ================= */
 
-.TC_blogHeader {
-	margin-bottom: 20px;
-}
-
+/* title */
 .TC_blogTitle {
 	font-size: 28px;
 	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 /* list */
-
 .TC_blogList {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: 25px;
 }
 
 /* card */
-
 .TC_blogCard {
 	background: white;
 	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 .TC_blogCard:hover {
@@ -68,8 +65,11 @@
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* image */
+.TC_blogCard:hover .TC_blogName {
+	color: #ff6600;
+}
 
+/* image */
 .TC_blogImage img {
 	width: 100%;
 	height: 180px;
@@ -77,7 +77,6 @@
 }
 
 /* content */
-
 .TC_blogContent {
 	padding: 15px;
 }
@@ -85,11 +84,13 @@
 .TC_blogName {
 	font-size: 18px;
 	margin-bottom: 8px;
+	transition: 0.3s;
 }
 
 .TC_blogDesc {
 	font-size: 14px;
 	color: #414141;
+	line-height: 1.5;
 }
 /* ================= RESPONSIVE ================= */
 

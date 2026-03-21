@@ -2,29 +2,47 @@
 require_once("config.php");
 
 // =======================
-// LẤY 5 SẢN PHẨM ĐẦU TIÊN
+// SẢN PHẨM NỔI BẬT
 // =======================
 
-$sql = "SELECT p.id, p.name, p.price, p.stock, p.image,
-               b.name AS brand_name,
-               c.name AS category_name
-        FROM products p
-        JOIN brands b ON p.brand_id = b.id
-        JOIN categories c ON p.category_id = c.id
-        LIMIT 5";
+$sqlNoiBat = "SELECT p.id, p.name, p.price, p.stock, p.image,
+                     b.name AS brand_name,
+                     c.name AS category_name
+              FROM products p
+              JOIN brands b ON p.brand_id = b.id
+              JOIN categories c ON p.category_id = c.id
+              LIMIT 5";
 
-$result = $Conn->query($sql);
+$resultNoiBat = $Conn->query($sqlNoiBat);
+
+if (!$resultNoiBat) {
+	die("Lỗi SQL (Nổi bật): " . $Conn->error);
+}
+
+// =======================
+// SẢN PHẨM MỚI
+// =======================
+
+$sqlMoi = "SELECT p.id, p.name, p.price, p.image
+           FROM products p
+           ORDER BY p.id DESC
+           LIMIT 5";
+
+$resultMoi = $Conn->query($sqlMoi);
+
+if (!$resultMoi) {
+	die("Lỗi SQL (Mới): " . $Conn->error);
+}
 ?>
 
 <div class="TC_main">
-	<!-- ================= BANNER ================= -->
 
+	<!-- ================= BANNER ================= -->
 	<section class="TC_banner">
 		<img src="img/Banner.png" />
 	</section>
 
 	<!-- ================= CATEGORY ================= -->
-
 	<section class="TC_category">
 		<h2 class="TC_title">Danh mục sản phẩm</h2>
 
@@ -38,42 +56,37 @@ $result = $Conn->query($sql);
 		</div>
 	</section>
 
-	<!-- ================= Sản phẩm nổi bật ================= -->
-
+	<!-- ================= SẢN PHẨM NỔI BẬT ================= -->
 	<section class="SP_DanhMuc">
 		<h2 class="SP_TenDanhMuc">Sản phẩm nổi bật</h2>
+
 		<div class="SP_DanhSachSanPham">
 
-			<?php while ($row = $result->fetch_assoc()): ?>
+			<?php while ($row = $resultNoiBat->fetch_assoc()): ?>
 
 			<div class="SP_SanPham">
 				<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
 
-					<!-- ================= HÌNH ================= -->
 					<div class="SP_HinhAnh">
 						<img src="SanPham/<?= $row['image'] ?>" alt="img" />
 					</div>
 
-					<!-- ================= TÊN ================= -->
 					<h3 class="SP_TenSanPham">
 						<?= $row['name'] ?>
 					</h3>
 
-					<!-- ================= THÔNG TIN ================= -->
 					<div class="SP_ThongSo">
 						<div>Hãng: <?= $row['brand_name'] ?></div>
 						<div>Loại: <?= $row['category_name'] ?></div>
 						<div>Còn lại: <?= $row['stock'] ?></div>
 					</div>
 
-					<!-- ================= GIÁ ================= -->
 					<div class="SP_Gia">
 						<span class="SP_GiaMoi">
 							<?= number_format($row['price'], 0, ',', '.') ?>đ
 						</span>
 					</div>
 
-					<!-- ================= ĐÁNH GIÁ (FAKE) ================= -->
 					<div class="SP_DanhGia">
 						<span class="SP_Sao">★</span> 5.0
 						<span class="SP_NhanXet">(100 đánh giá)</span>
@@ -81,7 +94,6 @@ $result = $Conn->query($sql);
 
 				</a>
 
-				<!-- ================= THÊM GIỎ ================= -->
 				<a href="addToCart.php?id=<?= $row['id'] ?>">
 					<button>Thêm vào giỏ</button>
 				</a>
@@ -91,60 +103,60 @@ $result = $Conn->query($sql);
 
 		</div>
 	</section>
-	<!-- ================= Sản phẩm mới ================= -->
+
+	<!-- ================= SẢN PHẨM MỚI ================= -->
 	<section class="SP_DanhMuc">
-		<h2 class="SP_TenDanhMuc">Sản phẩm nổi bật</h2>
+		<h2 class="SP_TenDanhMuc">Sản phẩm mới</h2>
+
 		<div class="SP_DanhSachSanPham">
+
+			<?php while ($row = $resultMoi->fetch_assoc()): ?>
+
 			<div class="SP_SanPham">
-				<a href="ChiTietSanPham.php">
+				<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
+
 					<div class="SP_HinhAnh">
-						<img src="img/SanPham/ava_77563131fc2b48acb9a41ec545d9ed7d_medium.png" alt="img" />
+						<img src="SanPham/<?= $row['image'] ?>" alt="img" />
 					</div>
+
 					<h3 class="SP_TenSanPham">
-						Laptop Acer Swift X14 SFX14 72G 77F9
+						<?= $row['name'] ?>
 					</h3>
-					<div class="SP_ThongSo">
-						<div>CPU: Ultra 7 155H</div>
-						<div>VGA: RTX 4050</div>
-						<div>RAM: 32GB SSD: 1TB</div>
-						<div>Màng: 14.5 inch OLED 120Hz</div>
-					</div>
-					<div class="SP_GiaCu">44.990.000đ</div>
+
 					<div class="SP_Gia">
-						<span class="SP_GiaMoi">35.490.000đ</span>
-						<span class="SP_GiamGia">-21%</span>
+						<span class="SP_GiaMoi">
+							<?= number_format($row['price'], 0, ',', '.') ?>đ
+						</span>
 					</div>
-					<div class="SP_DanhGia">
-						<span class="SP_Sao">★</span> 0.0
-						<span class="SP_NhanXet">(0 đánh giá)</span>
-					</div>
+
+				</a>
+
+				<a href="addToCart.php?id=<?= $row['id'] ?>">
+					<button>Thêm vào giỏ</button>
 				</a>
 			</div>
+
+			<?php endwhile; ?>
+
 		</div>
 	</section>
-	<!-- ================= TRANG CHU - BLOG ================= -->
 
-	<section class="TC_blog">
+	<!-- ================= BLOG ================= -->
+	<section class="TC_category">
 		<div class="TC_container">
-			<div class="TC_blogHeader">
-				<h2 class="TC_blogTitle">Tin công nghệ</h2>
-			</div>
+
+			<h2 class="TC_blogTitle">Tin công nghệ</h2>
 
 			<div class="TC_blogList">
+
 				<div class="TC_blogCard">
 					<div class="TC_blogImage">
 						<img src="img/blog1.jpg" />
 					</div>
 
 					<div class="TC_blogContent">
-						<h3 class="TC_blogName">
-							Top 5 bàn phím cơ đáng mua 2026
-						</h3>
-
-						<p class="TC_blogDesc">
-							Tổng hợp những bàn phím cơ tốt nhất cho game thủ và
-							lập trình viên.
-						</p>
+						<h3>Top 5 bàn phím cơ đáng mua 2026</h3>
+						<p>Gợi ý bàn phím cho game thủ & dev.</p>
 					</div>
 				</div>
 
@@ -154,12 +166,8 @@ $result = $Conn->query($sql);
 					</div>
 
 					<div class="TC_blogContent">
-						<h3 class="TC_blogName">Chuột gaming dưới 1 triệu</h3>
-
-						<p class="TC_blogDesc">
-							Những mẫu chuột gaming giá rẻ nhưng hiệu năng cực
-							tốt.
-						</p>
+						<h3>Chuột gaming dưới 1 triệu</h3>
+						<p>Ngon - bổ - rẻ cho học sinh.</p>
 					</div>
 				</div>
 
@@ -169,14 +177,20 @@ $result = $Conn->query($sql);
 					</div>
 
 					<div class="TC_blogContent">
-						<h3 class="TC_blogName">Cách chọn màn hình gaming</h3>
-
-						<p class="TC_blogDesc">
-							Hướng dẫn chọn màn hình phù hợp cho game thủ.
-						</p>
+						<h3>Cách chọn màn hình gaming</h3>
+						<p>Hiểu rõ refresh rate & panel.</p>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
+
 </div>
+
+<?php
+// =======================
+// ĐÓNG KẾT NỐI
+// =======================
+$Conn->close();
+?>
