@@ -18,7 +18,6 @@
 	<link rel="stylesheet" href="css/GioHang.css">
 	<link rel="stylesheet" href="css/TrangGioiThieu.css">
 
-
 </head>
 
 <body>
