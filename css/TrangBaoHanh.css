@@ -1,162 +1,107 @@
-/* Main Component Container */
-.BH_component {
-	max-width: 850px;
-	margin: 0 auto;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #333;
-	line-height: 1.5;
+/* Khung chứa chính */
+.BH_khung_chinh {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e0e0e0;
+    background-color: #121212;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* Tiêu đề */
-.BH_title {
-	font-size: 22px;
-	font-weight: bold;
-	color: #111;
-	margin-bottom: 35px;
+.BH_khung_chinh * {
+    box-sizing: inherit;
 }
 
-/* Vùng Tabs */
-.BH_tabs {
-	display: flex;
-	margin-bottom: 25px;
+/* Phần tiêu đề trang */
+.BH_phan_dau {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.BH_tabs .tab {
-	padding: 12px 20px;
-	font-weight: bold;
-	font-size: 15px;
-	text-align: center;
-	width: 230px;
-	cursor: pointer;
+.BH_tieu_de {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-.BH_tabs .tab.active {
-	background-color: #5b75f0;
-	color: #ffffff;
+.BH_duong_ke {
+    width: 80px;
+    height: 4px;
+    background-color: #d32f2f;
+    margin: 0 auto 30px auto;
 }
 
-.BH_tabs .tab.inactive {
-	background-color: transparent;
-	color: #111;
+/* Các khối nội dung chính sách */
+.BH_phan_noi_dung {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border-left: 5px solid #d32f2f;
 }
 
-/* Chú thích */
-.BH_instruction {
-	font-size: 14px;
-	margin-bottom: 12px;
-	color: #111;
+.BH_tieu_de_muc {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-/* Form tra cứu */
-.BH_search-form {
-	display: flex;
-	width: 100%;
-	margin-bottom: 40px;
+/* Định dạng chữ và danh sách */
+.BH_doan_van {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #cccccc;
 }
 
-.BH_search-form .input-field {
-	flex: 1;
-	padding: 12px 15px;
-	border: 1px solid #ddd;
-	font-size: 15px;
-	outline: none;
-	color: #333;
+.BH_doan_van_phu {
+    font-size: 16px;
+    color: #cccccc;
+    margin-top: 8px;
+    margin-bottom: 15px;
 }
 
-.BH_search-form .input-field::placeholder {
-	color: #888;
+.BH_danh_sach {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
 }
 
-.BH_search-form .phone-input {
-	border-right: none;
-	border-radius: 4px 0 0 4px;
+.BH_danh_sach > li {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #cccccc;
 }
 
-.BH_search-form .code-input {
-	border-radius: 0;
+.BH_danh_sach_con {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 15px;
 }
 
-/* Nút tra cứu */
-.BH_search-form .btn-search {
-	background-color: #1a73e8;
-	color: #ffffff;
-	border: none;
-	padding: 0 30px;
-	font-size: 15px;
-	font-weight: 500;
-	cursor: pointer;
-	border-radius: 0 4px 4px 0;
-	transition: background-color 0.2s;
+.BH_danh_sach_con > li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #cccccc;
 }
 
-.BH_search-form .btn-search:hover {
-	background-color: #1557b0;
+/* Màu nhấn mạnh */
+.BH_text_do {
+    color: #ef5350 !important; /* Màu đỏ sáng hơn để dễ đọc trên nền tối */
 }
 
-/* Đường kẻ ngang */
-.BH_divider {
-	border: none;
-	border-top: 1px solid #e0e0e0;
-	margin: 30px 0;
+.BH_text_xanh {
+    color: #42a5f5; /* Màu xanh tương tự như ảnh ban đầu */
+    font-weight: bold;
 }
 
-/* Nội dung chính sách */
-.BH_policy-content p {
-	font-size: 15.5px;
-	color: #333;
-	margin-bottom: 15px;
-}
-
-.BH_policy-content h3 {
-	font-size: 17px;
-	font-weight: bold;
-	color: #111;
-	margin-top: 25px;
-	margin-bottom: 15px;
-}
-
-.BH_contact-list {
-	list-style-type: disc;
-	padding-left: 20px;
-	margin-top: 10px;
-}
-
-.BH_contact-list li {
-	font-size: 15.5px;
-	color: #333;
-	margin-bottom: 12px;
-
-	/* List Styles */
-	.BH_list {
-		list-style-type: disc;
-		padding-left: 20px;
-		margin-top: 10px;
-		margin-bottom: 20px;
-	}
-
-	.BH_list li {
-		font-size: 15.5px;
-		color: #333;
-		margin-bottom: 12px;
-	}
-
-	/* Links and Highlights */
-	.BH_policy-content .phone-link {
-		color: #1a73e8;
-		font-weight: bold;
-		text-decoration: underline;
-	}
-
-	color: #1a73e8;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-.BH_note-title {
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-
-.BH_text-red {
-	color: #d93025 !important;
+/* Tối ưu hiển thị cho điện thoại */
+@media (max-width: 768px) {
+    .BH_phan_noi_dung {
+        padding: 20px;
+    }
 }
