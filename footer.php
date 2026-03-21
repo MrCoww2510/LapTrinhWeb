@@ -12,8 +12,8 @@
             <h3 class="FT_title">Liên kết nhanh</h3>
             <ul class="FT_list">
                 <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="/html/TrangSanPham.html">Sản phẩm</a></li>
-                <li><a href="/html/GioiThieu.html">Giới thiệu</a></li>
+                <li><a href="TrangSanPham.php">Sản phẩm</a></li>
+                <li><a href="TrangGioiThieu.php">Giới thiệu</a></li>
                 <li><a href="TrangBaoHanh.php">Bảo hành</a></li>
             </ul>
         </div>
