@@ -37,6 +37,6 @@ include("config.php")
 			<li><a href="#">Cập nhật sản phẩm</a></li>
 			<li><a href="#">Cập nhật nhóm</a></li>
 
-			<li class="Right">Xin chào: họ và tên | <a href="login.php"><span class="Logout">Thoát</span></a></li>
+			<li class="Right">Xin chào: <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest'; ?> | <a href="login.php"><span class="Logout">Thoát</span></a></li>
 		</ul>
 	</div>
