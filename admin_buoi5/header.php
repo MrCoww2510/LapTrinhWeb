@@ -34,8 +34,8 @@ include("config.php")
 				</ul>
 			</li>
 
-			<li><a href="#">Cập nhật sản phẩm</a></li>
-			<li><a href="#">Cập nhật nhóm</a></li>
+			<li><a href="CapNhatSanPham.php">Cập nhật sản phẩm</a></li>
+			<li><a href="CapNhatNhom.php">Cập nhật nhóm</a></li>
 
 			<li class="Right">Xin chào: họ và tên | <a href="login.php"><span class="Logout">Thoát</span></a></li>
 		</ul>
