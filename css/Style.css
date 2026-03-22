@@ -14,13 +14,7 @@ a {
 /* ================= BODY ================= */
 
 body {
-	background: linear-gradient(
-		135deg,
-		hsl(32, 100%, 80%),
-		hsl(30, 100%, 70%),
-		hsl(28, 100%, 60%)
-	);
-
+	background: white;
 	overflow-x: hidden;
 }
 
@@ -32,7 +26,7 @@ body {
 	z-index: 1000;
 }
 .HD_topHeader {
-	background: hsl(30, 100%, 50%);
+	background: hsl(0, 100%, 50%);
 
 	display: flex;
 	align-items: center;
@@ -76,7 +70,7 @@ body {
 }
 
 .HD_search button {
-	background: #8b0000;
+	background: #0077ff;
 	color: white;
 	border: none;
 
@@ -88,7 +82,7 @@ body {
 }
 
 .HD_search button:hover {
-	background: #a80000;
+	background: #0400da;
 }
 
 /* ---------- RIGHT MENU ---------- */
@@ -112,7 +106,7 @@ body {
 /* ================= NAV MENU ================= */
 
 .HD_nav {
-	background: hsl(30, 100%, 50%);
+	background: hsl(0, 100%, 50%);
 }
 
 .HD_menu {

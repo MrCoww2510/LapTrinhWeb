@@ -1,5 +1,5 @@
 <?php
-	include("config.php");
+	require_once("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -16,7 +16,8 @@
 	<link rel="stylesheet" href="css/ChiTietSanPham.css">
 	<link rel="stylesheet" href="css/TrangBaoHanh.css">
 	<link rel="stylesheet" href="css/GioHang.css">
-	<link rel="stylesheet" href="css/TrangBaoHanh.css">
+	<link rel="stylesheet" href="css/TrangGioiThieu.css">
+
 </head>
 
 <body>
@@ -28,24 +29,33 @@
 					<img src="img/Logo.png" alt="logo">
 				</a>
 			</div>
+
 			<div class="HD_search">
 				<input type="text" placeholder="Tìm sản phẩm...">
 				<button>Tìm</button>
 			</div>
+
 			<div class="HD_rightMenu">
-				<a href="GioHang.php">Giỏ hàng</a>
-				<a href="javascript:void(0)" onclick="moPopupDangNhap()">Tài khoản</a>
+				<a href="GioHang.php" class="HD_menu_item">Giỏ hàng</a>
+				
+				<?php if (isset($_SESSION['user'])): ?>
+					<a href="ThongTinTaiKhoan.php" class="HD_menu_item">
+						<i class="fas fa-user"></i> <?php echo explode(' ', $_SESSION['user']['fullname'])[0]; ?>
+					</a>
+				<?php else: ?>
+					<a href="javascript:void(0)" onclick="moPopupDangNhap()" class="HD_menu_item">Tài khoản</a>
+				<?php endif; ?>
 			</div>
 		</div>
 		<!-- ===== MENU ===== -->
 		<nav class="HD_nav">
 			<ul class="HD_menu">
 				<li><a href="index.php">Trang chủ</a></li>
-				<li><a href="html/GioiThieu.html">Giới thiệu</a></li>
+				<li><a href="TrangGioiThieu.php">Giới thiệu</a></li>
 				<li><a href="TrangBaoHanh.php">Bảo hành</a></li>
 				<li><a href="TrangSanPham.php">Sản phẩm</a></li>
-				<li><a href="TraCuuDonHang.html">Tra cứu đơn hàng</a></li>
-				<li><a href="LienHe.html">Liên hệ</a></li>
+				<li><a href="TraCuuDonHang.php">Tra cứu đơn hàng</a></li>
+				<li><a href="LienHe.php">Liên hệ</a></li>
 			</ul>
 		</nav>
 	</header>
