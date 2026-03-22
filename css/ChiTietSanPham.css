@@ -1,130 +1,96 @@
-.CTSP_chitietsanpham {
-	display: flex;
-	gap: 40px;
-	max-width: 1100px;
-	margin: auto;
-	background: white;
-	padding: 20px;
+.CTSP_ChiTietSanPham{
+	width:1100px;
+	margin:30px auto;
+	background:#fff;
+	padding:20px;
+	display:flex;
+	gap:30px;
 }
 
-/* BÊN TRÁI */
-
-.CTSP_trai img {
-	width: 45%;
+.CTSP_BenTrai{
+	width:50%;
 }
 
-.CTSP_anh {
-	width: 100%;
+.CTSP_HinhAnh img{
+	width:100%;
+	border:1px solid #ddd;
 }
 
-.CTSP_hinhanh {
-	display: flex;
-	gap: 10px;
-	margin-top: 10px;
+.CTSP_AnhPhu{
+	display:flex;
+	gap:10px;
+	margin-top:10px;
 }
 
-.CTSP_hinhanh img {
-	width: 60px;
-	border: 1px solid #ddd;
-	padding: 4px;
-	cursor: pointer;
+.CTSP_AnhPhu img{
+	width:60px;
+	border:2px solid transparent;
+	cursor:pointer;
 }
 
-/* BÊN PHẢI */
-
-.CTSP_phai {
-	width: 55%;
+.CTSP_AnhPhu img.active{
+	border-color:red;
 }
 
-h2 {
-	margin-bottom: 15px;
+.CTSP_BenPhai{
+	width:50%;
 }
 
-/* GIÁ */
-
-.CTSP_gia {
-	margin-bottom: 20px;
+.CTSP_TenSP{
+	font-size:20px;
+	font-weight:bold;
+	margin-bottom:15px;
 }
 
-.CTSP_giamoi {
-	color: red;
-	font-size: 28px;
-	font-weight: bold;
+.CTSP_GiaMoi{
+	color:red;
+	font-size:28px;
+	font-weight:bold;
 }
 
-.CTSP_giacu {
-	text-decoration: line-through;
-	margin-left: 10px;
-	color: #777;
+.CTSP_GiaCu{
+	text-decoration:line-through;
+	color:#888;
+	margin-left:10px;
 }
 
-.CTSP_giamgia {
-	border: 1px solid red;
-	color: red;
-	padding: 2px 6px;
-	margin-left: 10px;
-	font-size: 13px;
+.CTSP_NutMua{
+	margin-top:20px;
 }
 
-/* NÚT */
-
-.CTSP_nut {
-	display: flex;
-	gap: 10px;
-	margin-bottom: 20px;
+.CTSP_NutMua button{
+	background:red;
+	color:#fff;
+	border:none;
+	padding:15px 30px;
+	font-size:16px;
+	cursor:pointer;
+	border-radius:5px;
 }
 
-.CTSP_mua {
-	background: red;
-	color: white;
-	border: none;
-	padding: 15px;
-	width: 220px;
-	font-weight: bold;
-	cursor: pointer;
-	border-radius: 6px;
+.CTSP_ThongSo{
+	margin-top:30px;
+	border:1px solid #ddd;
 }
 
-.CTSP_mua p {
-	font-size: 12px;
-	margin-top: 5px;
+.CTSP_ThongSoNB{
+	background:red;
+	color:#fff;
+	padding:10px;
+	font-weight:bold;
 }
 
-.CTSP_tuvan {
-	background: white;
-	border: 2px solid red;
-	color: red;
-	padding: 15px;
-	width: 220px;
-	font-weight: bold;
-	cursor: pointer;
-	border-radius: 6px;
+.CTSP_ThongSo table{
+	width:100%;
+	border-collapse:collapse;
 }
 
-.CTSP_tuvan p {
-	font-size: 12px;
-	margin-top: 5px;
+.CTSP_ThongSo td{
+	border:1px solid #ddd;
+	padding:10px;
 }
 
-/* THÔNG SỐ */
-
-.CTSP_thongso {
-	border: 1px solid #ddd;
-}
-
-.CTSP_thongso h3 {
-	background: red;
-	color: white;
-	padding: 10px;
-	font-size: 16px;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-td {
-	border: 1px solid #ddd;
-	padding: 10px;
+.CTSP_ThongSo td:first-child{
+	background:#f9f9f9;
+	width:40%;
 }
