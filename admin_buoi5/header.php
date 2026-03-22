@@ -8,7 +8,7 @@ include("config.php")
 	<meta charset="UTF-8">
 	<title>Quản lý hệ thống bán hàng</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/themnhom.css">
+	<link rel="stylesheet" href="css/them.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@ include("config.php")
 			<li class="Dropdown">
 				<a href="#">Thêm</a>
 				<ul class="Dropdown_Content">
-					<li><a href="#">Thêm sản phẩm</a></li>
+					<li><a href="ThemSanPham.php">Thêm sản phẩm</a></li>
 					<li><a href="ThemNhom.php">Thêm nhóm</a></li>
 				</ul>
 			</li>
