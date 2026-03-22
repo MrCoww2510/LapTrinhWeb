@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="css/TrangBaoHanh.css">
 	<link rel="stylesheet" href="css/GioHang.css">
 	<link rel="stylesheet" href="css/TrangGioiThieu.css">
+	<link rel="stylesheet" href="css/TraCuuDonHang.css">
 
 </head>
 

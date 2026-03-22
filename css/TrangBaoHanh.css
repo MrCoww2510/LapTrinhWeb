@@ -1,4 +1,4 @@
-/* Khung chứa chính */
+
 .BH_khung_chinh {
     max-width: 1000px;
     margin: 0 auto;
@@ -14,7 +14,6 @@
     box-sizing: inherit;
 }
 
-/* Phần tiêu đề trang */
 .BH_phan_dau {
     text-align: center;
     margin-bottom: 50px;
@@ -34,7 +33,6 @@
     margin: 0 auto 30px auto;
 }
 
-/* Các khối nội dung chính sách */
 .BH_phan_noi_dung {
     background-color: #1e1e1e;
     padding: 40px;
@@ -50,7 +48,6 @@
     margin-bottom: 20px;
 }
 
-/* Định dạng chữ và danh sách */
 .BH_doan_van {
     font-size: 16px;
     margin-bottom: 15px;
@@ -89,13 +86,12 @@
     color: #cccccc;
 }
 
-/* Màu nhấn mạnh */
 .BH_text_do {
-    color: #ef5350 !important; /* Màu đỏ sáng hơn để dễ đọc trên nền tối */
+    color: #ef5350 !important;
 }
 
 .BH_text_xanh {
-    color: #42a5f5; /* Màu xanh tương tự như ảnh ban đầu */
+    color: #42a5f5;
     font-weight: bold;
 }
 
