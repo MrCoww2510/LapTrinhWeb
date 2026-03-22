@@ -8,6 +8,7 @@ include("config.php")
 	<meta charset="UTF-8">
 	<title>Quản lý hệ thống bán hàng</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/themnhom.css">
 </head>
 
 <body>
@@ -23,13 +24,13 @@ include("config.php")
 	<!-- ================= MENU ================= -->
 	<div class="Menu">
 		<ul class="Menu_List">
-			<li><a href="#">Trang chủ</a></li>
+			<li><a href="index.php">Trang chủ</a></li>
 
 			<li class="Dropdown">
 				<a href="#">Thêm</a>
 				<ul class="Dropdown_Content">
 					<li><a href="#">Thêm sản phẩm</a></li>
-					<li><a href="#">Thêm nhóm</a></li>
+					<li><a href="ThemNhom.php">Thêm nhóm</a></li>
 				</ul>
 			</li>
 
