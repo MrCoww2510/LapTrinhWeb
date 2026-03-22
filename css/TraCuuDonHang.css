@@ -1,0 +1,330 @@
+/* --- CSS CHO TRANG TRA CỨU ĐƠN HÀNG --- */
+.TC_khung_chinh {
+    max-width: 800px;
+    margin: 40px auto; 
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.TC_khung_chinh * {
+    box-sizing: inherit;
+}
+
+.TC_phan_dau {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.TC_tieu_de {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+.TC_mo_ta {
+    color: #666;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* --- PHẦN NHẬP THÔNG TIN TRA CỨU --- */
+.TC_phan_tra_cuu {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    margin-bottom: 40px;
+}
+
+.TC_tra_cuu_tieu_de {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.TC_nhom_nhap {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.TC_nhap_lieu {
+    flex: 1;
+    min-width: 250px;
+}
+
+.TC_nhap_lieu label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.TC_nhap_lieu input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.TC_nhap_lieu input[type="text"]:focus {
+    border-color: #d32f2f;
+}
+
+.TC_nhap_lieu input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.TC_nut_tra_cuu {
+    background-color: #d10000; 
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.TC_nut_tra_cuu:hover {
+    background-color: #d10000;
+}
+
+/* --- PHẦN KẾT QUẢ TRA CỨU --- */
+.TC_phan_ket_qua {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.TC_ket_qua_tieu_de {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000000;
+    text-align: center;
+}
+
+.TC_khung_ket_qua {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.TC_thong_tin_don {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.TC_thong_tin_tieu_de {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.TC_doan_van_ket_qua {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.TC_thong_tin_dam_nhat {
+    font-weight: bold;
+    color: #333;
+}
+
+.TC_trang_thai {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.TC_trang_thai_tieu_de {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.TC_cac_trang_thai_buoc {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.TC_buoc {
+    text-align: center;
+    width: 80px;
+}
+
+.TC_vong_tron_trang_thai {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 2px solid #ccc;
+    margin: 0 auto 8px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.TC_buoc_da_dat .TC_vong_tron_trang_thai {
+    background-color: #4caf50; 
+    border: 2px solid #4caf50;
+}
+
+.TC_buoc_hien_tai .TC_vong_tron_trang_thai {
+    background-color: #ffffff;
+    color: #e65100;
+    border: 2px solid #e65100;
+}
+
+.TC_ten_trang_thai {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+.TC_buoc_hien_tai .TC_ten_trang_thai {
+    color: #e65100;
+}
+
+.TC_khung_chi_tiet {
+    border: 1px solid #eee;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.TC_chi_tiet_tieu_de {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.TC_danh_sach_san_pham {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.TC_san_pham_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.TC_san_pham_item:last-child {
+    border-bottom: none;
+}
+
+.TC_san_pham_info {
+    flex: 1;
+}
+
+.TC_ten_san_pham {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.TC_so_luong {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.TC_gia_san_pham {
+    font-weight: bold;
+    color: #e65100;
+    font-size: 14px;
+}
+
+.TC_tong_cong {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 16px;
+    color: #333;
+}
+
+.TC_tong_tien {
+    font-weight: bold;
+    color: #e65100;
+    font-size: 18px;
+}
+
+/* --- PHẦN LIÊN HỆ --- */
+.TC_phan_lien_he {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.TC_lien_he_tieu_de {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.TC_lien_he_mo_ta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.TC_lien_he_hotline {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e65100;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .TC_khung_chinh {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .TC_khung_ket_qua {
+        grid-template-columns: 1fr;
+    }
+
+    .TC_nhom_nhap {
+        flex-direction: column;
+    }
+
+    .TC_nhap_lieu {
+        width: 100%;
+    }
+}
