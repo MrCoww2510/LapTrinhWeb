@@ -35,6 +35,9 @@ CREATE TABLE users(
 	password VARCHAR(255),
 	fullname VARCHAR(100),
 	email VARCHAR(100),
+	phone VARCHAR(20),
+    gioi_tinh VARCHAR(10),
+    ngay_sinh DATE,
 	role VARCHAR(20)
 );
 
