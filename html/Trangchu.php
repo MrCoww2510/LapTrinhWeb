@@ -23,8 +23,12 @@ if (!$resultNoiBat) {
 // SẢN PHẨM MỚI
 // =======================
 
-$sqlMoi = "SELECT p.id, p.name, p.price, p.image
-           FROM products p
+$sqlMoi = "SELECT p.id, p.name, p.price, p.stock, p.image,
+   			b.name AS brand_name,
+            c.name AS category_name
+           	FROM products p
+			JOIN brands b ON p.brand_id = b.id
+            JOIN categories c ON p.category_id = c.id
            ORDER BY p.id DESC
            LIMIT 5";
 
@@ -117,6 +121,12 @@ if (!$resultMoi) {
 
 					<div class="SP_HinhAnh">
 						<img src="SanPham/<?= $row['image'] ?>" alt="img" />
+					</div>
+
+					<div class="SP_ThongSo">
+						<div>Hãng: <?= $row['brand_name'] ?></div>
+						<div>Loại: <?= $row['category_name'] ?></div>
+						<div>Còn lại: <?= $row['stock'] ?></div>
 					</div>
 
 					<h3 class="SP_TenSanPham">
