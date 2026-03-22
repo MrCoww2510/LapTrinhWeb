@@ -103,7 +103,7 @@ CREATE TABLE orders(
 	user_id INT,
 	total_price DECIMAL(12,2),
 	status VARCHAR(50),
-
+	travelid VARCHAR(10),
 	FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -113,7 +113,6 @@ CREATE TABLE order_details(
 	product_id INT,
 	quantity INT,
 	price DECIMAL(12,2),
-
 	FOREIGN KEY (order_id) REFERENCES orders(id),
 	FOREIGN KEY (product_id) REFERENCES products(id)
 );
