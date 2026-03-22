@@ -1,0 +1,136 @@
+/* ================= FONT ================= */
+@font-face {
+	font-family: "TitleFont";
+	src: url("../fonts/HL-OngDo-Unicode.ttf"); /* file .ttf của m */
+}
+
+/* ================= RESET ================= */
+body {
+	margin: 0;
+	font-family: Arial;
+	background: #f0f0f0;
+}
+li {
+	list-style: none;
+}
+
+/* ================= HEADER ================= */
+.Header {
+	position: relative;
+	height: 350px;
+	background: url("../banner/banner.jpg") no-repeat center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* cỏ */
+.Co {
+	position: absolute;
+	bottom: 0;
+	left: 90%;
+	transform: translateX(-50%);
+	width: 20%;
+}
+.Co2 {
+	position: absolute;
+	bottom: 0;
+	left: 70%;
+	transform: translateX(-50%);
+	width: 20%;
+}
+
+/* bảng */
+.Bang {
+	position: absolute;
+	right: 20px;
+	top: 2px;
+	width: 200px;
+}
+.Header_Title {
+	position: absolute;
+	left: 25%;
+	font-family: "TitleFont";
+	font-size: 50px;
+	color: black;
+}
+
+/* ================= MENU ================= */
+.Menu {
+	background: #ddd;
+}
+
+.Menu_List {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.Menu_List li {
+	position: relative;
+}
+
+.Menu_List a {
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	color: black;
+}
+
+.Menu_List a:hover {
+	background: #bbb;
+}
+
+/* dropdown */
+.Dropdown_Content {
+	display: none;
+	position: absolute;
+	background: white;
+	min-width: 150px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Dropdown_Content li a {
+	color: black;
+}
+
+.Dropdown:hover .Dropdown_Content {
+	display: block;
+}
+
+.Dropdown_Content li a:hover {
+	background: green;
+	color: white;
+}
+
+/* right menu */
+.Right {
+	margin-left: auto;
+	padding: 10px;
+}
+
+.Logout {
+	color: red;
+	cursor: pointer;
+}
+
+/* ================= CONTENT ================= */
+.Content {
+	margin: 10px;
+	height: 250px;
+	border-radius: 10px;
+	background: white;
+	padding: 10px;
+}
+
+/* ================= FOOTER ================= */
+.Footer {
+	margin: 10px;
+	background: green;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	border-radius: 20px;
+}
