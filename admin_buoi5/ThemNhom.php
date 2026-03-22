@@ -1,5 +1,5 @@
 <?php
 include("header.php");
-include("php/macdinh.php");
+include("php/themnhom.php");
 include("footer.php");
 ?>

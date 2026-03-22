@@ -1,0 +1,92 @@
+
+.TN_card-container {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.TN_card-header {
+    background-color: #ffc107;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.TN_card-body {
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.TN_form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.TN_form-group label {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.TN_form-group input {
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #495057;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.TN_form-group input:focus {
+    outline: none;
+    border-color: #80bdff;
+}
+
+.TN_card-footer {
+    padding: 15px 25px;
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.TN_btn-submit {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.15s;
+}
+
+.TN_btn-submit:hover {
+    background-color: #218838;
+}
+
+.TN_alert {
+    padding: 10px;
+    margin: 15px 25px 0 25px;
+    border-radius: 4px;
+    text-align: center;
+}
+.TN_success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.TN_error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
