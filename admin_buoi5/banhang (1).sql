@@ -58,4 +58,16 @@ INSERT INTO tintuc (id, tieude, noidung) VALUES
 (1, 'tin 1', 'tin 1...'),
 (2, 'tin 2', 'tin 2...');
 
+CREATE TABLE taikhoan (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(50) NOT NULL,
+  password varchar(50) NOT NULL,
+  loaitk int(11) NOT NULL DEFAULT 0, -- 1: Admin, 0: User thường
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO taikhoan (username, password, loaitk) VALUES
+('admin', '123456', 1),
+('user', '123456', 0);
+
 COMMIT;
