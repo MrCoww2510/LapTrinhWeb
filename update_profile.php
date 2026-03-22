@@ -5,13 +5,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user'])) {
     $uid = $_SESSION['user']['id'];
     $fullname = $Conn->real_escape_string($_POST['fullname']);
     $phone = $Conn->real_escape_string($_POST['phone']);
-    $new_email = $Conn->real_escape_string($_POST['email']); // Lấy email mới từ form
+    $new_email = $Conn->real_escape_string($_POST['email']); 
     $gender = $_POST['gender'];
     
-    // Ghép ngày sinh YYYY-MM-DD
+    // Ghép ngày sinh 
     $ngay_sinh = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
 
-    // Cập nhật cả email và phone vào Database
+    // Cập nhật email và SĐT vào Database
     $sql = "UPDATE users SET 
             fullname = '$fullname', 
             phone = '$phone', 

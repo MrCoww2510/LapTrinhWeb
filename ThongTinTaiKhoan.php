@@ -14,7 +14,7 @@ $sql = "SELECT * FROM users WHERE id = $userId";
 $result = $Conn->query($sql);
 $userInfo = $result->fetch_assoc();
 
-// 3. Xử lý tách ngày sinh (định dạng YYYY-MM-DD)
+// 3. Xử lý tách ngày sinh 
 $bd_day = $bd_month = $bd_year = "";
 if(!empty($userInfo['ngay_sinh'])) {
     $date_parts = explode('-', $userInfo['ngay_sinh']);
@@ -23,7 +23,7 @@ if(!empty($userInfo['ngay_sinh'])) {
     $bd_day = (int)$date_parts[2];
 }
 
-// 4. Xử lý tránh lỗi Warning cho Giới tính
+// 4. Tránh lỗi Warning cho Giới tính
 $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : ''; 
 ?>
 

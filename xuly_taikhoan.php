@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Lưu thông tin vào SESSION
             $_SESSION['user'] = $user;
 
-            echo "<script>alert('Chào mừng " . $user['fullname'] . " trở lại!'); window.location.href='index.php';</script>";
+            echo "<script> window.location.href='index.php';</script>";
         } else {
             // Nếu sai, báo lỗi
             echo "<script>alert('Sai tài khoản hoặc mật khẩu!'); history.back();</script>";
