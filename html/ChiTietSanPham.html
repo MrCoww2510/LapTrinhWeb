@@ -6,12 +6,12 @@
 			<img id="CTSP_AnhChinh" src="https://picsum.photos/500/300" alt="">
 		</div>
 
-		<!-- <div class="CTSP_AnhPhu">
+		<div class="CTSP_AnhPhu">
 			<img src="https://picsum.photos/500/300?1" class="active">
 			<img src="https://picsum.photos/500/300?2">
 			<img src="https://picsum.photos/500/300?3">
 			<img src="https://picsum.photos/500/300?4">
-		</div> -->
+		</div>
 	</div>
 
 	<!-- RIGHT -->
@@ -43,14 +43,15 @@
 </div>
 
 <script>
-	const MainImage = document.getElementById("MainImage");
-	const ListImg = document.querySelectorAll(".list-img img");
+	const anhChinh = document.getElementById("CTSP_AnhChinh");
+	const dsAnh = document.querySelectorAll(".CTSP_AnhPhu img");
 
-	ListImg.forEach(img => {
-		img.addEventListener("click", () => {
-			MainImage.src = img.src;
-
-			ListImg.forEach(i => i.classList.remove("active"));
+	dsAnh.forEach(function(img){
+		img.addEventListener("click", function(){
+			anhChinh.src = img.src;
+			dsAnh.forEach(function(i){
+				i.classList.remove("active");
+			});
 			img.classList.add("active");
 		});
 	});
