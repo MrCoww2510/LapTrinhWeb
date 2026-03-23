@@ -110,6 +110,7 @@ body {
 }
 
 .HD_menu {
+	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -119,6 +120,52 @@ body {
 	flex-wrap: wrap;
 	max-width: 1200px;
 	margin: auto;
+}
+/* ===============nút menu =================== */
+.HD_Nutmenu {
+	position: relative; /* làm gốc cho dropdown */
+	display: none;
+	padding: 10px 15px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: 0.2s;
+}
+
+.HD_Nutmenu:hover {
+	background-color: #0400da;
+}
+.HD_menumini {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	list-style: none;
+	display: none;
+
+	background: hsl(0, 100%, 60%);
+	width: 220px;
+
+	border-radius: 8px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+	padding: 10px 0;
+}
+.HD_menumini li {
+	padding: 10px 15px;
+}
+
+.HD_menumini li a {
+	color: white;
+	display: block;
+	font-weight: bold;
+}
+
+.HD_menumini li:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+.HD_Nutmenu:hover .HD_menumini {
+	display: block;
 }
 /* ---------- MENU ITEM ---------- */
 
@@ -197,8 +244,15 @@ body {
 
 	border-top: 1px solid #333;
 }
-@media (max-width: 600px) {
-	* {
-		font-size: 1rem;
+
+@media (max-width: 768px) {
+	.HD_rightMenu {
+		display: none;
+	}
+	.HD_nav {
+		display: none;
+	}
+	.HD_Nutmenu {
+		display: flex;
 	}
 }

@@ -1,103 +1,102 @@
-
 .BH_khung_chinh {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #e0e0e0;
-    background-color: #121212;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    line-height: 1.6;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	background-color: #000000;
+	padding: 20px 5%;
+	margin: 20px;
+	box-sizing: border-box;
+	line-height: 1.6;
+	border-radius: 20px;
 }
 
 .BH_khung_chinh * {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 .BH_phan_dau {
-    text-align: center;
-    margin-bottom: 50px;
+	text-align: center;
+	margin-bottom: 50px;
 }
 
 .BH_tieu_de {
-    font-size: 32px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
+	font-size: 32px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 20px;
 }
 
 .BH_duong_ke {
-    width: 80px;
-    height: 4px;
-    background-color: #d32f2f;
-    margin: 0 auto 30px auto;
+	width: 80px;
+	height: 4px;
+	background-color: #d32f2f;
+	margin: 0 auto 30px auto;
 }
 
 .BH_phan_noi_dung {
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 40px;
-    border-left: 5px solid #d32f2f;
+	background-color: #1e1e1e;
+	padding: 40px;
+	border-radius: 8px;
+	margin-bottom: 40px;
+	border-left: 5px solid #d32f2f;
 }
 
 .BH_tieu_de_muc {
-    font-size: 22px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 20px;
 }
 
 .BH_doan_van {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #cccccc;
+	font-size: 16px;
+	margin-bottom: 15px;
+	color: #cccccc;
 }
 
 .BH_doan_van_phu {
-    font-size: 16px;
-    color: #cccccc;
-    margin-top: 8px;
-    margin-bottom: 15px;
+	font-size: 16px;
+	color: #cccccc;
+	margin-top: 8px;
+	margin-bottom: 15px;
 }
 
 .BH_danh_sach {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 15px;
+	list-style-type: disc;
+	padding-left: 20px;
+	margin-bottom: 15px;
 }
 
 .BH_danh_sach > li {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #cccccc;
+	font-size: 16px;
+	margin-bottom: 12px;
+	color: #cccccc;
 }
 
 .BH_danh_sach_con {
-    list-style-type: circle;
-    padding-left: 20px;
-    margin-top: 8px;
-    margin-bottom: 15px;
+	list-style-type: circle;
+	padding-left: 20px;
+	margin-top: 8px;
+	margin-bottom: 15px;
 }
 
 .BH_danh_sach_con > li {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #cccccc;
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #cccccc;
 }
 
 .BH_text_do {
-    color: #ef5350 !important;
+	color: #ef5350 !important;
 }
 
 .BH_text_xanh {
-    color: #42a5f5;
-    font-weight: bold;
+	color: #42a5f5;
+	font-weight: bold;
 }
 
 /* Tối ưu hiển thị cho điện thoại */
 @media (max-width: 768px) {
-    .BH_phan_noi_dung {
-        padding: 20px;
-    }
+	.BH_phan_noi_dung {
+		padding: 20px;
+	}
 }

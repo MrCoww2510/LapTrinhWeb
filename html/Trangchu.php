@@ -161,7 +161,7 @@ if (!$resultMoi) {
 
 				<div class="TC_blogCard">
 					<div class="TC_blogImage">
-						<img src="img/blog1.jpg" />
+						<img src="img/blog/banphim.jpg" />
 					</div>
 
 					<div class="TC_blogContent">
@@ -172,7 +172,7 @@ if (!$resultMoi) {
 
 				<div class="TC_blogCard">
 					<div class="TC_blogImage">
-						<img src="img/blog2.jpg" />
+						<img src="img/blog/topchuot.png" />
 					</div>
 
 					<div class="TC_blogContent">
@@ -183,7 +183,7 @@ if (!$resultMoi) {
 
 				<div class="TC_blogCard">
 					<div class="TC_blogImage">
-						<img src="img/blog3.jpg" />
+						<img src="img/blog/manghinh.jpg" />
 					</div>
 
 					<div class="TC_blogContent">

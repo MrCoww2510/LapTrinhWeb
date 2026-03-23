@@ -1,116 +1,104 @@
-.GT_khung_chinh {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #e0e0e0;
-    background-color: #121212;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    line-height: 1.6;
-}
-
-.GT_khung_chinh * {
-    box-sizing: inherit;
-}
-
 .GT_phan_dau {
-    text-align: center;
-    margin-bottom: 50px;
+	text-align: center;
+	margin-bottom: 50px;
 }
 
 .GT_tieu_de {
-    font-size: 32px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 10px;
+	font-size: 32px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 10px;
 }
 
 .GT_tieu_de_phu {
-    font-size: 18px;
-    color: #aaaaaa;
-    margin-bottom: 20px;
+	font-size: 18px;
+	color: #aaaaaa;
+	margin-bottom: 20px;
 }
 
 .GT_duong_ke {
-    width: 80px;
-    height: 4px;
-    background-color: #d32f2f;
-    margin: 0 auto 30px auto;
+	width: 80px;
+	height: 4px;
+	background-color: #d32f2f;
+	margin: 0 auto 30px auto;
 }
 
 .GT_phan_noi_dung {
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 8px;
-    margin-bottom: 40px;
-    border-left: 5px solid #d32f2f;
+	background-color: #1e1e1e;
+	padding: 40px;
+	border-radius: 8px;
+	margin-bottom: 40px;
+	border-left: 5px solid #d32f2f;
 }
 
 .GT_tieu_de_muc {
-    font-size: 26px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
+	font-size: 26px;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .GT_doan_van {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #cccccc;
+	font-size: 16px;
+	margin-bottom: 15px;
+	color: #cccccc;
 }
 
 .GT_luoi_2_cot {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 30px;
+	margin-bottom: 50px;
 }
 
 .GT_luoi_3_cot {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
 }
 
 .GT_the_khoi {
-    background-color: #1e1e1e;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    border: 1px solid transparent;
+	background-color: #1e1e1e;
+	padding: 30px;
+	border-radius: 8px;
+	text-align: center;
+	transition:
+		transform 0.3s ease,
+		border-color 0.3s ease;
+	border: 1px solid transparent;
 }
 
 .GT_the_khoi:hover {
-    transform: translateY(-5px);
-    border-color: #d32f2f;
+	transform: translateY(-5px);
+	border-color: #d32f2f;
 }
 
 .GT_bieu_tuong {
-    font-size: 40px;
-    margin-bottom: 15px;
+	font-size: 40px;
+	margin-bottom: 15px;
 }
 
 .GT_tieu_de_the {
-    font-size: 22px;
-    color: #ffffff;
-    margin-bottom: 15px;
+	font-size: 22px;
+	color: #ffffff;
+	margin-bottom: 15px;
 }
 
 .GT_tieu_de_ly_do {
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 10px;
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 10px;
 }
 
 /* Tùy chỉnh khi mở ở mobile */
 @media (max-width: 768px) {
-    .GT_luoi_2_cot, .GT_luoi_3_cot {
-        grid-template-columns: 1fr;
-    }
-    
-    .GT_phan_noi_dung {
-        padding: 20px;
-    }
+	.GT_luoi_2_cot,
+	.GT_luoi_3_cot {
+		grid-template-columns: 1fr;
+	}
+
+	.GT_phan_noi_dung {
+		padding: 20px;
+	}
 }

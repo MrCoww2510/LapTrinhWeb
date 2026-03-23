@@ -38,14 +38,46 @@
 
 			<div class="HD_rightMenu">
 				<a href="GioHang.php" class="HD_menu_item">Giỏ hàng</a>
-				
+
 				<?php if (isset($_SESSION['user'])): ?>
-					<a href="ThongTinTaiKhoan.php" class="HD_menu_item">
-						<i class="fas fa-user"></i> <?php echo explode(' ', $_SESSION['user']['fullname'])[0]; ?>
-					</a>
+				<a href="ThongTinTaiKhoan.php" class="HD_menu_item">
+					<i class="fas fa-user"></i> <?php echo explode(' ', $_SESSION['user']['fullname'])[0]; ?>
+				</a>
 				<?php else: ?>
-					<a href="javascript:void(0)" onclick="moPopupDangNhap()" class="HD_menu_item">Tài khoản</a>
+				<a href="javascript:void(0)" onclick="moPopupDangNhap()" class="HD_menu_item">Tài khoản</a>
 				<?php endif; ?>
+			</div>
+			<!-- =========== nút menu =========== -->
+			<div class="HD_Nutmenu">☰
+
+				<nav class="HD_navmini">
+					<ul class="HD_menumini">
+						<li>
+							<div class="HD_rightMenumini">
+								<a href="GioHang.php" class="HD_menu_item">Giỏ hàng</a>
+
+							</div>
+						</li>
+						<li>
+							<?php if (isset($_SESSION['user'])): ?>
+							<a href="ThongTinTaiKhoan.php" class="HD_menu_item">
+								<i class="fas fa-user"></i>
+								<?php echo explode(' ', $_SESSION['user']['fullname'])[0]; ?>
+							</a>
+							<?php else: ?>
+							<a href="javascript:void(0)" onclick="moPopupDangNhap()" class="HD_menu_item">Tài
+								khoản</a>
+							<?php endif; ?>
+						</li>
+						<li><a href="index.php">Trang chủ</a></li>
+						<li><a href="TrangGioiThieu.php">Giới thiệu</a></li>
+						<li><a href="TrangBaoHanh.php">Bảo hành</a></li>
+						<li><a href="TrangSanPham.php">Sản phẩm</a></li>
+						<li><a href="TraCuuDonHang.php">Tra cứu đơn hàng</a></li>
+						<li><a href="LienHe.php">Liên hệ</a></li>
+					</ul>
+				</nav>
+
 			</div>
 		</div>
 		<!-- ===== MENU ===== -->

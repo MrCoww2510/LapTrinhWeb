@@ -14,15 +14,6 @@ $sql = "SELECT p.id, p.name, p.price, p.stock, p.image,
 $result = $Conn->query($sql);
 ?>
 <section>
-	<div class="SP_ThanhHang">
-		<button>ASUS</button>
-		<button>Acer</button>
-		<button>Dell</button>
-		<button>MSI</button>
-		<button>Lenovo</button>
-		<button>HP</button>
-		<button>LG gram</button>
-	</div>
 
 	<div class="SP_ThanhSP">
 		<h2>Sản phẩm</h2>
