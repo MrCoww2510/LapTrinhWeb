@@ -14,7 +14,7 @@ a {
 /* ================= BODY ================= */
 
 body {
-	background: white;
+	background: rgb(200, 200, 200);
 	overflow-x: hidden;
 }
 
@@ -26,7 +26,7 @@ body {
 	z-index: 1000;
 }
 .HD_topHeader {
-	background: hsl(0, 100%, 50%);
+	background: hsl(0, 100%, 60%);
 
 	display: flex;
 	align-items: center;
@@ -70,7 +70,7 @@ body {
 }
 
 .HD_search button {
-	background: #0077ff;
+	background: #464fff;
 	color: white;
 	border: none;
 
@@ -106,7 +106,7 @@ body {
 /* ================= NAV MENU ================= */
 
 .HD_nav {
-	background: hsl(0, 100%, 50%);
+	background: hsl(0, 100%, 60%);
 }
 
 .HD_menu {
