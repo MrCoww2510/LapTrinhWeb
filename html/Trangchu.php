@@ -47,7 +47,7 @@ if (!$resultMoi) {
 	</section>
 
 	<!-- ================= CATEGORY ================= -->
-	<section class="TC_category">
+	<!-- <section class="TC_category">
 		<h2 class="TC_title">Danh mục sản phẩm</h2>
 
 		<div class="TC_categoryContainer">
@@ -58,7 +58,7 @@ if (!$resultMoi) {
 			<div class="TC_categoryItem">Màn hình</div>
 			<div class="TC_categoryItem">Ghế Gaming</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- ================= SẢN PHẨM NỔI BẬT ================= -->
 	<section class="SP_DanhMuc">

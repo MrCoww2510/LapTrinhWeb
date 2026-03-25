@@ -1,9 +1,16 @@
+/* Toàn trang  */
+.SP_TrangSanPham {
+	background: white;
+	margin: 20px;
+	border-radius: 10px;
+}
 /* ===== THANH TRÊN ===== */
 .SP_ThanhSP {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 15px 30px;
+	z-index: 10;
 }
 
 /* ===== SẮP XẾP ===== */
@@ -42,10 +49,15 @@
 }
 
 .SP_DanhSachSanPham {
+	background: white;
+	border: 0px soild white;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 20px;
 	padding: 40px;
+	overflow: hidden;
 }
 /* ================= PRODUCT ================= */
 

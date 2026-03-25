@@ -13,7 +13,7 @@ $sql = "SELECT p.id, p.name, p.price, p.stock, p.image,
         JOIN categories c ON p.category_id = c.id";
 $result = $Conn->query($sql);
 ?>
-<section>
+<section class="SP_TrangSanPham">
 
 	<div class="SP_ThanhSP">
 		<h2>Sản phẩm</h2>
