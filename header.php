@@ -32,8 +32,10 @@
 			</div>
 
 			<div class="HD_search">
-				<input type="text" placeholder="Tìm sản phẩm...">
-				<button>Tìm</button>
+				<form action="search.php" method="GET">
+					<input type="text" name="keyword" placeholder="Tìm sản phẩm...">
+					<button type="submit">Tìm</button>
+				</form>
 			</div>
 
 			<div class="HD_rightMenu">
