@@ -5,16 +5,15 @@
             <span class="DangNhap_close_btn" onclick="dongPopup()">&times;</span>
         </div>
 
-        <form class="DangNhap_body" action="xuly_taikhoan.php" method="POST">
+        <form class="DangNhap_body" action="xuly_taikhoan.php" method="POST" onsubmit="return kiemTraHopLe()">
             <input type="hidden" name="loai_hanh_dong" id="Loai_Hanh_Dong" value="dang_nhap" />
 
             <div class="DangNhap_text_right">
-                <a class="DangNhap_link" id="Link_DoiKieuNhap" onclick="chuyenDoiEmailSDT()">Đăng nhập bằng số điện thoại</a>
                 <a class="DangNhap_link" id="Link_QuayLai" onclick="chuyenCheDo('DangNhap')" style="display: none; color: #555; text-decoration: underline; font-size: 13px;">Quay lại</a>
             </div>
 
             <div class="DangNhap_input_group">
-                <input type="text" name="tai_khoan" id="Input_TaiKhoan" class="DangNhap_input" placeholder="Email" required />
+                <input type="text" name="tai_khoan" id="Input_TaiKhoan" class="DangNhap_input" placeholder="Số điện thoại hoặc Email" required />
             </div>
 
             <div id="Nhom_DangKy" style="display: none">
@@ -34,7 +33,7 @@
             </div>
 
             <div class="DangNhap_text_right" id="KhuVuc_QuenMatKhau">
-                <a class="DangNhap_link" id="Link_QuenMatKhau" onclick="chuyenCheDo('QuenMatKhau')">Quên mật khẩu email?</a>
+                <a class="DangNhap_link" id="Link_QuenMatKhau" onclick="chuyenCheDo('QuenMatKhau')">Quên mật khẩu?</a>
             </div>
 
             <button type="submit" class="DangNhap_btn_main" id="Nut_Chinh">ĐĂNG NHẬP</button>
@@ -80,7 +79,6 @@
         const khuVucQuenMK = document.getElementById("KhuVuc_QuenMatKhau");
         const nutChinh = document.getElementById("Nut_Chinh");
         const khuVucFooter = document.getElementById("KhuVuc_Footer");
-        const linkDoiKieuNhap = document.getElementById("Link_DoiKieuNhap");
         const linkQuayLai = document.getElementById("Link_QuayLai");
         const inputMatKhau = document.getElementById("Input_MatKhau");
         const loaiHanhDong = document.getElementById("Loai_Hanh_Dong");
@@ -91,7 +89,6 @@
             nhomDangKy.style.display = "none";
             khuVucMatKhau.style.display = "none";
             khuVucQuenMK.style.display = "none";
-            linkDoiKieuNhap.style.display = "none";
             linkQuayLai.style.display = "inline-block";
             nutChinh.innerText = "KHÔI PHỤC";
             inputMatKhau.removeAttribute("required");
@@ -102,11 +99,9 @@
             nhomDangKy.style.display = "block";
             khuVucMatKhau.style.display = "block";
             khuVucQuenMK.style.display = "none";
-            linkDoiKieuNhap.style.display = "inline-block";
             linkQuayLai.style.display = "none";
             nutChinh.innerText = "TẠO TÀI KHOẢN";
             khuVucFooter.innerHTML = '<p style="margin: 0;">Bạn đã có tài khoản? <a href="javascript:void(0)" onclick="chuyenCheDo(\'DangNhap\')">Đăng nhập!</a></p>';
-            linkDoiKieuNhap.innerText = "Đăng ký bằng số điện thoại";
             inputMatKhau.setAttribute("required", "true");
             dangO_CheDoDangKy = true;
         } else {
@@ -115,38 +110,48 @@
             nhomDangKy.style.display = "none";
             khuVucMatKhau.style.display = "block";
             khuVucQuenMK.style.display = "block";
-            linkDoiKieuNhap.style.display = "inline-block";
             linkQuayLai.style.display = "none";
             nutChinh.innerText = "ĐĂNG NHẬP";
             khuVucFooter.innerHTML = '<p style="margin: 0;">Bạn chưa có tài khoản? <a href="javascript:void(0)" onclick="chuyenCheDo(\'DangKy\')">Đăng ký ngay!</a></p>';
-            linkDoiKieuNhap.innerText = "Đăng nhập bằng số điện thoại";
             inputMatKhau.setAttribute("required", "true");
             dangO_CheDoDangKy = false;
         }
     }
 
-    let dungEmail = true;
-    function chuyenDoiEmailSDT() {
-        const link = document.getElementById("Link_DoiKieuNhap");
-        const input = document.getElementById("Input_TaiKhoan");
-        const trangThai = dangO_CheDoDangKy ? "Đăng ký" : "Đăng nhập";
-
-        if (dungEmail) {
-            link.innerText = `${trangThai} bằng email`;
-            input.type = "tel";
-            input.placeholder = "Số điện thoại";
-            dungEmail = false;
-        } else {
-            link.innerText = `${trangThai} bằng số điện thoại`;
-            input.type = "email";
-            input.placeholder = "Email";
-            dungEmail = true;
-        }
-    }
-
     // Đóng popup khi nhấn ra vùng ngoài
-    window.onclick = function (event) {
+    window.addEventListener('mousedown', function (event) {
         const popup = document.getElementById("KhuVuc_Form");
-        if (event.target == popup) dongPopup();
-    };
+        if (event.target == popup) {
+            dongPopup();
+        }
+    });
+
+    // Hàm kiểm tra dữ liệu trước khi cho phép form gửi sang PHP
+    function kiemTraHopLe() {
+        const loaiHanhDong = document.getElementById("Loai_Hanh_Dong").value;
+        const taiKhoan = document.getElementById("Input_TaiKhoan").value.trim();
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const phoneRegex = /^(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+
+        // 1. Kiểm tra tài khoản chung: Phải thỏa mãn 1 trong 2 điều kiện (Là Email HOẶC là SĐT)
+        if (!emailRegex.test(taiKhoan) && !phoneRegex.test(taiKhoan)) {
+            alert("Lỗi: Tài khoản phải là Email hoặc Số điện thoại hợp lệ!");
+            return false; // Chặn form lại
+        }
+
+        // 2. Kiểm tra Họ và Tên (CHỈ áp dụng khi đang ở chế độ Đăng ký)
+        if (loaiHanhDong === "dang_ky") {
+            const ho = document.querySelector('input[name="ho"]').value.trim();
+            const ten = document.querySelector('input[name="ten"]').value.trim();
+            const nameRegex = /^[\p{L}\s]+$/u;
+
+            if (!nameRegex.test(ho) || !nameRegex.test(ten)) {
+                alert("Lỗi: Họ và Tên chỉ được chứa chữ cái, không dùng số hay ký tự đặc biệt!");
+                return false; 
+            }
+        }
+
+        return true; 
+    }
 </script>

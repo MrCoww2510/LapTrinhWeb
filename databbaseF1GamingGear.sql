@@ -117,6 +117,15 @@ CREATE TABLE order_details(
 	FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
+CREATE TABLE IF NOT EXISTS user_addresses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    ho_ten VARCHAR(100),
+    so_dien_thoai VARCHAR(20),
+    dia_chi_day_du TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 CREATE TABLE thongso(
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	product_id INT,
