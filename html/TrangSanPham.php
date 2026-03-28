@@ -37,46 +37,46 @@ $result = $Conn->query($sql);
 
 		<?php while ($row = $result->fetch_assoc()): ?>
 
-		<div class="SP_SanPham">
-			<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
+			<div class="SP_SanPham">
+				<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
 
-				<!-- ================= HÌNH ================= -->
-				<div class="SP_HinhAnh">
-					<img src="SanPham/<?= $row['image'] ?>" alt="img" />
-				</div>
+					<!-- ================= HÌNH ================= -->
+					<div class="SP_HinhAnh">
+						<img src="SanPham/<?= $row['image'] ?>" alt="img" />
+					</div>
 
-				<!-- ================= TÊN ================= -->
-				<h3 class="SP_TenSanPham">
-					<?= $row['name'] ?>
-				</h3>
+					<!-- ================= TÊN ================= -->
+					<h3 class="SP_TenSanPham">
+						<?= $row['name'] ?>
+					</h3>
 
-				<!-- ================= THÔNG TIN ================= -->
-				<div class="SP_ThongSo">
-					<div>Hãng: <?= $row['brand_name'] ?></div>
-					<div>Loại: <?= $row['category_name'] ?></div>
-					<div>Còn lại: <?= $row['stock'] ?></div>
-				</div>
+					<!-- ================= THÔNG TIN ================= -->
+					<div class="SP_ThongSo">
+						<div>Hãng: <?= $row['brand_name'] ?></div>
+						<div>Loại: <?= $row['category_name'] ?></div>
+						<div>Còn lại: <?= $row['stock'] ?></div>
+					</div>
 
-				<!-- ================= GIÁ ================= -->
-				<div class="SP_Gia">
-					<span class="SP_GiaMoi">
-						<?= number_format($row['price'], 0, ',', '.') ?>đ
-					</span>
-				</div>
+					<!-- ================= GIÁ ================= -->
+					<div class="SP_Gia">
+						<span class="SP_GiaMoi">
+							<?= number_format($row['price'], 0, ',', '.') ?>đ
+						</span>
+					</div>
 
-				<!-- ================= ĐÁNH GIÁ (FAKE) ================= -->
-				<div class="SP_DanhGia">
-					<span class="SP_Sao">★</span> 5.0
-					<span class="SP_NhanXet">(100 đánh giá)</span>
-				</div>
+					<!-- ================= ĐÁNH GIÁ (FAKE) ================= -->
+					<div class="SP_DanhGia">
+						<span class="SP_Sao">★</span> 5.0
+						<span class="SP_NhanXet">(100 đánh giá)</span>
+					</div>
 
-			</a>
+				</a>
 
-			<!-- ================= THÊM GIỎ ================= -->
-			<a href="addToCart.php?id=<?= $row['id'] ?>">
-				<button>Thêm vào giỏ</button>
-			</a>
-		</div>
+				<!-- ================= THÊM GIỎ ================= -->
+				<a href="addToCart.php?id=<?= $row['id'] ?>">
+					<button>Thêm vào giỏ</button>
+				</a>
+			</div>
 
 		<?php endwhile; ?>
 
@@ -84,13 +84,13 @@ $result = $Conn->query($sql);
 </section>
 <!-- file cũ -->
 <script>
-function toggleSort() {
-	let menu = document.getElementById("SP_SapXepMenu");
-	menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
+	function toggleSort() {
+		let menu = document.getElementById("SP_SapXepMenu");
+		menu.style.display = (menu.style.display === "block") ? "none" : "block";
+	}
 
-function selectSort(text) {
-	document.getElementById("SP_SXHienTai").innerText = text;
-	document.getElementById("SP_SapXepMenu").style.display = "none";
-}
+	function selectSort(text) {
+		document.getElementById("SP_SXHienTai").innerText = text;
+		document.getElementById("SP_SapXepMenu").style.display = "none";
+	}
 </script>
