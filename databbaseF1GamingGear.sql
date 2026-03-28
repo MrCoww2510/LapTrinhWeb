@@ -41,12 +41,12 @@ CREATE TABLE users(
 	role VARCHAR(20)
 );
 
-INSERT INTO users(username,password,fullname,email,role) VALUES
-('admin','123456','Admin','admin@gmail.com','admin'),
-('user01','123456','Nguyen Van A','a@gmail.com','customer'),
-('user02','123456','Tran Van B','b@gmail.com','customer'),
-('user03','123456','Le Van C','c@gmail.com','customer'),
-('user04','123456','Pham Van D','d@gmail.com','customer');
+INSERT INTO users(username,password,fullname,email,role,phone,gioi_tinh,ngay_sinh) VALUES
+('admin','123456','Admin','admin@gmail.com','admin','','',''),
+('user01','123456','Nguyen Van A','a@gmail.com','customer','','',''),
+('user02','123456','Tran Van B','b@gmail.com','customer','','',''),
+('user03','123456','Le Van C','c@gmail.com','customer','','',''),
+('user04','123456','Pham Van D','d@gmail.com','customer','','','');
 
 CREATE TABLE products(
 	id INT AUTO_INCREMENT PRIMARY KEY,
