@@ -114,6 +114,11 @@ $result_address = $Conn->query($sql_address);
                 </div>
 
                 <div class="TTTK_form_group">
+                    <label class="TTTK_label">Đổi mật khẩu </label>
+                    <input type="password" name="new_password" class="TTTK_input" placeholder="Nhập mật khẩu mới ">
+                </div>
+
+                <div class="TTTK_form_group">
                     <label class="TTTK_label">Ngày sinh</label>
                     <div class="TTTK_select_group">
                         <select name="day" class="TTTK_select">
@@ -256,6 +261,7 @@ $result_address = $Conn->query($sql_address);
         let day = document.querySelector('select[name="day"]').value;
         let month = document.querySelector('select[name="month"]').value;
         let year = document.querySelector('select[name="year"]').value;
+        let newPassword = document.querySelector('input[name="new_password"]').value.trim();
 
         // 1. KIỂM TRA HỌ TÊN
         if (fullname === "" || !isValidName(fullname)) {
@@ -283,7 +289,16 @@ $result_address = $Conn->query($sql_address);
             return false;
         }
 
-        return true; 
+        // 4. KIỂM TRA MẬT KHẨU 
+        if (newPassword !== "") {
+            // Regex: Ít nhất 8 ký tự, 1 chữ in hoa, 1 ký tự đặc biệt
+            const passwordRegex = /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+            if (!passwordRegex.test(newPassword)) {
+                alert("Mật khẩu mới phải có ít nhất 8 ký tự, bao gồm ít nhất 1 chữ in hoa và 1 ký tự đặc biệt!");
+                document.querySelector('input[name="new_password"]').focus();
+                return false;
+            }
+        }
     }
 
     // Kiểm tra Form Thêm Địa Chỉ Mới

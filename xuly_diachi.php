@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once 'config.php'; // File kết nối database
-
-// Thiết lập phản hồi JSON
+require_once 'config.php';
 header('Content-Type: application/json');
 
 // Chỉ xử lý POST request và user đã đăng nhập
@@ -38,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user'])) {
     }
     $stmt_check->close();
 } else {
-    // Truy cập trái phép
+
     echo json_encode(['success' => false, 'message' => 'Truy cập không hợp lệ!']);
     exit();
 }
