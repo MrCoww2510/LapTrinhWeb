@@ -25,6 +25,8 @@ if(!empty($userInfo['ngay_sinh'])) {
 
 // 4. Tránh lỗi Warning cho Giới tính
 $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : ''; 
+$sql_address = "SELECT * FROM user_addresses WHERE user_id = $userId ORDER BY id DESC";
+$result_address = $Conn->query($sql_address);
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +37,21 @@ $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : '';
     <title>Thông tin tài khoản - F1GamingGear</title>
     <link rel="stylesheet" href="css/ThongTinTaiKhoan.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* CSS cho nút xóa địa chỉ */
+        .btn-delete-address {
+            padding: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+            color: #a0a0a0;
+        }
+        .btn-delete-address:hover {
+            color: #e62e2e;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
 
@@ -63,7 +80,7 @@ $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : '';
         
         <section id="tab_profile" class="TTTK_section TTTK_show">
             <h2 class="TTTK_title">Thông tin tài khoản</h2>
-            <form action="update_profile.php" method="POST" style="margin-top: 30px;">
+            <form action="update_profile.php" method="POST" style="margin-top: 30px;" onsubmit="return validateProfileForm()">
                 
                 <div class="TTTK_form_group">
                     <label class="TTTK_label">Họ Tên</label>
@@ -86,7 +103,9 @@ $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : '';
                     <label class="TTTK_label">Số điện thoại</label>
                     <input type="tel" name="phone" class="TTTK_input" 
                            value="<?php echo isset($userInfo['phone']) ? htmlspecialchars($userInfo['phone']) : ''; ?>" 
-                           placeholder="Nhập số điện thoại">
+                           placeholder="Nhập số điện thoại"
+                           pattern="^(84|0[3|5|7|8|9])[0-9]{8}$" 
+                           title="Vui lòng nhập đúng số điện thoại hợp lệ (10 số)">
                 </div>
 
                 <div class="TTTK_form_group">
@@ -127,54 +146,76 @@ $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : '';
                 <h2 class="TTTK_title">Sổ địa chỉ</h2>
                 <button type="button" class="TTTK_btn_add_addr" onclick="TTTK_openModal()">+ Thêm địa chỉ mới</button>
             </div>
-            <div style="color: #999; margin-top: 50px; text-align: center;">
-                <p>Bạn chưa có địa chỉ nào trong sổ địa chỉ.</p>
+            
+            <div style="margin-top: 30px;">
+                <?php 
+                // Kiểm tra xem có địa chỉ nào không
+                if ($result_address && $result_address->num_rows > 0) {
+                    // Dùng vòng lặp in ra tất cả các địa chỉ đã lưu
+                    while($addr = $result_address->fetch_assoc()) {
+                ?>
+                        <div class="address-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; background-color: #f9f9f9; display: flex; justify-content: space-between; align-items: center;">
+                            
+                            <div class="address-text">
+                                <div style="font-size: 16px; margin-bottom: 8px;">
+                                    <strong style="color: #333; font-size: 18px;"><?php echo htmlspecialchars($addr['ho_ten']); ?></strong> 
+                                    <span style="color: #999; margin: 0 10px;">|</span> 
+                                    <span style="color: #555;"><?php echo htmlspecialchars($addr['so_dien_thoai']); ?></span>
+                                </div>
+                                <div style="color: #666; line-height: 1.5;">
+                                    <?php echo nl2br(htmlspecialchars($addr['dia_chi_day_du'])); ?>
+                                </div>
+                            </div>
+
+                            <a href="javascript:void(0)" class="btn-delete-address text-danger" data-id="<?php echo $addr['id']; ?>" onclick="xoaDiachi(this)" title="Xóa địa chỉ">
+                                <i class="fa fa-trash-alt"></i>
+                            </a>
+
+                        </div>
+                <?php 
+                    } // Kết thúc vòng lặp
+                } else { 
+                    // Nếu chưa có địa chỉ nào thì hiện dòng thông báo này
+                ?>
+                    <div style="color: #999; margin-top: 50px; text-align: center;">
+                        <p>Bạn chưa có địa chỉ nào trong sổ địa chỉ.</p>
+                    </div>
+                <?php } ?>
             </div>
         </section>
 
     </main>
 </div>
 
-<div class="TTTK_modal_overlay" id="TTTK_AddressModal">
+<div class="TTTK_modal_overlay" id="TTTK_AddressModal" style="display: none;">
     <div class="TTTK_modal_box">
         <div class="TTTK_modal_header">
             <span>ĐỊA CHỈ MỚI</span>
             <span style="cursor:pointer; font-size:24px;" onclick="TTTK_closeModal()">&times;</span>
         </div>
-        <form class="TTTK_modal_body" action="save_address.php" method="POST">
-            <p class="TTTK_modal_sub">Thông tin khách hàng</p>
-            <input type="text" name="addr_fullname" placeholder="Nhập Họ Tên" class="TTTK_modal_input" required>
-            <input type="tel" name="addr_phone" placeholder="Nhập Số điện thoại" class="TTTK_modal_input" required>
-
-            <p class="TTTK_modal_sub">Địa chỉ</p>
-            <div class="TTTK_modal_row">
-                <select class="TTTK_modal_input" name="city"><option>Chọn Tỉnh/Thành phố</option></select>
-                <select class="TTTK_modal_input" name="district"><option>Chọn Quận/Huyện</option></select>
-            </div>
-            <div class="TTTK_modal_row">
-                <select class="TTTK_modal_input" name="ward"><option>Chọn Phường/Xã</option></select>
-                <input type="text" name="specific_address" placeholder="Số nhà, tên đường..." class="TTTK_modal_input">
+        
+        <form class="TTTK_modal_body" action="save_address.php" method="POST" onsubmit="return validateAddressForm()">
+            <div style="margin-bottom: 15px;">
+                <p class="TTTK_modal_sub" style="margin-bottom: 5px;">Thông tin khách hàng</p>
+                <input type="text" name="addr_fullname" placeholder="Nhập Họ Tên" class="TTTK_modal_input" style="width: 100%; margin-bottom: 10px;" required>
+                <input type="tel" name="addr_phone" placeholder="Nhập Số điện thoại" class="TTTK_modal_input" style="width: 100%;" required>
             </div>
 
-            <p class="TTTK_modal_sub">Loại địa chỉ</p>
-            <div class="TTTK_type_group">
-                <label style="flex:1;">
-                    <input type="radio" name="addr_type" value="Văn phòng" style="display:none;" checked>
-                    <div class="TTTK_type_label">Văn phòng</div>
-                </label>
-                <label style="flex:1;">
-                    <input type="radio" name="addr_type" value="Nhà riêng" style="display:none;">
-                    <div class="TTTK_type_label">Nhà riêng</div>
-                </label>
+            <div style="margin-bottom: 15px;">
+                <p class="TTTK_modal_sub" style="margin-bottom: 5px;">Địa chỉ giao hàng</p>
+                <textarea name="dia_chi_day_du" placeholder="Nhập địa chỉ đầy đủ (Số nhà, Đường, Phường/Xã, Quận/Huyện, Tỉnh/Thành phố)..." class="TTTK_modal_input" style="width: 100%; height: 100px; resize: vertical; padding-top: 10px;" required></textarea>
             </div>
-            <button type="submit" class="TTTK_btn_submit">HOÀN THÀNH</button>
+
+            <button type="submit" class="TTTK_btn_submit" style="margin-top: 10px; width: 100%;">HOÀN THÀNH</button>
         </form>
+
     </div>
 </div>
 
 <?php include("footer.php"); ?>
 
 <script>
+    // Xử lý chuyển Tab
     function TTTK_switchTab(evt, tabId) {
         var sections = document.getElementsByClassName("TTTK_section");
         for (var i = 0; i < sections.length; i++) { sections[i].classList.remove("TTTK_show"); }
@@ -184,10 +225,120 @@ $current_gender = isset($userInfo['gioi_tinh']) ? $userInfo['gioi_tinh'] : '';
         evt.currentTarget.classList.add("TTTK_active");
     }
 
+    // Xử lý đóng mở Modal Thêm Địa Chỉ
     function TTTK_openModal() { document.getElementById('TTTK_AddressModal').style.display = 'flex'; }
     function TTTK_closeModal() { document.getElementById('TTTK_AddressModal').style.display = 'none'; }
-    window.onclick = function(e) { if(e.target == document.getElementById('TTTK_AddressModal')) TTTK_closeModal(); }
-</script>
+    
+    // Fix lỗi kéo bôi đen chuột đóng form bằng cách dùng mousedown thay vì onclick
+    window.addEventListener('mousedown', function (event) {
+        const popup = document.getElementById("TTTK_AddressModal");
+        if (event.target == popup) {
+            TTTK_closeModal();
+        }
+    });
 
+    // Hàm kiểm tra định dạng số điện thoại Việt Nam
+    function isValidVietnamesePhone(phone) {
+        const phoneRegex = /^(84|0[3|5|7|8|9])[0-9]{8}$/;
+        return phoneRegex.test(phone);
+    }
+
+    // Hàm kiểm tra Họ Tên (Chỉ cho phép chữ cái tiếng Việt và khoảng trắng)
+    function isValidName(name) {
+        const nameRegex = /^[\p{L}\s]+$/u;
+        return nameRegex.test(name);
+    }
+
+    // Kiểm tra Form Thông Tin Tài Khoản
+    function validateProfileForm() {
+        let fullname = document.querySelector('input[name="fullname"]').value.trim();
+        let phone = document.querySelector('input[name="phone"]').value.trim();
+        let day = document.querySelector('select[name="day"]').value;
+        let month = document.querySelector('select[name="month"]').value;
+        let year = document.querySelector('select[name="year"]').value;
+
+        // 1. KIỂM TRA HỌ TÊN
+        if (fullname === "" || !isValidName(fullname)) {
+            alert("Họ tên không hợp lệ! Vui lòng chỉ nhập chữ cái (không bao gồm số hay ký tự đặc biệt như @, #, $...).");
+            document.querySelector('input[name="fullname"]').focus();
+            return false; 
+        }
+
+        // 2. KIỂM TRA SỐ ĐIỆN THOẠI
+        if (phone !== "" && !isValidVietnamesePhone(phone)) {
+            alert("Số điện thoại không hợp lệ! Vui lòng nhập đúng định dạng số điện thoại Việt Nam (10 số).");
+            document.querySelector('input[name="phone"]').focus();
+            return false; 
+        }
+
+        // 3. KIỂM TRA NGÀY SINH HỢP LỆ
+        if (day !== "" && month !== "" && year !== "") {
+            let checkDate = new Date(year, month - 1, day); 
+            if (checkDate.getFullYear() != year || checkDate.getMonth() + 1 != month || checkDate.getDate() != day) {
+                alert("Ngày sinh không hợp lệ! Vui lòng chọn lại (Ví dụ: Tháng 2 không có ngày 30, 31).");
+                return false;
+            }
+        } else if ((day !== "" || month !== "" || year !== "") && !(day !== "" && month !== "" && year !== "")) {
+            alert("Vui lòng chọn đầy đủ Ngày, Tháng, Năm sinh hoặc để trống toàn bộ.");
+            return false;
+        }
+
+        return true; 
+    }
+
+    // Kiểm tra Form Thêm Địa Chỉ Mới
+    function validateAddressForm() {
+        let phone = document.querySelector('input[name="addr_phone"]').value.trim();
+        let address = document.querySelector('textarea[name="dia_chi_day_du"]').value.trim();
+
+        if (!isValidVietnamesePhone(phone)) {
+            alert("Số điện thoại giao hàng không hợp lệ! Vui lòng kiểm tra lại.");
+            document.querySelector('input[name="addr_phone"]').focus();
+            return false;
+        }
+
+        if (address.length < 10) {
+            alert("Vui lòng nhập địa chỉ đầy đủ và chi tiết hơn (ít nhất 10 ký tự).");
+            document.querySelector('textarea[name="dia_chi_day_du"]').focus();
+            return false;
+        }
+
+        return true;
+    }
+
+    // Hàm Xử Lý Xóa Địa Chỉ Bằng AJAX
+    function xoaDiachi(element) {
+        const addressId = $(element).data('id');
+        const parentCard = $(element).closest('.address-item');
+
+        if (confirm('Bạn chắc chắn muốn xóa địa chỉ này?')) {
+            $.ajax({
+                url: 'xuly_diachi.php', 
+                method: 'POST',
+                data: {
+                    action: 'xoa',
+                    id: addressId
+                },
+                success: function(response) {
+                    if (response.success) {
+                        parentCard.fadeOut(300, function() {
+                            $(this).remove();
+                            // Nếu xóa hết địa chỉ, có thể reload lại trang để hiện câu "Bạn chưa có địa chỉ nào"
+                            if ($('.address-item').length === 0) {
+                                location.reload();
+                            }
+                        });
+                    } else {
+                        alert('Lỗi: ' + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Lỗi AJAX:', error);
+                    alert('Có lỗi kết nối, vui lòng thử lại sau.');
+                }
+            });
+        }
+    }
+</script>                               
 </body>
 </html>
