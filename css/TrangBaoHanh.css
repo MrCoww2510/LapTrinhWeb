@@ -1,7 +1,7 @@
 .BH_khung_chinh {
 	font-family: Arial, Helvetica, sans-serif;
-	color: #ffffff;
-	background-color: #000000;
+	color: #333;
+	background-color: #e2e2e2;
 	padding: 20px 5%;
 	margin: 20px;
 	box-sizing: border-box;
@@ -21,7 +21,7 @@
 .BH_tieu_de {
 	font-size: 32px;
 	font-weight: bold;
-	color: #ffffff;
+	color: #222;
 	margin-bottom: 20px;
 }
 
@@ -33,29 +33,30 @@
 }
 
 .BH_phan_noi_dung {
-	background-color: #1e1e1e;
+	background-color: #ffffff;
 	padding: 40px;
-	border-radius: 8px;
+	border-radius: 10px;
 	margin-bottom: 40px;
 	border-left: 5px solid #d32f2f;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .BH_tieu_de_muc {
 	font-size: 22px;
 	font-weight: bold;
-	color: #ffffff;
+	color: #222;
 	margin-bottom: 20px;
 }
 
 .BH_doan_van {
 	font-size: 16px;
 	margin-bottom: 15px;
-	color: #cccccc;
+	color: #555;
 }
 
 .BH_doan_van_phu {
 	font-size: 16px;
-	color: #cccccc;
+	color: #555;
 	margin-top: 8px;
 	margin-bottom: 15px;
 }
@@ -69,7 +70,7 @@
 .BH_danh_sach > li {
 	font-size: 16px;
 	margin-bottom: 12px;
-	color: #cccccc;
+	color: #555;
 }
 
 .BH_danh_sach_con {
@@ -82,15 +83,16 @@
 .BH_danh_sach_con > li {
 	font-size: 16px;
 	margin-bottom: 8px;
-	color: #cccccc;
+	color: #666;
 }
 
 .BH_text_do {
-	color: #ef5350 !important;
+	color: #e53935 !important;
+	font-weight: bold;
 }
 
 .BH_text_xanh {
-	color: #42a5f5;
+	color: #1e88e5;
 	font-weight: bold;
 }
 
