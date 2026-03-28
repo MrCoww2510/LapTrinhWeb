@@ -1,20 +1,24 @@
-/* Toàn trang  */
+/* ================= TOÀN TRANG ================= */
+
 .SP_TrangSanPham {
 	background: white;
 	margin: 20px;
 	border-radius: 10px;
 }
-/* ===== THANH TRÊN ===== */
+
+/* ================= THANH TRÊN ================= */
+
 .SP_ThanhSP {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 15px 30px;
-	position: relative; 
+	position: relative;
 	z-index: 10;
 }
 
-/* ===== SẮP XẾP ===== */
+/* ================= SẮP XẾP ================= */
+
 .SP_SapXep {
 	position: relative;
 }
@@ -28,15 +32,16 @@
 }
 
 .SP_SapXepMenu {
+	display: none;
 	position: absolute;
 	top: 110%;
 	right: 0;
 	background: white;
 	border: 1px solid #ccc;
 	border-radius: 8px;
-	display: none;
 	width: 180px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	z-index: 20;
 }
 
 .SP_SapXepMenu li {
@@ -49,31 +54,22 @@
 	background: #eee;
 }
 
+.SP_SapXepMenu.show {
+	display: block;
+}
+
+/* ================= DANH SÁCH SẢN PHẨM ================= */
+
 .SP_DanhSachSanPham {
 	background: white;
-	border: 0px soild white;
 	border-radius: 10px;
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 20px;
+
 	padding: 40px;
-	overflow: hidden;
-}
-/* ================= PRODUCT ================= */
-
-.SP_DanhMuc {
-	border-radius: 10px;
-	border: 1px solid rgb(255, 255, 255);
-	background: white;
-	margin: 20px;
-	padding: 20px 5%;
-	overflow: hidden;
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
-}
-
-.SP_DanhMuc .SP_TenDanhMuc {
-	margin-bottom: 20px;
 }
 
 /* ================= KHUNG SẢN PHẨM ================= */
@@ -84,6 +80,12 @@
 	border-radius: 8px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	position: relative;
+	transition: 0.3s;
+}
+
+.SP_SanPham:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= HÌNH ẢNH ================= */
@@ -94,8 +96,9 @@
 }
 
 .SP_HinhAnh img {
-	width: 200px;
-	height: 200px;
+	width: 100%;
+	max-width: 200px;
+	max-height: 200px;
 }
 
 /* ================= TÊN SẢN PHẨM ================= */
@@ -122,16 +125,7 @@
 	margin: 4px 0;
 }
 
-/* ================= GIÁ CŨ ================= */
-
-.SP_GiaCu {
-	text-decoration: line-through;
-	color: #888;
-	font-size: 14px;
-	margin-bottom: 5px;
-}
-
-/* ================= GIÁ MỚI ================= */
+/* ================= GIÁ ================= */
 
 .SP_Gia {
 	display: flex;
@@ -144,14 +138,6 @@
 	color: #e60012;
 	font-size: 22px;
 	font-weight: bold;
-}
-
-.SP_GiamGia {
-	border: 1px solid red;
-	color: red;
-	padding: 2px 6px;
-	font-size: 13px;
-	border-radius: 4px;
 }
 
 /* ================= ĐÁNH GIÁ ================= */
@@ -170,37 +156,40 @@
 	color: #888;
 	margin-left: 5px;
 }
-.SP_SanPham:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-/* ======nút====== */
+
+/* ================= NÚT ================= */
+
 .SP_SanPham button {
 	width: 100%;
-	border: 0px;
+	border: none;
 	color: white;
 	background-color: red;
 	padding: 10px;
 	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.2s;
 }
 
-/* đặc biệt */
-@media (max-width: 1024px) {
-	.SP.SP_DanhSachSanPham {
-		grid-template-columns: repeat(2, 1fr);
-	}
+.SP_SanPham button:hover {
+	background-color: #c40000;
+}
 
-	.TC_blogList {
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+	.SP_DanhSachSanPham {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (max-width: 1024px) {
+	.SP_DanhSachSanPham {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media (max-width: 600px) {
 	.SP_DanhSachSanPham {
-		grid-template-columns: 1fr;
-	}
-
-	.TC_blogList {
 		grid-template-columns: 1fr;
 	}
 }
