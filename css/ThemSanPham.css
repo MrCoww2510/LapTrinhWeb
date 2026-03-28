@@ -1,4 +1,4 @@
-.container{
+.TSP_ThemSanPham{
     width: 400px;
     margin: 50px auto;
     background: white;
@@ -11,7 +11,7 @@ h2{
     text-align: center;
 }
 
-.form-group{
+.TSP_ThanhPhan{
     margin-bottom: 15px;
 }
 
@@ -20,24 +20,25 @@ label{
     margin-bottom: 5px;
 }
 
-input, textarea{
+.TSP_ThemSanPham input,
+.TSP_ThemSanPham textarea{
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-button{
+.TSP_ThemSanPham button{
     width: 100%;
     padding: 10px;
-    background: #28a745;
+    background: red;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover{
+.TSP_ThemSanPham button:hover{
     background: #218838;
 }
 
