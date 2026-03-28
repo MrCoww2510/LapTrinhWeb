@@ -40,6 +40,25 @@
 		<p>© 2026 F1GamingGear - Nhóm 10 </p>
 	</div>
 </footer>
+<button onclick="scrollToTop()" id="backToTop">↑</button>
+<script>
+let backToTop = document.getElementById("backToTop");
+
+window.onscroll = function() {
+	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+		backToTop.style.display = "block";
+	} else {
+		backToTop.style.display = "none";
+	}
+};
+
+function scrollToTop() {
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth"
+	});
+}
+</script>
 </body>
 
 </html>
