@@ -1,49 +1,73 @@
-.TSP_ThemSanPham{
-    width: 400px;
-    margin: 50px auto;
+.qlsp-container {
+    max-width: 1000px;
+    margin: auto;
+    font-family: Arial;
+}
+
+.qlsp-card {
     background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #ddd;
 }
 
-h2{
-    text-align: center;
-}
-
-.TSP_ThanhPhan{
-    margin-bottom: 15px;
-}
-
-label{
-    display: block;
-    margin-bottom: 5px;
-}
-
-.TSP_ThemSanPham input,
-.TSP_ThemSanPham textarea{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.TSP_ThemSanPham button{
-    width: 100%;
-    padding: 10px;
-    background: red;
-    color: white;
+.qlsp-btn {
+    padding: 10px 15px;
+    border-radius:5px;
+    text-decoration: none;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.TSP_ThemSanPham button:hover{
-    background: #218838;
+.qlsp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#preview{
-    margin-top: 10px;
+.qlsp-btn-add {
+    background: black;
+    color: white;
+    display: inline-block;
+}
+
+.qlsp-btn-edit {
+    color: black;
+}
+
+.qlsp-btn-delete {
+    color: red;
+}
+
+.qlsp-input,
+.qlsp-textarea {
     width: 100%;
-    display: none;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.qlsp-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.qlsp-table th,
+.qlsp-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.qlsp-table th {
+    background: #fafafa;
+    text-align: left;
+}
+
+.qlsp-table tr:hover {
+    background: #f1f1f1;
 }

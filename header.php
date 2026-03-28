@@ -77,6 +77,7 @@
 						<li><a href="TrangBaoHanh.php">Bảo hành</a></li>
 						<li><a href="TrangSanPham.php">Sản phẩm</a></li>
 						<li><a href="TraCuuDonHang.php">Tra cứu đơn hàng</a></li>
+						<li><a href="ThemSanPham.php">Thêm sản phẩm</a></li>
 
 					</ul>
 				</nav>
@@ -91,6 +92,7 @@
 				<li><a href="TrangBaoHanh.php">Bảo hành</a></li>
 				<li><a href="TrangSanPham.php">Sản phẩm</a></li>
 				<li><a href="TraCuuDonHang.php">Tra cứu đơn hàng</a></li>
+				<li><a href="ThemSanPham.php">Thêm sản phẩm</a></li>
 			</ul>
 		</nav>
 	</header>
