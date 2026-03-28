@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("config.php"); // Nhúng file kết nối Database
+require_once("config.php");
 
 // Kiểm tra đăng nhập (bắt buộc phải có để biết giỏ hàng của ai)
 if (!KiemTraDangNhap()) {
@@ -19,7 +19,7 @@ $sql_cart = "SELECT od.id AS detail_id, p.name, p.image, p.price, od.quantity
 $result_cart = $Conn->query($sql_cart);
 $grand_total = 0;
 
-include("header.php"); // Gọi Header
+include("header.php");
 ?>
 
 <section class="GH_container">
@@ -81,7 +81,7 @@ include("header.php"); // Gọi Header
 
         <div class="GH_actions">
             <button class="GH_continue" onclick="window.location.href='TrangSanPham.php'">← Tiếp tục mua</button>
-            <button class="GH_checkout">Thanh toán →</button>
+            <button class="GH_checkout" onclick="moPopupThanhToan()">Thanh toán →</button>
         </div>
     </div>
 </section>
@@ -119,5 +119,53 @@ include("header.php"); // Gọi Header
     });
 </script>
 
-<?php include("footer.php"); // Gọi Footer 
+<div id="popupThanhToan" class="GH_modal">
+    <div class="GH_modal_content">
+        <div class="GH_modal_header">
+            Xác nhận đơn hàng - F1GamingGear
+        </div>
+
+        <div class="GH_modal_body">
+            <p><strong>Khách hàng:</strong> <?= $_SESSION['user']['fullname'] ?? 'Chưa cập nhật' ?></p>
+            <hr style="border: 0.5px solid #eee; margin: 15px 0;">
+
+            <p><strong>Sản phẩm trong giỏ:</strong></p>
+            <ul>
+                <?php
+                // Reset lại con trỏ dữ liệu để vòng lặp có thể chạy lại lần 2 lấy tên sản phẩm
+                if (isset($result_cart) && $result_cart->num_rows > 0) {
+                    mysqli_data_seek($result_cart, 0);
+                    while ($item = $result_cart->fetch_assoc()) {
+                        echo "<li>" . $item['name'] . " <b>(x" . $item['quantity'] . ")</b></li>";
+                    }
+                }
+                ?>
+            </ul>
+
+            <hr style="border: 0.5px solid #eee; margin: 15px 0;">
+            <h3 style="color: red; text-align: right; margin: 0;">
+                Tổng thanh toán: <?= number_format($grand_total, 0, ',', '.') ?>đ
+            </h3>
+        </div>
+
+        <div class="GH_modal_footer">
+            <button class="btn-huy" onclick="dongPopupThanhToan()">Hủy bỏ</button>
+            <button class="btn-xac-nhan" onclick="window.location.href='TrangThanhToan.php'">Xác nhận</button>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function moPopupThanhToan() {
+        document.getElementById('popupThanhToan').style.display = 'block';
+    }
+
+    function dongPopupThanhToan() {
+        document.getElementById('popupThanhToan').style.display = 'none';
+    }
+</script>
+
+<?php include("footer.php");
 ?>
