@@ -1,7 +1,7 @@
 <?php if (session_status() == PHP_SESSION_NONE) {session_start();}
-// =======================
+
 // KẾT NỐI DATABASE
-// =======================
+
 
 $Host = "localhost";      // Server MySQL (XAMPP mặc định là localhost)
 $User = "root";           // User mặc định XAMPP
@@ -16,16 +16,8 @@ if ($Conn->connect_error) {
 	die("❌ Kết nối database thất bại: " . $Conn->connect_error);
 }
 
-// =======================
-// SET UTF-8 (TRÁNH LỖI TIẾNG VIỆT)
-// =======================
 $Conn->set_charset("utf8");
-// =======================
-// KHỞI TẠO SESSION
-// =======================
-// =======================
-// (OPTIONAL) HÀM HỖ TRỢ
-// =======================
+
 
 // Hàm kiểm tra đăng nhập
 function KiemTraDangNhap() {
@@ -37,4 +29,5 @@ function LaAdmin() {
 	return isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin';
 }
 
+// tránh lỗi session
 ?>

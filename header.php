@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="css/GioHang.css">
 	<link rel="stylesheet" href="css/TrangGioiThieu.css">
 	<link rel="stylesheet" href="css/TraCuuDonHang.css">
-	<link rel="stylesheet" href="css/ThemSanPham.css">
+	<link rel="stylesheet" href="css/qlsp.css">
 
 </head>
 
@@ -77,7 +77,10 @@
 						<li><a href="TrangBaoHanh.php">Bảo hành</a></li>
 						<li><a href="TrangSanPham.php">Sản phẩm</a></li>
 						<li><a href="TraCuuDonHang.php">Tra cứu đơn hàng</a></li>
-						<li><a href="ThemSanPham.php">Thêm sản phẩm</a></li>
+
+						<?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
+						<li><a href="ThemSanPham.php">Quản lí sản phẩm</a></li>
+						<?php endif; ?>
 
 					</ul>
 				</nav>
@@ -92,8 +95,11 @@
 				<li><a href="TrangBaoHanh.php">Bảo hành</a></li>
 				<li><a href="TrangSanPham.php">Sản phẩm</a></li>
 				<li><a href="TraCuuDonHang.php">Tra cứu đơn hàng</a></li>
-				<li><a href="ThemSanPham.php">Thêm sản phẩm</a></li>
+
+				<?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
+				<li><a href="ThemSanPham.php">Quản lí sản phẩm</a></li>
+				<?php endif; ?>
+
 			</ul>
 		</nav>
 	</header>
-	<?php include 'html/DangNhap.html'; ?>
