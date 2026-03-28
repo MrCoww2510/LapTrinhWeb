@@ -1,5 +1,5 @@
 <?php
-session_start(); // Thêm dòng này nếu bạn chưa có ở file config.php để chạy Session
+session_start(); 
 require_once 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,6 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("<script>alert('Họ hoặc Tên không hợp lệ!'); history.back();</script>");
         }
 
+        // KIỂM TRA BẢO MẬT MẬT KHẨU (Ít nhất 8 ký tự, 1 chữ in hoa, 1 ký tự đặc biệt)
+        if (!preg_match("/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/", $mat_khau)) {
+            die("<script>alert('Lỗi: Mật khẩu phải có ít nhất 8 ký tự, bao gồm ít nhất 1 chữ in hoa và 1 ký tự đặc biệt!'); history.back();</script>");
+        }
+
         // Kiểm tra Tài khoản phải là Email HOẶC Số điện thoại
         $email_regex = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
         $phone_regex = "/^(84|0[3|5|7|8|9])+([0-9]{8})$/";
@@ -36,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fullname = $ho . " " . $ten;
         $role = 'customer';
 
-        // Phân loại tài khoản là email hay sđt để lưu cho đúng cột
+        // Phân loại tài khoản là email hay sđt 
         $email_luu = preg_match($email_regex, $tai_khoan) ? $tai_khoan : NULL;
         $phone_luu = preg_match($phone_regex, $tai_khoan) ? $tai_khoan : NULL;
 
@@ -50,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('Tài khoản, Email hoặc Số điện thoại này đã tồn tại!'); history.back();</script>";
         } else {
             
-            // LƯU TRỰC TIẾP MẬT KHẨU CHƯA MÃ HÓA VÀO DB
+            // LƯU MẬT KHẨU 
             $stmt_insert = $Conn->prepare("INSERT INTO users (username, password, fullname, email, phone, role) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt_insert->bind_param("ssssss", $tai_khoan, $mat_khau, $fullname, $email_luu, $phone_luu, $role);
 
@@ -84,12 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             
-            // SO SÁNH MẬT KHẨU TRỰC TIẾP (Không dùng password_verify)
+            // SO SÁNH MẬT KHẨU TRỰC TIẾP 
             if ($mat_khau === $user['password']) {
-                
-                // Xóa trường password khỏi mảng session để bảo mật
                 unset($user['password']); 
-                
                 $_SESSION['user'] = $user;
                 echo "<script> window.location.href='index.php';</script>";
             } else {

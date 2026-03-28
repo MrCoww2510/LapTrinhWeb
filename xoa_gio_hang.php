@@ -20,8 +20,7 @@ if (isset($_GET['id'])) {
        Chỉ cho phép xóa dòng trong bảng order_details NẾU:
        - Đúng ID chi tiết đơn hàng ($detail_id)
        - Đơn hàng đó phải thuộc về User đang đăng nhập ($user_id)
-       - Đơn hàng đó phải đang ở trạng thái Giỏ hàng ('Cart')
-       (Viết thế này để chống trường hợp user đổi số ID trên URL để xóa trộm đồ của người khác)
+       - Đơn hàng đó phải đang ở trạng thái Giỏ hàng
     */
     $sql_delete = "DELETE order_details 
                    FROM order_details 
@@ -31,7 +30,7 @@ if (isset($_GET['id'])) {
                    AND orders.status = 'Cart'";
 
     if ($Conn->query($sql_delete) === TRUE) {
-        // Xóa thành công, quay lại trang giỏ hàng
+
         header("Location: GioHang.php");
         exit();
     } else {

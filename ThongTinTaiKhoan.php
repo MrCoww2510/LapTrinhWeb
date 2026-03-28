@@ -91,7 +91,6 @@ $result_address = $Conn->query($sql_address);
 						<input type="text" name="fullname" class="TTTK_input"
 							value="<?php echo htmlspecialchars($userInfo['fullname']); ?>" required>
 					</div>
-
 					<div class="TTTK_form_group">
 						<label class="TTTK_label">Giới tính</label>
 						<div class="TTTK_radio_group">
@@ -103,6 +102,37 @@ $result_address = $Conn->query($sql_address);
 								<input type="radio" name="gender" value="Nữ"
 									<?php echo ($current_gender == 'Nữ') ? 'checked' : ''; ?>> Nữ
 							</label>
+						</div>
+					</div>
+					<div class="TTTK_form_group">
+						<label class="TTTK_label">Đổi mật khẩu </label>
+						<input type="password" name="new_password" class="TTTK_input" placeholder="Nhập mật khẩu mới ">
+					</div>
+
+					<div class="TTTK_form_group">
+						<label class="TTTK_label">Ngày sinh</label>
+						<div class="TTTK_select_group">
+							<select name="day" class="TTTK_select">
+								<option value="">Ngày</option>
+								<?php for($i=1;$i<=31;$i++): ?>
+								<option value="<?php echo $i; ?>" <?php echo ($i == $bd_day) ? "selected" : ""; ?>>
+									<?php echo $i; ?></option>
+								<?php endfor; ?>
+							</select>
+							<select name="month" class="TTTK_select">
+								<option value="">Tháng</option>
+								<?php for($i=1;$i<=12;$i++): ?>
+								<option value="<?php echo $i; ?>" <?php echo ($i == $bd_month) ? "selected" : ""; ?>>
+									Tháng <?php echo $i; ?></option>
+								<?php endfor; ?>
+							</select>
+							<select name="year" class="TTTK_select">
+								<option value="">Năm</option>
+								<?php for($i=date("Y");$i>=1950;$i--): ?>
+								<option value="<?php echo $i; ?>" <?php echo ($i == $bd_year) ? "selected" : ""; ?>>
+									<?php echo $i; ?></option>
+								<?php endfor; ?>
+							</select>
 						</div>
 					</div>
 
@@ -259,26 +289,19 @@ $result_address = $Conn->query($sql_address);
 		document.getElementById('TTTK_AddressModal').style.display = 'none';
 	}
 
+	<<
+	<<
+	<<
+	< HEAD
 	// Fix lỗi kéo bôi đen chuột đóng form bằng cách dùng mousedown thay vì onclick
 	window.addEventListener('mousedown', function(event) {
 		const popup = document.getElementById("TTTK_AddressModal");
 		if (event.target == popup) {
 			TTTK_closeModal();
 		}
-	});
-
-	// Hàm kiểm tra định dạng số điện thoại Việt Nam
-	function isValidVietnamesePhone(phone) {
-		const phoneRegex = /^(84|0[3|5|7|8|9])[0-9]{8}$/;
-		return phoneRegex.test(phone);
-	}
-
-	// Hàm kiểm tra Họ Tên (Chỉ cho phép chữ cái tiếng Việt và khoảng trắng)
-	function isValidName(name) {
-		const nameRegex = /^[\p{L}\s]+$/u;
-		return nameRegex.test(name);
-	}
-
+	}); ===
+	===
+	=
 	// Kiểm tra Form Thông Tin Tài Khoản
 	function validateProfileForm() {
 		let fullname = document.querySelector('input[name="fullname"]').value.trim();
@@ -286,13 +309,59 @@ $result_address = $Conn->query($sql_address);
 		let day = document.querySelector('select[name="day"]').value;
 		let month = document.querySelector('select[name="month"]').value;
 		let year = document.querySelector('select[name="year"]').value;
+		let newPassword = document.querySelector('input[name="new_password"]').value.trim(); >>>
+		>>>
+		>
+		065 bb1af4126a61384f9c85a3bbd2b4f30d31027
 
-		// 1. KIỂM TRA HỌ TÊN
-		if (fullname === "" || !isValidName(fullname)) {
-			alert("Họ tên không hợp lệ! Vui lòng chỉ nhập chữ cái (không bao gồm số hay ký tự đặc biệt như @, #, $...).");
-			document.querySelector('input[name="fullname"]').focus();
-			return false;
+		// Hàm kiểm tra định dạng số điện thoại Việt Nam
+		function isValidVietnamesePhone(phone) {
+			const phoneRegex = /^(84|0[3|5|7|8|9])[0-9]{8}$/;
+			return phoneRegex.test(phone);
 		}
+
+		// Hàm kiểm tra Họ Tên (Chỉ cho phép chữ cái tiếng Việt và khoảng trắng)
+		function isValidName(name) {
+			const nameRegex = /^[\p{L}\s]+$/u;
+			return nameRegex.test(name);
+		}
+
+		// Kiểm tra Form Thông Tin Tài Khoản
+		function validateProfileForm() {
+			let fullname = document.querySelector('input[name="fullname"]').value.trim();
+			let phone = document.querySelector('input[name="phone"]').value.trim();
+			let day = document.querySelector('select[name="day"]').value;
+			let month = document.querySelector('select[name="month"]').value;
+			let year = document.querySelector('select[name="year"]').value;
+
+			<<
+			<<
+			<<
+			< HEAD
+			// 1. KIỂM TRA HỌ TÊN
+			if (fullname === "" || !isValidName(fullname)) {
+				alert(
+					"Họ tên không hợp lệ! Vui lòng chỉ nhập chữ cái (không bao gồm số hay ký tự đặc biệt như @, #, $...)."
+				);
+				document.querySelector('input[name="fullname"]').focus();
+				return false;
+			} ===
+			===
+			=
+			// 4. KIỂM TRA MẬT KHẨU
+			if (newPassword !== "") {
+				// Regex: Ít nhất 8 ký tự, 1 chữ in hoa, 1 ký tự đặc biệt
+				const passwordRegex = /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+				if (!passwordRegex.test(newPassword)) {
+					alert("Mật khẩu mới phải có ít nhất 8 ký tự, bao gồm ít nhất 1 chữ in hoa và 1 ký tự đặc biệt!");
+					document.querySelector('input[name="new_password"]').focus();
+					return false;
+				}
+			}
+		} >>>
+		>>>
+		>
+		065 bb1af4126a61384f9c85a3bbd2b4f30d31027
 
 		// 2. KIỂM TRA SỐ ĐIỆN THOẠI
 		if (phone !== "" && !isValidVietnamesePhone(phone)) {
