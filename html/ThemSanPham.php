@@ -15,49 +15,50 @@ if(isset($_POST['them'])){
 ?>
 
 <div class="container">
-    <h2>THÊM SẢN PHẨM</h2>
+	<h2>THÊM SẢN PHẨM</h2>
 
-    <form method="POST" enctype="multipart/form-data">
-        
-        <!-- Ảnh -->
-        <div class="form-group">
-            <label>Hình ảnh</label>
-            <input type="file" name="hinhanh" id="fileInput" required>
-            <img id="preview" src="" alt="">
-        </div>
+	<form method="POST" enctype="multipart/form-data">
 
-        <!-- Tên -->
-        <div class="form-group">
-            <label>Tên sản phẩm</label>
-            <input type="text" name="ten" required>
-        </div>
+		<!-- Ảnh -->
+		<div class="form-group">
+			<label>Hình ảnh</label>
+			<input type="file" name="hinhanh" id="fileInput" required>
+			<img id="preview" src="" alt="">
+		</div>
 
-        <!-- Giá -->
-        <div class="form-group">
-            <label>Giá</label>
-            <input type="number" name="gia" required>
-        </div>
+		<!-- Tên -->
+		<div class="form-group">
+			<label>Tên sản phẩm</label>
+			<input type="text" name="ten" required>
+		</div>
 
-        <!-- Thông số -->
-        <div class="form-group">
-            <label>Thông số</label>
-            <textarea name="thongso" rows="4"></textarea>
-        </div>
+		<!-- Giá -->
+		<div class="form-group">
+			<label>Giá</label>
+			<input type="number" name="gia" required>
+		</div>
 
-        <button type="submit" name="them">Thêm sản phẩm</button>
-    </form>
+		<!-- Thông số -->
+		<div class="form-group">
+			<label>Thông số</label>
+			<textarea name="thongso" rows="4"></textarea>
+		</div>
+
+		<button type="submit" name="them">Thêm sản phẩm</button>
+	</form>
 </div>
 
 <script>
-document.getElementById("fileInput").onchange = function(e){
-    const [file] = e.target.files;
-    if(file){
-        let img = document.getElementById("preview");
-        img.src = URL.createObjectURL(file);
-        img.style.display = "block";
-    }
+document.getElementById("fileInput").onchange = function(e) {
+	const [file] = e.target.files;
+	if (file) {
+		let img = document.getElementById("preview");
+		img.src = URL.createObjectURL(file);
+		img.style.display = "block";
+	}
 }
 </script>
 
 </body>
+
 </html>

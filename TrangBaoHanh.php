@@ -1,5 +1,5 @@
-<?php 
+<?php
     include("header.php");
     include("html/TrangBaoHanh.html");
-    include("footer.php"); 
+    include("footer.php");
 ?>
