@@ -9,8 +9,8 @@ $sqlNoiBat = "SELECT p.id, p.name, p.price, p.stock, p.image,
                      b.name AS brand_name,
                      c.name AS category_name
               FROM products p
-              JOIN brands b ON p.brand_id = b.id
-              JOIN categories c ON p.category_id = c.id
+              LEFT JOIN brands b ON p.brand_id = b.id
+              LEFT JOIN categories c ON p.category_id = c.id
               LIMIT 5";
 
 $resultNoiBat = $Conn->query($sqlNoiBat);
@@ -27,10 +27,10 @@ $sqlMoi = "SELECT p.id, p.name, p.price, p.stock, p.image,
    			b.name AS brand_name,
             c.name AS category_name
            	FROM products p
-			JOIN brands b ON p.brand_id = b.id
-            JOIN categories c ON p.category_id = c.id
-           ORDER BY p.id DESC
-           LIMIT 5";
+			LEFT JOIN brands b ON p.brand_id = b.id
+            LEFT JOIN categories c ON p.category_id = c.id
+           	ORDER BY p.id DESC
+           	LIMIT 5";
 
 $resultMoi = $Conn->query($sqlMoi);
 
@@ -46,22 +46,8 @@ if (!$resultMoi) {
 		<img src="img/Banner.png" />
 	</section>
 
-	<!-- ================= CATEGORY ================= -->
-	<!-- <section class="TC_category">
-		<h2 class="TC_title">Danh mục sản phẩm</h2>
-
-		<div class="TC_categoryContainer">
-			<div class="TC_categoryItem">Bàn phím</div>
-			<div class="TC_categoryItem">Chuột</div>
-			<div class="TC_categoryItem">Tai nghe</div>
-			<div class="TC_categoryItem">Laptop</div>
-			<div class="TC_categoryItem">Màn hình</div>
-			<div class="TC_categoryItem">Ghế Gaming</div>
-		</div>
-	</section> -->
-
 	<!-- ================= SẢN PHẨM NỔI BẬT ================= -->
-	<section class="SP_DanhMuc">
+	<section class="TC_category">
 		<h2 class="SP_TenDanhMuc">Sản phẩm nổi bật</h2>
 
 		<div class="SP_DanhSachSanPham">
@@ -109,7 +95,7 @@ if (!$resultMoi) {
 	</section>
 
 	<!-- ================= SẢN PHẨM MỚI ================= -->
-	<section class="SP_DanhMuc">
+	<section class="TC_category">
 		<h2 class="SP_TenDanhMuc">Sản phẩm mới</h2>
 
 		<div class="SP_DanhSachSanPham">

@@ -74,6 +74,11 @@
 
 /* ================= KHUNG SẢN PHẨM ================= */
 
+.SP_TenDanhMuc {
+	text-align: center;
+	font-size: 2em;
+}
+
 .SP_SanPham {
 	background: white;
 	padding: 15px;

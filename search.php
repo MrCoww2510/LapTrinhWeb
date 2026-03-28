@@ -12,8 +12,8 @@ if(isset($_GET['keyword'])){
                    brands.name AS brand_name,
                    categories.name AS category_name
             FROM products
-            JOIN brands ON products.brand_id = brands.id
-            JOIN categories ON products.category_id = categories.id
+            LEFT JOIN brands ON products.brand_id = brands.id
+            LEFT JOIN categories ON products.category_id = categories.id
             WHERE products.name LIKE '%$keyword%'";
 
     $result = $conn->query($sql);

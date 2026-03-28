@@ -31,16 +31,12 @@ switch ($sort) {
 		$order = "ORDER BY p.id DESC"; // nổi bật
 }
 
-// =======================
-// LẤY DỮ LIỆU
-// =======================
-
 $sql = "SELECT p.id, p.name, p.price, p.stock, p.image,
         b.name AS brand_name,
         c.name AS category_name
         FROM products p
-        JOIN brands b ON p.brand_id = b.id
-        JOIN categories c ON p.category_id = c.id
+        LEFT JOIN brands b ON p.brand_id = b.id
+        LEFT JOIN categories c ON p.category_id = c.id
         $order";
 
 $result = $Conn->query($sql);

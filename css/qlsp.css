@@ -14,28 +14,51 @@
 	box-shadow: 0 0 10px #ddd;
 }
 
-.QLSP_btn {
-	padding: 10px 15px;
-	border-radius: 5px;
-	cursor: pointer;
+/* ================= BUTTON CHUNG ================= */
+.QLSP_btn,
+.QLSP_btn_add,
+.QLSP_btn_edit,
+.QLSP_btn_delete {
+	display: inline-block;
+	padding: 10px 16px;
+	border-radius: 8px;
 	border: none;
-}
-.QLSP_btn_add {
+
 	background: black;
 	color: white;
+
+	font-size: 14px;
+	font-weight: 500;
+
+	cursor: pointer;
+	transition: all 0.25s ease;
+	text-align: center;
 }
 
-.QLSP_btn_edit {
-	background: black;
-	color: white;
-	padding: 6px 10px;
-	border-radius: 6px;
+.QLSP_btn:hover,
+.QLSP_btn_add:hover,
+.QLSP_btn_edit:hover {
+	background: #333;
+	transform: translateY(-2px);
 }
 .QLSP_btn_delete {
-	background: red;
-	color: white;
-	padding: 6px 10px;
-	border-radius: 6px;
+	background: #e53935;
+}
+.QLSP_btn_delete:hover {
+	background: #b71c1c;
+	transform: translateY(-2px);
+}
+.QLSP_btn:active,
+.QLSP_btn_add:active,
+.QLSP_btn_edit:active,
+.QLSP_btn_delete:active {
+	transform: scale(0.95);
+}
+a.QLSP_btn,
+a.QLSP_btn_add,
+a.QLSP_btn_edit,
+a.QLSP_btn_delete {
+	text-decoration: none;
 }
 
 .QLSP_input {

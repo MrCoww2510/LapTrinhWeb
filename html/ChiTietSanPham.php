@@ -12,8 +12,8 @@ $sql = "SELECT p.*,
                c.name AS category_name,
                t.cpu, t.ram, t.vga, t.storage, t.screen, t.battery, t.weight
         FROM products p
-        JOIN brands b ON p.brand_id = b.id
-        JOIN categories c ON p.category_id = c.id
+        LEFT JOIN brands b ON p.brand_id = b.id
+        LEFT JOIN categories c ON p.category_id = c.id
         LEFT JOIN thongso t ON p.id = t.product_id
         WHERE p.id = $id";
 
