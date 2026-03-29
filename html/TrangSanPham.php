@@ -66,42 +66,42 @@ $result = $Conn->query($sql);
 
 		<?php while ($row = $result->fetch_assoc()): ?>
 
-		<div class="SP_SanPham">
+			<div class="SP_SanPham">
 
-			<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
+				<a href="ChiTietSanPham.php?id=<?= $row['id'] ?>">
 
-				<div class="SP_HinhAnh">
-					<img src="SanPham/<?= $row['image'] ?>" alt="img">
-				</div>
+					<div class="SP_HinhAnh">
+						<img src="SanPham/<?= $row['image'] ?>" alt="img">
+					</div>
 
-				<h3 class="SP_TenSanPham">
-					<?= $row['name'] ?>
-				</h3>
+					<h3 class="SP_TenSanPham">
+						<?= $row['name'] ?>
+					</h3>
 
-				<div class="SP_ThongSo">
-					<div>Hãng: <?= $row['brand_name'] ?></div>
-					<div>Loại: <?= $row['category_name'] ?></div>
-					<div>Còn lại: <?= $row['stock'] ?></div>
-				</div>
+					<div class="SP_ThongSo">
+						<div>Hãng: <?= $row['brand_name'] ?></div>
+						<div>Loại: <?= $row['category_name'] ?></div>
+						<div>Còn lại: <?= $row['stock'] ?></div>
+					</div>
 
-				<div class="SP_Gia">
-					<span class="SP_GiaMoi">
-						<?= number_format($row['price'], 0, ',', '.') ?>đ
-					</span>
-				</div>
+					<div class="SP_Gia">
+						<span class="SP_GiaMoi">
+							<?= number_format($row['price'], 0, ',', '.') ?>đ
+						</span>
+					</div>
 
-				<div class="SP_DanhGia">
-					<span class="SP_Sao">★</span> 5.0
-					<span class="SP_NhanXet">(100 đánh giá)</span>
-				</div>
+					<div class="SP_DanhGia">
+						<span class="SP_Sao">★</span> 5.0
+						<span class="SP_NhanXet">(100 đánh giá)</span>
+					</div>
 
-			</a>
+				</a>
 
-			<a href="addToCart.php?id=<?= $row['id'] ?>">
-				<button>Thêm vào giỏ</button>
-			</a>
+				<a href="addToCart.php?id=<?= $row['id'] ?>">
+					<button>Thêm vào giỏ</button>
+				</a>
 
-		</div>
+			</div>
 
 		<?php endwhile; ?>
 
@@ -111,30 +111,30 @@ $result = $Conn->query($sql);
 
 
 <script>
-function toggleSort() {
-	document.getElementById("SP_SapXepMenu").classList.toggle("show");
-}
+	function toggleSort() {
+		document.getElementById("SP_SapXepMenu").classList.toggle("show");
+	}
 
-function selectSort(type) {
+	function selectSort(type) {
 
-	document.getElementById("SP_SXHienTai").innerText = type;
+		document.getElementById("SP_SXHienTai").innerText = type;
 
-	let sortValue = "featured";
+		let sortValue = "featured";
 
-	if (type === "Tên từ A-Z") sortValue = "name_asc";
-	if (type === "Tên từ Z-A") sortValue = "name_desc";
-	if (type === "Giá tăng dần") sortValue = "price_asc";
-	if (type === "Giá giảm dần") sortValue = "price_desc";
+		if (type === "Tên từ A-Z") sortValue = "name_asc";
+		if (type === "Tên từ Z-A") sortValue = "name_desc";
+		if (type === "Giá tăng dần") sortValue = "price_asc";
+		if (type === "Giá giảm dần") sortValue = "price_desc";
 
-	window.location.href = "TrangSanPham.php?sort=" + sortValue;
-}
+		window.location.href = "TrangSanPham.php?sort=" + sortValue;
+	}
 
-// hiển thị sort hiện tại khi load trang
-const urlParams = new URLSearchParams(window.location.search);
-const sort = urlParams.get('sort');
+	// hiển thị sort hiện tại khi load trang
+	const urlParams = new URLSearchParams(window.location.search);
+	const sort = urlParams.get('sort');
 
-if (sort === "name_asc") document.getElementById("SP_SXHienTai").innerText = "Tên từ A-Z";
-if (sort === "name_desc") document.getElementById("SP_SXHienTai").innerText = "Tên từ Z-A";
-if (sort === "price_asc") document.getElementById("SP_SXHienTai").innerText = "Giá tăng dần";
-if (sort === "price_desc") document.getElementById("SP_SXHienTai").innerText = "Giá giảm dần";
+	if (sort === "name_asc") document.getElementById("SP_SXHienTai").innerText = "Tên từ A-Z";
+	if (sort === "name_desc") document.getElementById("SP_SXHienTai").innerText = "Tên từ Z-A";
+	if (sort === "price_asc") document.getElementById("SP_SXHienTai").innerText = "Giá tăng dần";
+	if (sort === "price_desc") document.getElementById("SP_SXHienTai").innerText = "Giá giảm dần";
 </script>

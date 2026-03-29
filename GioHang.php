@@ -23,22 +23,22 @@ include("header.php");
 ?>
 
 <section class="GH_container">
-	<h2 class="GH_title">🛒 Giỏ hàng của bạn</h2>
+    <h2 class="GH_title">🛒 Giỏ hàng của bạn</h2>
 
-	<table class="GH_table">
-		<thead>
-			<tr>
-				<th>Hình</th>
-				<th>Tên sản phẩm</th>
-				<th>Giá</th>
-				<th>Số lượng</th>
-				<th>Tổng</th>
-				<th>Xóa</th>
-			</tr>
-		</thead>
+    <table class="GH_table">
+        <thead>
+            <tr>
+                <th>Hình</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+                <th>Xóa</th>
+            </tr>
+        </thead>
 
-		<tbody>
-			<?php
+        <tbody>
+            <?php
             // Nếu có sản phẩm trong giỏ thì lặp để in ra
             if ($result_cart && $result_cart->num_rows > 0):
                 while ($row = $result_cart->fetch_assoc()):
@@ -46,92 +46,100 @@ include("header.php");
                     $grand_total += $subtotal;
             ?>
 
-			<tr class="GH_item" data-price="<?= $row['price'] ?>">
-				<td>
-					<img src="SanPham/<?= $row['image'] ?>" alt="" width="80" />
-				</td>
-				<td><?= $row['name'] ?></td>
-				<td><?= number_format($row['price'], 0, ',', '.') ?>đ</td>
-				<td>
-					<input type="number" value="<?= $row['quantity'] ?>" min="1" class="GH_quantity" />
-				</td>
-				<td class="GH_item_subtotal"><?= number_format($subtotal, 0, ',', '.') ?>đ</td>
-				<td>
-					<a href="xoa_gio_hang.php?id=<?= $row['detail_id'] ?>">
-						<button type="button" class="GH_delete" style="cursor: pointer;">❌</button>
-					</a>
-				</td>
-			</tr>
+                    <tr class="GH_item" data-price="<?= $row['price'] ?>">
+                        <td>
+                            <img src="SanPham/<?= $row['image'] ?>" alt="" width="80" />
+                        </td>
+                        <td><?= $row['name'] ?></td>
+                        <td><?= number_format($row['price'], 0, ',', '.') ?>đ</td>
+                        <td>
+                            <input type="number" value="<?= $row['quantity'] ?>" min="1" class="GH_quantity" data-id="<?= $row['detail_id'] ?>" />
+                        </td>
+                        <td class="GH_item_subtotal"><?= number_format($subtotal, 0, ',', '.') ?>đ</td>
+                        <td>
+                            <a href="xoa_gio_hang.php?id=<?= $row['detail_id'] ?>">
+                                <button type="button" class="GH_delete" style="cursor: pointer;">❌</button>
+                            </a>
+                        </td>
+                    </tr>
 
-			<?php
+                <?php
                 endwhile;
             else:
                 ?>
-			<tr>
-				<td colspan="6" style="text-align: center; padding: 30px; font-weight: bold;">
-					Giỏ hàng của bạn đang trống!
-				</td>
-			</tr>
-			<?php endif; ?>
-		</tbody>
-	</table>
+                <tr>
+                    <td colspan="6" style="text-align: center; padding: 30px; font-weight: bold;">
+                        Giỏ hàng của bạn đang trống!
+                    </td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
 
-	<div class="GH_totalBox">
-		<h3>Tổng tiền: <span id="GH_grand_total"><?= number_format($grand_total, 0, ',', '.') ?>đ</span></h3>
+    <div class="GH_totalBox">
+        <h3>Tổng tiền: <span id="GH_grand_total"><?= number_format($grand_total, 0, ',', '.') ?>đ</span></h3>
 
-		<div class="GH_actions">
-			<button class="GH_continue" onclick="window.location.href='TrangSanPham.php'">← Tiếp tục mua</button>
-			<button class="GH_checkout" onclick="moPopupThanhToan()">Thanh toán →</button>
-		</div>
-	</div>
+        <div class="GH_actions">
+            <button class="GH_continue" onclick="window.location.href='TrangSanPham.php'">← Tiếp tục mua</button>
+            <button class="GH_checkout" onclick="moPopupThanhToan()">Thanh toán →</button>
+        </div>
+    </div>
 </section>
 
 <script>
-function formatCurrency(number) {
-	return new Intl.NumberFormat('vi-VN').format(number) + 'đ';
-}
+    function formatCurrency(number) {
+        return new Intl.NumberFormat('vi-VN').format(number) + 'đ';
+    }
 
-function updateCart() {
-	let grandTotal = 0;
-	const cartItems = document.querySelectorAll('.GH_item');
+    function updateCart() {
+        let grandTotal = 0;
+        const cartItems = document.querySelectorAll('.GH_item');
 
-	cartItems.forEach(item => {
-		const price = parseFloat(item.getAttribute('data-price'));
-		const quantityInput = item.querySelector('.GH_quantity');
-		let quantity = parseInt(quantityInput.value);
+        cartItems.forEach(item => {
+            const price = parseFloat(item.getAttribute('data-price'));
+            const quantityInput = item.querySelector('.GH_quantity');
+            let quantity = parseInt(quantityInput.value);
 
-		if (quantity < 1 || isNaN(quantity)) {
-			quantity = 1;
-			quantityInput.value = 1;
-		}
+            if (quantity < 1 || isNaN(quantity)) {
+                quantity = 1;
+                quantityInput.value = 1;
+            }
 
-		const subtotal = price * quantity;
-		grandTotal += subtotal;
-		item.querySelector('.GH_item_subtotal').innerText = formatCurrency(subtotal);
-	});
+            const subtotal = price * quantity;
+            grandTotal += subtotal;
+            item.querySelector('.GH_item_subtotal').innerText = formatCurrency(subtotal);
+        });
 
-	document.getElementById('GH_grand_total').innerText = formatCurrency(grandTotal);
-}
+        document.getElementById('GH_grand_total').innerText = formatCurrency(grandTotal);
+    }
 
-document.querySelectorAll('.GH_quantity').forEach(input => {
-	input.addEventListener('input', updateCart);
-	input.addEventListener('change', updateCart);
-});
+    document.querySelectorAll('.GH_quantity').forEach(input => {
+        input.addEventListener('input', updateCart);
+
+        input.addEventListener('change', function() {
+            let detail_id = this.getAttribute('data-id');
+            let new_quantity = this.value;
+
+            if (new_quantity >= 1) {
+                window.location.href = `cap_nhat_so_luong.php?id=${detail_id}&qty=${new_quantity}`;
+            }
+        });
+    });
 </script>
 
 <div id="popupThanhToan" class="GH_modal">
-	<div class="GH_modal_content">
-		<div class="GH_modal_header">
-			Xác nhận đơn hàng - F1GamingGear
-		</div>
+    <div class="GH_modal_content">
+        <div class="GH_modal_header">
+            Xác nhận đơn hàng - F1GamingGear
+        </div>
 
-		<div class="GH_modal_body">
-			<p><strong>Khách hàng:</strong> <?= $_SESSION['user']['fullname'] ?? 'Chưa cập nhật' ?></p>
-			<hr style="border: 0.5px solid #eee; margin: 15px 0;">
+        <div class="GH_modal_body">
+            <p><strong>Khách hàng:</strong> <?= $_SESSION['user']['fullname'] ?? 'Chưa cập nhật' ?></p>
+            <hr style="border: 0.5px solid #eee; margin: 15px 0;">
 
-			<p><strong>Sản phẩm trong giỏ:</strong></p>
-			<ul>
-				<?php
+            <p><strong>Sản phẩm trong giỏ:</strong></p>
+            <ul>
+                <?php
                 // Reset lại con trỏ dữ liệu để vòng lặp có thể chạy lại lần 2 lấy tên sản phẩm
                 if (isset($result_cart) && $result_cart->num_rows > 0) {
                     mysqli_data_seek($result_cart, 0);
@@ -140,31 +148,31 @@ document.querySelectorAll('.GH_quantity').forEach(input => {
                     }
                 }
                 ?>
-			</ul>
+            </ul>
 
-			<hr style="border: 0.5px solid #eee; margin: 15px 0;">
-			<h3 style="color: red; text-align: right; margin: 0;">
-				Tổng thanh toán: <?= number_format($grand_total, 0, ',', '.') ?>đ
-			</h3>
-		</div>
+            <hr style="border: 0.5px solid #eee; margin: 15px 0;">
+            <h3 style="color: red; text-align: right; margin: 0;">
+                Tổng thanh toán: <?= number_format($grand_total, 0, ',', '.') ?>đ
+            </h3>
+        </div>
 
-		<div class="GH_modal_footer">
-			<button class="btn-huy" onclick="dongPopupThanhToan()">Hủy bỏ</button>
-			<button class="btn-xac-nhan" onclick="window.location.href='TrangThanhToan.php'">Xác nhận</button>
-		</div>
-	</div>
+        <div class="GH_modal_footer">
+            <button class="btn-huy" onclick="dongPopupThanhToan()">Hủy bỏ</button>
+            <button class="btn-xac-nhan" onclick="window.location.href='TrangThanhToan.php'">Xác nhận</button>
+        </div>
+    </div>
 </div>
 
 
 
 <script>
-function moPopupThanhToan() {
-	document.getElementById('popupThanhToan').style.display = 'block';
-}
+    function moPopupThanhToan() {
+        document.getElementById('popupThanhToan').style.display = 'block';
+    }
 
-function dongPopupThanhToan() {
-	document.getElementById('popupThanhToan').style.display = 'none';
-}
+    function dongPopupThanhToan() {
+        document.getElementById('popupThanhToan').style.display = 'none';
+    }
 </script>
 
 <?php
