@@ -12,31 +12,31 @@
 
 · Dọn dẹp file CSS, gom code trùng lặp.
 
-2. Hoàn thiện chức năng (PHP + MySQL)
+<!-- 2. Hoàn thiện chức năng (PHP + MySQL) -->
 
 <!-- · Tối ưu kết nối cơ sở dữ liệu (tạo file config.php). -->
 
-· Thêm chức năng:
+<!-- · Thêm chức năng: -->
 
 <!-- · Đăng nhập / đăng ký tài khoản (có kiểm tra dữ liệu nhập). -->
 
-· Hiển thị danh sách dữ liệu từ bảng MySQL.
+<!-- · Hiển thị danh sách dữ liệu từ bảng MySQL. -->
 
-· Thêm, sửa, xóa dữ liệu (CRUD).
+<!-- · Thêm, sửa, xóa dữ liệu (CRUD). -->
 
 <!-- · Tách code PHP thành module / include file (header.php, footer.php). -->
 
-3. Thêm tương tác bằng JavaScript
+<!-- 3. Thêm tương tác bằng JavaScript -->
 
-· Kiểm tra dữ liệu nhập (form validation) trước khi gửi lên server.
+<!-- · Kiểm tra dữ liệu nhập (form validation) trước khi gửi lên server. -->
 
-· Hiệu ứng giao diện: menu ẩn/hiện, nút “Lên đầu trang”, thông báo popup.
+<!-- · Hiệu ứng giao diện: menu ẩn/hiện, nút “Lên đầu trang”, thông báo popup. -->
 
 · Sử dụng AJAX (fetch) để tải dữ liệu mà không cần tải lại trang.
 
 4. Kiểm thử và hoàn thiện
 
-· Kiểm tra lỗi cú pháp, lỗi kết nối database.
+<!-- · Kiểm tra lỗi cú pháp, lỗi kết nối database. -->
 
 · Test toàn bộ luồng: đăng ký → đăng nhập → thao tác dữ liệu.
 

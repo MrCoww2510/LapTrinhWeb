@@ -3,10 +3,10 @@
 // KẾT NỐI DATABASE
 
 
-$Host = "localhost";      // Server MySQL (XAMPP mặc định là localhost)
-$User = "root";           // User mặc định XAMPP
-$Password = "";           // XAMPP mặc định không có mật khẩu
-$Database = "GearShop";   // Tên database của m
+$Host = "localhost";
+$User = "root";
+$Password = "";
+$Database = "GearShop";
 
 // Tạo kết nối
 $Conn = new mysqli($Host, $User, $Password, $Database);
