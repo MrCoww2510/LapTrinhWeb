@@ -27,8 +27,8 @@ if (isset($_GET['id'])) {
         $row_price = $result_price->fetch_assoc();
         $price = $row_price['price'];
 
-        // Bước 2: Kiểm tra xem khách hàng này đã có giỏ hàng (đơn hàng trạng thái 'Cart') chưa
-        // Bước 2: Kiểm tra xem khách hàng này đã có giỏ hàng chưa
+        // Kiểm tra xem khách hàng này đã có giỏ hàng  chưa
+        //Kiểm tra xem khách hàng này đã có giỏ hàng chưa
         $sql_check_order = "SELECT id FROM orders WHERE user_id = $user_id AND status = 'Cart'";
         $result_order = $Conn->query($sql_check_order);
 

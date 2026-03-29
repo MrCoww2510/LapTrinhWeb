@@ -30,8 +30,7 @@ if ($result_cart->num_rows > 0) {
 
         if ($Conn->query($sql_checkout) === TRUE) {
             echo "<script>
-                alert('🎉 Đặt hàng thành công!');
-                window.location.href = 'TrangSanPham.php';
+                window.location.href = 'GioHang.php?success=1&order_id=$order_id';
             </script>";
         } else {
             echo "<script>alert('Lỗi hệ thống khi thanh toán: " . $Conn->error . "'); window.history.back();</script>";

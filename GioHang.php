@@ -4,7 +4,7 @@ require_once("config.php");
 
 // Kiểm tra đăng nhập (bắt buộc phải có để biết giỏ hàng của ai)
 if (!KiemTraDangNhap()) {
-    echo "<script>alert('Vui lòng đăng nhập để xem giỏ hàng!'); window.location.href='DangNhap.php';</script>";
+    echo "<script>alert('Vui lòng đăng nhập để xem giỏ hàng!'); window.location.href='index.php';</script>";
     exit();
 }
 
@@ -166,6 +166,38 @@ include("header.php");
         document.getElementById('popupThanhToan').style.display = 'none';
     }
 </script>
+
+<?php
+if (isset($_GET['success']) && $_GET['success'] == 1):
+    $ma_don_hang_vua_dat = isset($_GET['order_id']) ? intval($_GET['order_id']) : '';
+?>
+
+    <div id="popupThanhCong" class="GH_modal" style="display: block;">
+        <div class="GH_modal_content" style="max-width: 400px; text-align: center;">
+            <div style="font-size: 50px; color: #4CAF50; margin-bottom: 10px;">✔</div>
+            <h2 style="color: #333; margin-bottom: 10px;">Thanh toán thành công!</h2>
+
+            <div style="background: #fdf7f7; border: 1px dashed #d9534f; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                <p style="margin: 0; color: #555;">Mã đơn hàng của bạn là:</p>
+                <h1 style="color: #d9534f; margin: 5px 0 0 0;">OD<?= $ma_don_hang_vua_dat ?></h1>
+                <p style="margin: 5px 0 0 0; font-size: 13px; color: #888;">(Vui lòng lưu lại mã này cùng số điện thoại để tra cứu)</p>
+            </div>
+
+            <p style="color: #666; margin-bottom: 30px;">Cảm ơn bạn đã mua sắm tại F1GamingGear.</p>
+
+            <button class="btn-xac-nhan" style="width: 100%; background: #4CAF50;" onclick="dongPopupVaTiepTuc()">
+                Tiếp tục mua sắm
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function dongPopupVaTiepTuc() {
+            document.getElementById('popupThanhCong').style.display = 'none';
+            window.location.href = 'TrangSanPham.php';
+        }
+    </script>
+<?php endif; ?>
 
 <?php include("footer.php");
 ?>
