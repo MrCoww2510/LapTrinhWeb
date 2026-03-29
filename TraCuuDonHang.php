@@ -55,6 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tc_ma_don_hang'])) {
                     $current_step = 4;
                     $text_status = "Đã giao thành công";
                     break;
+                case 'Cancelled':
+                    $current_step = 0;
+                    $text_status = "Đã hủy";
+                    break;
                 default:
                     $current_step = 1;
                     $text_status = "Đang cập nhật";
@@ -156,6 +160,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tc_ma_don_hang'])) {
                 <div class="TC_tong_cong">
                     Tổng cộng: <span class="TC_tong_tien"><?= number_format($order_info['total_price'], 0, ',', '.') ?>đ</span>
                 </div>
+                <?php if ($current_step == 1): ?>
+                    <div style="text-align: right; margin-top: 15px;">
+                        <a href="Huy_Don_hang.php?id=<?= $order_info['id'] ?>" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này không? Hành động này không thể hoàn tác!');">
+                            <button type="button" style="background: #fff; color: #d9534f; border: 1px solid #d9534f; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.background='#d9534f'; this.style.color='#fff';" onmouseout="this.style.background='#fff'; this.style.color='#d9534f';">
+                                ❌ Hủy đơn hàng
+                            </button>
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     <?php endif; ?>
