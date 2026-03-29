@@ -7,7 +7,7 @@ require_once("config.php");
 if (!isset($_SESSION['user']) || !isset($_SESSION['user']['id'])) {
     echo "<script>
         alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!');
-        window.location.href = 'DangNhap.php'; // Đổi lại tên file đăng nhập nếu của bạn khác nhé
+        window.location.href = 'index.php';
     </script>";
     exit(); // Dừng toàn bộ code bên dưới
 }
