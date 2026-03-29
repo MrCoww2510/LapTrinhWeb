@@ -6,6 +6,11 @@
 	border-radius: 10px;
 }
 
+.SP_TenDanhMuc {
+	text-align: center;
+	font-size: 2em;
+}
+
 /* ================= THANH TRÊN ================= */
 
 .SP_ThanhSP {
