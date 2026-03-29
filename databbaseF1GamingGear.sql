@@ -42,8 +42,8 @@ CREATE TABLE users(
 );
 
 INSERT INTO users(username,password,fullname,email,role,phone,gioi_tinh,ngay_sinh) VALUES
-('admin','123456','Admin','admin@gmail.com','admin','','',''),
-('user01','123456','Nguyen Van A','a@gmail.com','customer','','',''),
+('admin','123456','Admin','admin@gmail.com','admin','0988777666','Nam','2000-01-01'),
+('user01','123456','Nguyen Van A','a@gmail.com','customer','0932666777','Nam','1990-01-01'),
 ('user02','123456','Tran Van B','b@gmail.com','customer','','',''),
 ('user03','123456','Le Van C','c@gmail.com','customer','','',''),
 ('user04','123456','Pham Van D','d@gmail.com','customer','','','');

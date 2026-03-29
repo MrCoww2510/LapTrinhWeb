@@ -93,7 +93,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($mat_khau === $user['password']) {
                 unset($user['password']); 
                 $_SESSION['user'] = $user;
-                echo "<script> window.location.href='index.php';</script>";
+                echo "<script>
+                alert('Đăng nhập thành công!');
+                window.location.href='index.php';</script>";
             } else {
                 echo "<script>alert('Sai tài khoản hoặc mật khẩu!'); history.back();</script>";
             }
