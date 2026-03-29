@@ -116,7 +116,7 @@ $result_address = $Conn->query($sql_address);
                     <div class="TTTK_form_group">
                         <label class="TTTK_label">Email</label>
                         <input type="email" name="email" class="TTTK_input"
-                            value="<?php echo htmlspecialchars($userInfo['email']); ?>">
+                            value="<?php echo htmlspecialchars($userInfo['email'] ?? ''); ?>">
                     </div>
 
                     <div class="TTTK_form_group">
